@@ -25,6 +25,12 @@ Our research covers client-side code integrity verification, PE section relocati
   *In-depth architectural analysis of native C++ engine bridges, internal symbol reflection, memory layouts, and data pipelines.*
 - **[Cardinal Engine System Architecture & Injection Boundaries (31KB)](docs/cardinal_hook_architecture.md)**  
   *Complete architectural dissection of the Cardinal game process, task graph threading, memory protection, and binary hooking contracts.*
+- **[AI Decision Scoring Pipeline & Dynamic Evaluation (45KB)](docs/ai_scoring_pipeline.md)**  
+  *Detailed engineering breakdown of real-time utility curves, threat assessment trees, and resource scoring loops.*
+- **[AI Session Handoff & State Synchronization (44KB)](docs/ai_session_handoff.md)**  
+  *State preservation, thread context handoff, and cross-thread synchronization mechanics.*
+- **[AI Unit Control Subsystem & Command Dispatch (33KB)](docs/ai_unit_control.md)**  
+  *Unit micro-management architectures, movement pathing models, and simulation command queues.*
 - **[Hybrid Native Subsystem & Spatial Model Auditing](docs/hybrid_native_subsystem_audit.md)**  
   *Analysis of spatial simulation models, probe hooks, and synchronization verification.*
 - **[AI Control Ownership & Simulation Boundary Verification](docs/ai_control_ownership.md)**  
