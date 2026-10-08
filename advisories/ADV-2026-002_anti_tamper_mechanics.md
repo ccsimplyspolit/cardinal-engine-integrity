@@ -5,27 +5,30 @@
 - **Published:** October 2026
 - **Researcher:** Sergey Shunko
 - **Classification:** Binary Security Analysis / Anti-Tamper Architecture
-- **Target:** Cardinal Engine (x64)
+- **Target:** Cardinal Engine (Relic x64)
 
 ---
 
 ## Executive Summary
 
-High-budget interactive simulations and strategy games implement multi-tiered anti-tamper defenses combining code virtualization, section checksumming, and runtime thread integrity checks. This research advisory details the defensive architecture utilized by the Cardinal Engine to protect against unauthorized memory patch operations and binary tampering.
+High-budget interactive simulations and strategy games implement multi-tiered client-side defenses combining code virtualization, section checksumming, and runtime thread integrity checks. This research advisory details the defensive architecture utilized by the Cardinal Engine to protect against unauthorized memory patch operations and binary tampering.
 
 ---
 
-## Key Technical Observations
+## Technical Findings & Vulnerability Mitigation
 
-### 1. Section Checksumming and Relocation Filtering
+### 1. Relocation-Masked Section Integrity
 The engine validates its `.text` segment integrity by comparing dynamic page hashes against compile-time hashes stored in protected metadata.
-- **Relocation Normalization:** To prevent ASLR-induced hash collisions, the integrity scanner zeroes out 8-byte relocation targets based on the binary's `.reloc` table before hashing.
-- **Hook Detection:** Direct jumps (`E9` jmp) or indirect call trampolines (`FF 25`) injected into standard engine subsystems (such as network synchronization and deterministic simulation ticks) trigger crash-on-anomaly traps.
+- **Relocation Normalization:** To prevent ASLR-induced false positives, the integrity scanner zeroes out 8-byte relocation targets based on the binary's `.reloc` table before hashing.
+- **Inline Trampoline Detection:** Direct jumps (`E9` jmp) or indirect call trampolines (`FF 25`) injected into standard engine subsystems (such as network synchronization and deterministic simulation ticks) trigger crash-on-anomaly traps.
 
-### 2. Anti-Tamper Virtualization Boundary
-Critical startup sequences and license validation functions are wrapped in custom virtualized bytecode.
-- The virtual machine interpreter processes custom register architectures (virtual accumulator, virtual stack).
-- Runtime analysis demonstrates that code transitions between native x64 and virtualized blocks are guarded by SEH (Structured Exception Handling) verification to catch attached debuggers.
+### 2. Runtime IAT Boundary Verification
+The engine actively traverses its Import Address Table (IAT) at runtime to ensure external function pointers have not been redirected to non-system modules. If a pointer points outside legitimate system DLL bounds (`ntdll.dll`, `kernel32.dll`), execution is halted.
+
+### 3. CPU Debug Register Auditing
+Worker threads periodically query thread contexts (`GetThreadContext`) to detect hardware execution breakpoints configured in debug registers `DR0` through `DR3` and control register `DR7`.
+
+*(Comprehensive architectural documentation, pseudocode implementations, and disassembly listings are documented in [docs/engine_integrity_architecture.md](../docs/engine_integrity_architecture.md)).*
 
 ---
 
