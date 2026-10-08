@@ -8,7 +8,7 @@
 
 This repository documents comprehensive binary reverse engineering, security auditing, and anti-tamper mechanics of the **Cardinal Engine** (Age of Empires IV / Relic Entertainment) on Windows x64.
 
-Our research covers client-side code integrity verification, PE section relocation-normalized hashing, Import Address Table (IAT) hook detection, SCAR virtual machine determinism, and Out-of-Sync (OOS) state integrity tracking across more than 4,400 audited engine APIs.
+Our research covers client-side code integrity verification, dynamic unpacking and PE header reconstruction, PE section relocation-normalized hashing, Import Address Table (IAT) hook detection, SCAR virtual machine determinism, and Out-of-Sync (OOS) state integrity tracking across more than 4,400 audited engine APIs.
 
 ---
 
@@ -19,6 +19,8 @@ Our research covers client-side code integrity verification, PE section relocati
   *Technical review of engine integrity checkpoints, section protection validations, relocation filtering, and anti-tamper virtualization boundary analysis.*
 
 ### 2. Comprehensive Architectural Whitepapers
+- **[Dynamic Unpacking, Section Restoration, and PE Reconstruction in the Cardinal Engine](docs/unpacker_and_pe_reconstruction.md)**  
+  *Technical methodology for dynamic OEP trapping via Page Guard (`PAGE_GUARD`), memory section alignment fixing, and automated IAT scraping and `.idata` rebuilding for protected game binaries.*
 - **[SCAR Checksum & Out-Of-Sync (OOS) Audit across 4,423 Functions](docs/scar_checksum_oos_audit.md)**  
   *Comprehensive classification of 4,423 engine functions across `wrap_timerule`, `wrap_eventrule`, `sim_command`, `sim_write`, `ai`, and `safe_ui`, identifying checksum-neutral vs desync-inducing execution branches.*
 - **[Cardinal Engine Native C++ Bridges & Subsystem Interop (46KB)](docs/native_cpp_bridges.md)**  
