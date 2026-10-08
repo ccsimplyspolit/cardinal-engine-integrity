@@ -1,7 +1,7 @@
 # Мосты оверлея для автора SCAR
 
 Документ для человека, который пишет `.scar` / `.lua` под AOE4HOOK и **не видит исходников DLL**.  
-Игра: Age of Empires IV **16.3.11308.0**. Схема snapshot: **10**. Метка: `16.3.11308.bridge12`. Lua **5.3** (песочница: нет `io` / `os`, см. [LUA_RUNTIME.md](LUA_RUNTIME.md)).
+Игра: Age of Empires IV **16.3.11308.0**. Схема snapshot: **10**. Метка: `16.3.11308.bridge12`. Lua **5.3** (песочница: нет `io` / `os`, см. LUA_RUNTIME.md).
 
 Оверлей кладёт данные в тот же Relic SCAR VM, куда попадает ваш файл. Вы читаете `_G`, вызываете обычные нативы Relic и (если нужно) helpers `AOE4HOOK.*` / `SpatialWorldModel.*` / `MacroBridge.*`.
 
@@ -24,7 +24,7 @@
 7. [Глобалы snapshot (полный словарь)](#7-глобалы-snapshot-полный-словарь)
 8. [API `AOE4HOOK.*`](#8-api-aoe4hook)
 9. [`AOE4HOOK_AI_PLAN`](#9-aoe4hook_ai_plan)
-10. [`AOE4HOOK_AI_SETTINGS` и профили](#10-aoe4hook_ai_settings-и-профили) — вкладка **AI BOT**: [`docs/AI_BOT.md`](../../docs/AI_BOT.md)
+10. [`AOE4HOOK_AI_SETTINGS` и профили](#10-aoe4hook_ai_settings-и-профили) — вкладка **AI BOT**: [`docs/AI_BOT.md`](ai_bot.md)
 11. [`SpatialWorldModel` и `UnitIntelligence`](#11-spatialworldmodel-и-unitintelligence)
 12. [`MacroBridge` — очередь / cancel](#12-macrobridge--очередь--cancel)
 13. [Обёртки `AOE4HOOK_Local` / `AOE4HOOK_Safe`](#13-обёртки-aoe4hook_local--aoe4hook_safe)
@@ -526,7 +526,7 @@ World-feed может всё ещё публиковать blob для SWM / hyb
 
 `safe` в таблице всегда гасит `cancelNative` / `relicScoring` / `availabilityNative`.
 
-Вкладка **AI BOT** (профили `.ini`, Fine-tuning, Scoring Lua, локи, AUTO hybrid): [`docs/AI_BOT.md`](../../docs/AI_BOT.md).
+Вкладка **AI BOT** (профили `.ini`, Fine-tuning, Scoring Lua, локи, AUTO hybrid): [`docs/AI_BOT.md`](ai_bot.md).
 
 `holds`: оверлей шлёт leftover. Если вы делаете свой auto-hold, **не продлевайте** expire, пока текущий ещё в будущем (как hybrid `H.SetAuto` с `refresh ~= true`). Countdown в `_G` при hash-skip замирает — ориентир для логики: свой `World_GetGameTime() + sec` при **первом** появлении ключа.
 
