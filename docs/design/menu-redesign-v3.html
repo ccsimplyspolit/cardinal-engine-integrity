@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$toneHax menu mockup v3</title>
+<style>
+:root {
+  --win: rgba(16, 17, 21, 0.97);
+  --card: #15171c;
+  --card-hi: #1a1c22;
+  --field: #1f2128;
+  --line: rgba(255, 255, 255, 0.06);
+  --line-2: rgba(255, 255, 255, 0.11);
+  --text: #ece8e0;
+  --text-2: #b8b2a7;
+  --muted: #7f796f;
+  --faint: #5d5951;
+  --ok: #5fd08e;
+  --bad: #ef6b6b;
+  --warn: #e7b24c;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --r-win: 14px;
+  --r-card: 12px;
+  --r-ctl: 8px;
+}
+[data-accent="gold"]   { --br-1:#ecc778; --br-2:#fff0c2; --br-3:#ff9f6b; --acc:#d6ad5c; --acc-hi:#ecc778; --acc-soft:rgba(214,173,92,.13); --acc-line:rgba(214,173,92,.38); --acc-glow:rgba(214,173,92,.30); --acc-ink:#1a1307; }
+[data-accent="violet"] { --br-1:#b7a8ff; --br-2:#7cc4ff; --br-3:#f39bff; --acc:#9a86ff; --acc-hi:#b7a8ff; --acc-soft:rgba(154,134,255,.14); --acc-line:rgba(154,134,255,.42); --acc-glow:rgba(154,134,255,.32); --acc-ink:#140f2e; }
+[data-accent="teal"]   { --br-1:#67dccb; --br-2:#9ec5ff; --br-3:#c6f7a8; --acc:#3fc6b4; --acc-hi:#67dccb; --acc-soft:rgba(63,198,180,.13); --acc-line:rgba(63,198,180,.40); --acc-glow:rgba(63,198,180,.30); --acc-ink:#04201c; }
+[data-accent="ruby"]   { --br-1:#f08398; --br-2:#ffc08a; --br-3:#d58bff; --acc:#e0617a; --acc-hi:#f08398; --acc-soft:rgba(224,97,122,.14); --acc-line:rgba(224,97,122,.42); --acc-glow:rgba(224,97,122,.30); --acc-ink:#2a0911; }
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  font-size: 14px; color: var(--text);
+  /* stand-in for the game behind the overlay */
+  background:
+    radial-gradient(700px 420px at 18% 22%, rgba(236,176,86,.30), transparent 62%),
+    radial-gradient(520px 380px at 8% 78%, rgba(88,140,70,.30), transparent 64%),
+    radial-gradient(900px 600px at 88% 88%, rgba(60,110,170,.26), transparent 60%),
+    repeating-linear-gradient(115deg, rgba(255,255,255,.025) 0 2px, transparent 2px 22px),
+    linear-gradient(135deg, #3a2b18, #16202c);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px; overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- window ---------- */
+.win {
+  position: relative;
+  width: min(1120px, 100%); height: min(740px, calc(100vh - 32px));
+  min-width: 560px; min-height: 460px; max-width: calc(100vw - 32px); max-height: calc(100vh - 32px);
+  resize: both;
+  display: grid; grid-template-columns: var(--side-w, 236px) 1fr;
+  transition: grid-template-columns .32s var(--ease);
+  border: 1px solid var(--line-2); border-radius: var(--r-win);
+  box-shadow: 0 30px 80px rgba(0,0,0,.45);
+  overflow: hidden;
+  animation: winIn .42s var(--ease) backwards;
+}
+.win.compact { --side-w: 68px; }
+@keyframes winIn { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
+.grip {
+  position: absolute; right: 4px; bottom: 4px; width: 12px; height: 12px; pointer-events: none; z-index: 3;
+  background: linear-gradient(135deg, transparent 0 46%, rgba(255,255,255,.28) 46% 54%, transparent 54% 66%, rgba(255,255,255,.28) 66% 74%, transparent 74%);
+  opacity: .7;
+}
+.size-tag {
+  position: absolute; right: 22px; bottom: 7px; z-index: 3; font-size: 11px; color: var(--muted);
+  font-family: Consolas, monospace; opacity: 0; transition: opacity .25s; pointer-events: none;
+}
+.win.resizing .size-tag { opacity: 1; }
+
+/* ---------- sidebar: see-through until the pointer is on it ---------- */
+.side {
+  display: flex; flex-direction: column; min-height: 0; min-width: 0;
+  background: linear-gradient(180deg, rgba(12,13,17,.34), rgba(12,13,17,.20));
+  border-right: 1px solid rgba(255,255,255,.08);
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+.brand { display: flex; align-items: center; gap: 10px; padding: 18px 14px 12px 16px; min-width: 0; }
+.brand .mark {
+  width: 32px; height: 32px; border-radius: 9px; flex: none;
+  background: linear-gradient(145deg, var(--acc-hi), var(--acc));
+  display: grid; place-items: center; color: var(--acc-ink);
+  box-shadow: 0 6px 18px var(--acc-glow);
+  transition: background .3s, box-shadow .3s;
+}
+.brand .txt { min-width: 0; white-space: nowrap; }
+.brand .name {
+  font-weight: 800; font-size: 15.5px; letter-spacing: .4px;
+  background: linear-gradient(90deg, var(--br-1), var(--br-2), var(--br-3), var(--br-1));
+  background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  text-shadow: none; filter: drop-shadow(0 1px 2px rgba(0,0,0,.55));
+  animation: brandFlow 6s linear infinite;
+}
+@keyframes brandFlow { from { background-position: 0% 50%; } to { background-position: 200% 50%; } }
+.brand .ver { font-size: 11px; color: var(--muted); margin-top: 1px; }
+.search {
+  margin: 4px 12px 8px; height: 34px; border-radius: var(--r-ctl);
+  background: rgba(31,33,40,.55); border: 1px solid var(--line);
+  display: flex; align-items: center; gap: 8px; padding: 0 10px; color: var(--muted);
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.search:focus-within { border-color: var(--acc-line); box-shadow: 0 0 0 3px var(--acc-soft); }
+.search input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: var(--text); font: inherit; font-size: 13px; }
+.kbd { font-size: 11px; color: var(--faint); border: 1px solid var(--line-2); border-radius: 5px; padding: 1px 5px; white-space: nowrap; }
+
+.nav {
+  position: relative; flex: 1; overflow-y: auto; overflow-x: hidden; padding: 4px 10px 12px;
+  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.14) transparent;
+}
+.group { font-size: 11px; font-weight: 600; letter-spacing: 1.1px; text-transform: uppercase; color: var(--faint); padding: 14px 10px 6px; white-space: nowrap; }
+.item {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 10px;
+  height: 34px; padding: 0 10px; border-radius: var(--r-ctl);
+  color: var(--text-2); cursor: pointer; user-select: none; white-space: nowrap;
+  transition: color .18s, background-color .18s;
+}
+.item svg { width: 17px; height: 17px; flex: none; opacity: .8; transition: opacity .18s, color .18s; }
+.item .lbl { overflow: hidden; text-overflow: ellipsis; }
+.item:hover { background: rgba(255,255,255,.06); color: var(--text); }
+.item:hover svg { opacity: 1; }
+.item.on { color: var(--text); }
+.item.on svg { color: var(--acc-hi); opacity: 1; }
+.bar { width: 3px; height: 14px; border-radius: 2px; flex: none; display: inline-block; }
+.bar.ok { background: var(--ok); box-shadow: 0 0 8px rgba(95,208,142,.6); }
+.bar.bad { background: var(--bad); box-shadow: 0 0 8px rgba(239,107,107,.55); }
+.bar.warn { background: var(--warn); box-shadow: 0 0 8px rgba(231,178,76,.55); }
+.item .bar { margin-left: auto; }
+.sub { margin-left: 18px; padding-left: 8px; border-left: 1px solid rgba(255,255,255,.08); overflow: hidden; transition: max-height .28s var(--ease), opacity .2s, margin .3s var(--ease), padding .3s var(--ease); }
+.sub.shut { max-height: 0 !important; opacity: 0; }
+.sub .item { height: 30px; font-size: 13.5px; }
+.fold .chev { margin-left: auto; transition: transform .25s var(--ease); opacity: .6; width: 14px; height: 14px; }
+.fold.shut .chev { transform: rotate(-90deg); }
+.indicator {
+  position: absolute; left: 10px; right: 10px; z-index: 0;
+  border-radius: var(--r-ctl);
+  background: linear-gradient(90deg, var(--acc-soft), rgba(255,255,255,.03));
+  border: 1px solid var(--acc-line);
+  transition: top .3s var(--ease), height .3s var(--ease), left .3s var(--ease), opacity .2s;
+  pointer-events: none;
+}
+.indicator::before {
+  content: ""; position: absolute; left: -1px; top: 7px; bottom: 7px; width: 3px; border-radius: 3px;
+  background: var(--acc-hi); box-shadow: 0 0 10px var(--acc-glow);
+}
+.side-foot { border-top: 1px solid rgba(255,255,255,.07); padding: 10px 12px 12px; display: grid; gap: 8px; }
+.conn { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.conn div { background: rgba(21,23,28,.6); border: 1px solid var(--line); border-radius: 8px; padding: 7px 9px; font-size: 12px; color: var(--text-2); display: flex; align-items: center; gap: 8px; white-space: nowrap; overflow: hidden; }
+.side-foot .row2 { display: flex; align-items: center; gap: 6px; }
+.hint { font-size: 11.5px; color: var(--muted); display: flex; align-items: center; gap: 6px; white-space: nowrap; overflow: hidden; }
+.collapse { margin-left: auto; width: 26px; height: 26px; border-radius: 7px; display: grid; place-items: center; color: var(--muted); cursor: pointer; border: 1px solid transparent; transition: background .18s, color .18s, border-color .18s, transform .3s var(--ease); flex: none; }
+.collapse:hover { background: rgba(255,255,255,.06); color: var(--text); border-color: var(--line); }
+.win.compact .collapse { transform: rotate(180deg); margin: 0 auto; }
+
+/* compact rail */
+.win.compact .brand { padding: 18px 0 12px; justify-content: center; }
+.win.compact .brand .txt,
+.win.compact .search input, .win.compact .search .kbd,
+.win.compact .item .lbl, .win.compact .item .chev,
+.win.compact .conn .lbl, .win.compact .hint { display: none; }
+.win.compact .search { justify-content: center; padding: 0; margin: 4px 12px 8px; cursor: pointer; }
+.win.compact .group { font-size: 0; height: 1px; padding: 0; margin: 12px 8px; background: rgba(255,255,255,.08); }
+.win.compact .item { justify-content: center; padding: 0; }
+.win.compact .item .bar { position: absolute; right: 5px; top: 10px; margin: 0; }
+.win.compact .sub { margin-left: 0; padding-left: 0; border-left-color: transparent; }
+.win.compact .conn { grid-template-columns: 1fr; }
+.win.compact .conn div { justify-content: center; padding: 8px 0; }
+.win.compact .side-foot .row2 { justify-content: center; }
+
+.rail-tip {
+  position: fixed; z-index: 100; pointer-events: none; left: 0; top: 0;
+  background: #202229; border: 1px solid var(--line-2); color: var(--text); font-size: 12.5px;
+  padding: 6px 10px; border-radius: 7px; box-shadow: 0 10px 24px rgba(0,0,0,.4); white-space: nowrap;
+  opacity: 0; transform: translate(-4px, -50%); transition: opacity .14s var(--ease), transform .14s var(--ease);
+}
+.rail-tip.show { opacity: 1; transform: translate(0, -50%); }
+
+.menu {
+  position: fixed; z-index: 90; min-width: 244px; padding: 6px;
+  background: #1b1d23; border: 1px solid var(--line-2); border-radius: 10px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.5);
+  opacity: 0; transform: translateY(-4px); pointer-events: none;
+  transition: opacity .16s var(--ease), transform .16s var(--ease);
+}
+.menu.open { opacity: 1; transform: none; pointer-events: auto; }
+.mi { display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 10px; border-radius: 7px; color: var(--text-2); cursor: pointer; white-space: nowrap; font-size: 13px; transition: background .14s, color .14s; }
+.mi:hover { background: rgba(255,255,255,.06); color: var(--text); }
+.mi svg { width: 16px; height: 16px; flex: none; opacity: .85; }
+.mi .end { margin-left: auto; display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12px; }
+.mi .step { width: 22px; height: 22px; border-radius: 6px; border: 1px solid var(--line-2); display: grid; place-items: center; color: var(--text-2); cursor: pointer; transition: background .14s, color .14s; }
+.mi .step:hover { background: rgba(255,255,255,.08); color: var(--text); }
+.mi.danger { color: #f1a3a3; }
+.mi.danger:hover { background: rgba(239,107,107,.12); color: #ffc2c2; }
+.msep { height: 1px; background: var(--line); margin: 5px 4px; }
+.iconbtn.active { background: rgba(255,255,255,.07); color: var(--text); border-color: var(--line-2); }
+.win.hidden { opacity: 0; transform: translateY(8px) scale(.985); pointer-events: none; transition: opacity .22s var(--ease), transform .22s var(--ease); }
+.win.shown { transition: opacity .28s var(--ease), transform .28s var(--ease); }
+.reopen {
+  position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 10px); z-index: 80;
+  display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 10px;
+  background: rgba(16,17,21,.9); border: 1px solid var(--line-2); color: var(--text-2); font-size: 12.5px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.45); cursor: pointer; opacity: 0; pointer-events: none;
+  transition: opacity .2s var(--ease), transform .2s var(--ease);
+}
+.reopen.show { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+.toast {
+  position: fixed; left: 50%; top: 18px; transform: translate(-50%, -8px); z-index: 95;
+  padding: 8px 12px; border-radius: 9px; background: #202229; border: 1px solid var(--line-2);
+  color: var(--text); font-size: 12.5px; box-shadow: 0 12px 30px rgba(0,0,0,.45);
+  opacity: 0; pointer-events: none; transition: opacity .2s var(--ease), transform .2s var(--ease);
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- main ---------- */
+.main { display: grid; grid-template-rows: auto 1fr auto; min-width: 0; min-height: 0; background: var(--win); }
+.head {
+  display: flex; align-items: center; gap: 14px; padding: 16px 20px 14px 24px; min-width: 0;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.025), transparent);
+}
+.crumb { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.title { font-size: 21px; font-weight: 650; letter-spacing: .2px; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.subtitle { font-size: 12.5px; color: var(--muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.head .grow { flex: 1; min-width: 0; }
+.status { display: flex; gap: 2px; padding: 4px; border-radius: 10px; background: var(--card); border: 1px solid var(--line); flex: none; }
+.pill { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--text-2); padding: 4px 9px; border-radius: 7px; cursor: default; transition: background .18s, padding .25s var(--ease); position: relative; white-space: nowrap; }
+.pill:hover { background: rgba(255,255,255,.05); }
+.pill .bar { height: 12px; }
+.pill[data-tip]:hover::after {
+  content: attr(data-tip); position: absolute; top: calc(100% + 8px); right: 0; white-space: nowrap;
+  background: #202229; border: 1px solid var(--line-2); color: var(--text); font-size: 12px;
+  padding: 6px 9px; border-radius: 7px; box-shadow: 0 10px 24px rgba(0,0,0,.4); z-index: 5;
+  animation: tipIn .16s var(--ease) both;
+}
+@keyframes tipIn { from { opacity: 0; } to { opacity: 1; } }
+.win.tiny .pill .lbl, .win.tiny .subtitle { display: none; }
+.win.tiny .pill { padding: 5px 7px; }
+.iconbtn { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; color: var(--muted); cursor: pointer; border: 1px solid transparent; transition: background .18s, color .18s, border-color .18s; flex: none; }
+.iconbtn:hover { background: rgba(255,255,255,.05); color: var(--text); border-color: var(--line); }
+.iconbtn.close:hover { background: rgba(239,107,107,.14); color: #ffb3b3; border-color: rgba(239,107,107,.3); }
+
+.body { overflow-y: auto; padding: 20px 22px 24px 24px; min-height: 0; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.14) transparent; }
+.page { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+.col { flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.page.enter { animation: pageIn .32s var(--ease) both; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.card {
+  background: linear-gradient(180deg, var(--card-hi), var(--card));
+  border: 1px solid var(--line); border-radius: var(--r-card);
+  transition: border-color .2s, box-shadow .2s;
+}
+.card:hover { border-color: var(--line-2); box-shadow: 0 8px 26px rgba(0,0,0,.25); }
+.card-h { display: flex; align-items: center; gap: 10px; padding: 14px 16px 12px; border-bottom: 1px solid var(--line); min-width: 0; }
+.card-h .ico { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; background: var(--acc-soft); color: var(--acc-hi); border: 1px solid var(--acc-line); flex: none; }
+.card-h .tt { min-width: 0; }
+.card-h .t { font-weight: 600; font-size: 14.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-h .d { font-size: 12px; color: var(--muted); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-h .right { margin-left: auto; display: flex; align-items: center; gap: 8px; flex: none; }
+.card-b { padding: 6px 16px 10px; transition: opacity .25s var(--ease), filter .25s; }
+.card-b.dim { opacity: .38; filter: saturate(.4); pointer-events: none; }
+.card-f { display: flex; justify-content: flex-end; gap: 8px; padding: 10px 16px 14px; flex-wrap: wrap; }
+
+.row { display: flex; align-items: center; gap: 14px; min-height: 46px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.035); }
+.row:last-child { border-bottom: 0; }
+.row .l { flex: 1; min-width: 0; }
+.row .l .n { color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.row .l .h { font-size: 12px; color: var(--muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.row.child { padding-left: 14px; position: relative; }
+.row.child::before { content: ""; position: absolute; left: 3px; top: 0; bottom: 0; width: 1px; background: var(--line-2); }
+.row.off { opacity: .42; }
+.row.off .lock { display: inline-flex; }
+.lock { display: none; align-items: center; gap: 4px; font-size: 11px; color: var(--muted); margin-left: 8px; }
+
+/* toggle */
+.tg { position: relative; width: 38px; height: 22px; flex: none; cursor: pointer; }
+.tg input { display: none; }
+.tg .tr { position: absolute; inset: 0; border-radius: 999px; background: #2a2c33; border: 1px solid var(--line-2); transition: background .22s var(--ease), border-color .22s, box-shadow .22s; }
+.tg .kn { position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: #c9c4ba; box-shadow: 0 2px 5px rgba(0,0,0,.45); transition: transform .26s var(--ease), background .22s, width .16s; }
+.tg:active .kn { width: 20px; }
+.tg input:checked + .tr { background: linear-gradient(90deg, var(--acc), var(--acc-hi)); border-color: transparent; box-shadow: 0 0 14px var(--acc-glow); }
+.tg input:checked + .tr + .kn { transform: translateX(16px); background: #fffaf0; }
+.tg input:checked:active + .tr + .kn { transform: translateX(12px); }
+.tg input:disabled + .tr { opacity: .5; cursor: not-allowed; }
+
+/* slider: stripe handle */
+.sl { display: flex; align-items: center; gap: 10px; width: clamp(150px, 46%, 250px); flex: none; }
+.sl input[type=range] {
+  -webkit-appearance: none; appearance: none; flex: 1; min-width: 0; width: 100%; height: 22px; background: transparent; cursor: pointer; margin: 0;
+  --p: 50%;
+}
+.sl input[type=range]::-webkit-slider-runnable-track {
+  height: 6px; border-radius: 4px;
+  background: linear-gradient(90deg, var(--acc) 0 var(--p), #2a2c33 var(--p) 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
+}
+.sl input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 6px; height: 18px; border-radius: 3px; margin-top: -6px;
+  background: #fffaf0; border: 0; box-shadow: 0 0 0 2px var(--acc-hi), 0 2px 8px rgba(0,0,0,.45);
+  transition: transform .18s var(--ease), box-shadow .18s;
+}
+.sl input[type=range]:hover::-webkit-slider-thumb { transform: scaleY(1.15); box-shadow: 0 0 0 2px var(--acc-hi), 0 0 0 7px var(--acc-soft), 0 2px 8px rgba(0,0,0,.45); }
+.sl input[type=range]:active::-webkit-slider-thumb { transform: scaleY(1.28); box-shadow: 0 0 0 2px var(--acc-hi), 0 0 0 9px var(--acc-soft), 0 2px 8px rgba(0,0,0,.45); }
+.sl input[type=range]::-moz-range-track { height: 6px; border-radius: 4px; background: #2a2c33; }
+.sl input[type=range]::-moz-range-progress { height: 6px; border-radius: 4px; background: var(--acc); }
+.sl input[type=range]::-moz-range-thumb { width: 6px; height: 18px; border-radius: 3px; background: #fffaf0; border: 0; box-shadow: 0 0 0 2px var(--acc-hi); }
+.val {
+  min-width: 58px; text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px;
+  padding: 4px 8px; border-radius: 7px; background: var(--field); border: 1px solid var(--line); color: var(--text);
+  transition: border-color .18s, color .18s; white-space: nowrap;
+}
+.sl:hover .val { border-color: var(--acc-line); color: var(--acc-hi); }
+
+/* buttons */
+.btn { height: 32px; padding: 0 14px; border-radius: 8px; border: 1px solid var(--line-2); background: var(--field); color: var(--text); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; transition: transform .14s var(--ease), background .18s, border-color .18s, box-shadow .18s, color .18s; }
+.btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,.18); }
+.btn:active { transform: translateY(0) scale(.98); }
+.btn.pri { background: linear-gradient(180deg, var(--acc-hi), var(--acc)); border-color: transparent; color: var(--acc-ink); box-shadow: 0 6px 18px var(--acc-glow); }
+.btn.pri:hover { box-shadow: 0 10px 24px var(--acc-glow); }
+.btn.ghost { background: transparent; }
+.btn.sm { height: 28px; padding: 0 11px; font-size: 12.5px; }
+
+/* accordion */
+.acc-h { display: flex; align-items: center; gap: 10px; padding: 14px 16px; cursor: pointer; user-select: none; }
+.acc-h .chev { margin-left: auto; transition: transform .28s var(--ease); color: var(--muted); flex: none; }
+.acc.open .acc-h .chev { transform: rotate(180deg); }
+.acc-b { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .32s var(--ease); }
+.acc.open .acc-b { grid-template-rows: 1fr; }
+.acc-b > div { overflow: hidden; }
+.acc-b .inner { padding: 0 16px 12px; border-top: 1px solid var(--line); }
+
+/* footer */
+.foot { display: flex; align-items: center; gap: 10px; padding: 10px 26px 10px 24px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); background: rgba(0,0,0,.14); min-width: 0; white-space: nowrap; }
+.foot .dirty { display: flex; align-items: center; gap: 8px; color: var(--text-2); }
+.foot .grow { flex: 1; }
+.chip { font-family: Consolas, "Cascadia Mono", monospace; font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
+.win.tiny .foot .open-txt { display: none; }
+
+/* placeholder page */
+.ph .row .l .n { color: var(--text-2); }
+.skel { height: 10px; border-radius: 6px; background: linear-gradient(90deg, #1d1f25 0%, #262830 50%, #1d1f25 100%); background-size: 200% 100%; animation: sh 1.6s linear infinite; }
+@keyframes sh { to { background-position: -200% 0; } }
+
+/* mockup controls (not part of the menu) */
+.mock { position: fixed; right: 16px; top: 12px; display: flex; gap: 6px; align-items: center; background: rgba(12,13,16,.85); border: 1px solid var(--line-2); border-radius: 10px; padding: 6px 8px; font-size: 12px; color: var(--muted); backdrop-filter: blur(6px); z-index: 60; }
+.sw { width: 18px; height: 18px; border-radius: 5px; cursor: pointer; border: 2px solid transparent; transition: transform .15s, border-color .15s; }
+.sw:hover { transform: scale(1.12); }
+.sw.on { border-color: #fff; }
+.mock .sep { width: 1px; height: 16px; background: var(--line-2); margin: 0 4px; }
+.mock button { background: none; border: 1px solid var(--line-2); color: var(--text-2); border-radius: 6px; font: inherit; font-size: 12px; padding: 2px 8px; cursor: pointer; }
+.mock button:hover { color: var(--text); border-color: rgba(255,255,255,.2); }
+</style>
+</head>
+<body data-accent="violet">
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-mem" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2.5-6.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-cam" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 12l6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="8" y="8" width="8" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 4v4M9 13h.01M15 13h.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0 5 5L13 18a2.1 2.1 0 0 1-3-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 15l-5 5a1.8 1.8 0 0 1-2.5-2.5l5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M16 4.5v5M10 14.5v5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 10h.01M11 10h.01M15 10h.01M8 14h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-probe" viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-net" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19v1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="13" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7V4M7 12H3M21 12h-4M7 17l-3 2M17 17l3 2M7 8L4 6M17 8l3-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M9 9v11" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 16a8 8 0 1 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 16l4-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l5 5M8 11h6M11 8v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 9v6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-dots" viewBox="0 0 24 24"><path d="M6 8v8M12 8v8M18 8v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-logo" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z" fill="currentColor"/><path d="M8.5 12.5l2.4 2.4 4.6-5" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="win" id="win">
+  <!-- ======================= SIDEBAR ======================= -->
+  <aside class="side">
+    <div class="brand">
+      <div class="mark"><svg width="18" height="18"><use href="#i-logo"/></svg></div>
+      <div class="txt"><div class="name">$toneHax</div><div class="ver">v1.0.4 · 16.3.11308</div></div>
+    </div>
+    <label class="search" id="searchBox" title="Поиск настроек (Ctrl K)">
+      <svg width="15" height="15"><use href="#i-search"/></svg>
+      <input id="q" placeholder="Поиск настроек" autocomplete="off">
+      <span class="kbd">Ctrl K</span>
+    </label>
+    <nav class="nav" id="nav">
+      <div class="indicator" id="ind"></div>
+
+      <div class="group">Лобби</div>
+      <div class="item" data-page="mem" data-label="Память" data-crumb="Лобби" data-title="Память" data-sub="Правки в памяти до начала матча"><svg><use href="#i-mem"/></svg><span class="lbl">Память</span></div>
+
+      <div class="group">Скрипты</div>
+      <div class="item" data-page="files" data-label="Файлы" data-crumb="Скрипты" data-title="Файлы" data-sub="Загрузка .scar и .lua, автозагрузка"><svg><use href="#i-file"/></svg><span class="lbl">Файлы</span></div>
+      <div class="item" data-page="send" data-label="Данные в Scar" data-crumb="Скрипты" data-title="Данные в Scar" data-sub="Отправка данных в SCAR"><svg><use href="#i-send"/></svg><span class="lbl">Данные в Scar</span></div>
+
+      <div class="group">Онлайн</div>
+      <div class="item fold" data-fold="world" data-label="Мир"><svg><use href="#i-globe"/></svg><span class="lbl">Мир</span><svg class="chev"><use href="#i-chev"/></svg></div>
+      <div class="sub" id="world">
+        <div class="item on" data-page="cam" data-label="Камера" data-crumb="Онлайн › Мир" data-title="Камера" data-sub="Лимиты зума, ночной слой и Full Reveal"><svg><use href="#i-cam"/></svg><span class="lbl">Камера</span></div>
+        <div class="item" data-page="radar" data-label="Радар" data-crumb="Онлайн › Мир" data-title="Радар" data-sub="Мини-карта, метки и предупреждения"><svg><use href="#i-radar"/></svg><span class="lbl">Радар</span></div>
+        <div class="item" data-page="esp" data-label="ESP" data-crumb="Онлайн › Мир" data-title="ESP" data-sub="Подсветка юнитов и зданий"><svg><use href="#i-scan"/></svg><span class="lbl">ESP</span></div>
+      </div>
+
+      <div class="group">Автоматизация</div>
+      <div class="item" data-page="macro" data-label="Макро" data-crumb="Автоматизация" data-title="Макро" data-sub="Производство и очереди"><svg><use href="#i-zap"/></svg><span class="lbl">Макро</span></div>
+      <div class="item" data-page="ai" data-label="AI BOT · сессия активна" data-crumb="Автоматизация" data-title="AI BOT" data-sub="ИИ ведёт экономику, армия у вас"><svg><use href="#i-bot"/></svg><span class="lbl">AI BOT</span><span class="bar ok" title="Сессия ИИ активна"></span></div>
+      <div class="item" data-page="patch" data-label="Patch Game" data-crumb="Автоматизация" data-title="Patch Game" data-sub="Патчи игры"><svg><use href="#i-wrench"/></svg><span class="lbl">Patch Game</span></div>
+
+      <div class="group">Офлайн</div>
+      <div class="item" data-page="offline" data-label="Scar / Lua / Desync" data-crumb="Офлайн" data-title="Scar / Lua / Desync" data-sub="Инструменты для игры против ИИ"><svg><use href="#i-code"/></svg><span class="lbl">Scar / Lua / Desync</span></div>
+
+      <div class="group">Система</div>
+      <div class="item" data-page="cfg" data-label="Параметры" data-crumb="Система" data-title="Параметры" data-sub="Масштаб, тема, сохранение"><svg><use href="#i-sliders"/></svg><span class="lbl">Параметры</span></div>
+      <div class="item" data-page="keys" data-label="Горячие клавиши" data-crumb="Система" data-title="Горячие клавиши" data-sub="Назначение клавиш"><svg><use href="#i-key"/></svg><span class="lbl">Горячие клавиши</span></div>
+      <div class="item" data-page="probe" data-label="Зонд" data-crumb="Система" data-title="Зонд" data-sub="Проверка нативов SCAR"><svg><use href="#i-probe"/></svg><span class="lbl">Зонд</span></div>
+      <div class="item" data-page="net" data-label="Network Monitor" data-crumb="Система" data-title="Network Monitor" data-sub="Регионы и соединения"><svg><use href="#i-net"/></svg><span class="lbl">Network Monitor</span></div>
+      <div class="item fold" data-fold="dbg" data-label="Отладка"><svg><use href="#i-bug"/></svg><span class="lbl">Отладка</span><svg class="chev"><use href="#i-chev"/></svg></div>
+      <div class="sub" id="dbg">
+        <div class="item" data-page="st" data-label="Статус" data-crumb="Система › Отладка" data-title="Статус" data-sub="Состояние модулей"><svg><use href="#i-pulse"/></svg><span class="lbl">Статус</span></div>
+        <div class="item" data-page="dump" data-label="Дамп VM" data-crumb="Система › Отладка" data-title="Дамп VM" data-sub="Снимок глобалов SCAR"><svg><use href="#i-db"/></svg><span class="lbl">Дамп VM</span></div>
+        <div class="item" data-page="hud" data-label="HUD" data-crumb="Система › Отладка" data-title="HUD" data-sub="Отладочный HUD"><svg><use href="#i-layout"/></svg><span class="lbl">HUD</span></div>
+        <div class="item" data-page="fps" data-label="Профайлер FPS" data-crumb="Система › Отладка" data-title="Профайлер FPS" data-sub="Секции кадра и пики"><svg><use href="#i-gauge"/></svg><span class="lbl">Профайлер FPS</span></div>
+      </div>
+    </nav>
+    <div class="side-foot">
+      <div class="conn">
+        <div title="Игра: матч идёт"><span class="bar ok"></span><span class="lbl">Игра</span></div>
+        <div title="SCAR: VM недоступна вне матча"><span class="bar bad"></span><span class="lbl">SCAR</span></div>
+      </div>
+      <div class="row2">
+        <span class="hint"><span class="kbd">Insert</span> скрыть меню</span>
+        <span class="collapse" id="collapse" title="Свернуть панель"><svg width="15" height="15"><use href="#i-left"/></svg></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ======================= MAIN ======================= -->
+  <section class="main">
+    <header class="head">
+      <div class="grow">
+        <div class="crumb" id="crumb">Онлайн › Мир</div>
+        <div class="title" id="title">Камера</div>
+        <div class="subtitle" id="sub">Лимиты зума, ночной слой и Full Reveal</div>
+      </div>
+      <div class="status">
+        <span class="pill" data-tip="Инжект: DLL в процессе игры"><span class="bar ok"></span><span class="lbl">Инжект</span></span>
+        <span class="pill" data-tip="Игра: матч идёт"><span class="bar ok"></span><span class="lbl">Игра</span></span>
+        <span class="pill" data-tip="Привязка: окно игры найдено"><span class="bar ok"></span><span class="lbl">Привязка</span></span>
+        <span class="pill" data-tip="SCAR: VM недоступна вне матча"><span class="bar bad"></span><span class="lbl">SCAR</span></span>
+        <span class="pill" data-tip="Зонд: не запускался"><span class="bar warn"></span><span class="lbl">Зонд</span></span>
+      </div>
+      <div class="iconbtn" id="moreBtn" title="Ещё"><svg width="18" height="18"><use href="#i-dots"/></svg></div>
+      <div class="iconbtn close" id="closeBtn" title="Закрыть (Insert)"><svg width="16" height="16"><use href="#i-x"/></svg></div>
+    </header>
+
+    <div class="body" id="body">
+      <div class="page enter" id="page"></div>
+    </div>
+
+    <footer class="foot">
+      <span class="dirty"><span class="bar warn" id="dirtyBar"></span><span id="dirtyText">Не сохранено</span></span>
+      <button class="btn sm pri" id="save">Сохранить</button>
+      <span class="grow"></span>
+      <span class="chip" title="Статус античит-слоёв и фильтров">RA S0 A0 F0</span>
+      <span class="open-txt">Оверлей открыт</span>
+    </footer>
+  </section>
+  <span class="size-tag" id="sizeTag"></span>
+  <span class="grip"></span>
+</div>
+
+<div class="menu" id="moreMenu">
+  <div class="mi" data-act="rail"><svg><use href="#i-left"/></svg><span id="railLbl">Свернуть панель</span></div>
+  <div class="mi" data-act="noop"><svg><use href="#i-zoom"/></svg>Масштаб меню
+    <span class="end"><span class="step" data-act="zoom-">−</span><span id="zoomVal">100%</span><span class="step" data-act="zoom+">+</span></span></div>
+  <div class="mi" data-act="lang"><svg><use href="#i-globe"/></svg>Язык<span class="end" id="langVal">Русский</span></div>
+  <div class="mi" data-act="size"><svg><use href="#i-layout"/></svg>Сбросить размер окна</div>
+  <div class="msep"></div>
+  <div class="mi danger" data-act="unload"><svg><use href="#i-x"/></svg>Выгрузить оверлей</div>
+</div>
+<div class="reopen" id="reopen"><span class="kbd">Insert</span>Меню скрыто, открыть</div>
+<div class="toast" id="toast"></div>
+
+<div class="mock">Акцент
+  <span class="sw"    data-acc="gold"   style="background:#d6ad5c"></span>
+  <span class="sw on" data-acc="violet" style="background:#9a86ff"></span>
+  <span class="sw"    data-acc="teal"   style="background:#3fc6b4"></span>
+  <span class="sw"    data-acc="ruby"   style="background:#e0617a"></span>
+  <span class="sep"></span>
+  <button id="szS">Узкое</button><button id="szM">Среднее</button><button id="szL">Широкое</button>
+</div>
+
+<template id="tpl-cam">
+  <div class="col">
+    <div class="card">
+      <div class="card-h">
+        <div class="ico"><svg width="16" height="16"><use href="#i-zoom"/></svg></div>
+        <div class="tt"><div class="t">Лимиты зума</div><div class="d">Насколько близко и далеко отъезжает камера</div></div>
+      </div>
+      <div class="card-b">
+        <div class="row"><div class="l"><div class="n">Минимум</div><div class="h">Ближе всего к земле</div></div>
+          <div class="sl"><input type="range" min="10" max="80" step="0.1" value="36" data-fmt="1"><span class="val">36.0</span></div></div>
+        <div class="row"><div class="l"><div class="n">Максимум</div><div class="h">Дальше всего от земли</div></div>
+          <div class="sl"><input type="range" min="60" max="200" step="0.1" value="124.8" data-fmt="1"><span class="val">124.8</span></div></div>
+      </div>
+      <div class="card-f"><button class="btn ghost">Сброс</button><button class="btn pri">Применить</button></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h">
+        <div class="ico"><svg width="16" height="16"><use href="#i-eye"/></svg></div>
+        <div class="tt"><div class="t">Мапхак</div><div class="d">Видимость карты</div></div>
+      </div>
+      <div class="card-b">
+        <div class="row"><div class="l"><div class="n">Full Reveal</div><div class="h">Вся карта открыта</div></div>
+          <label class="tg"><input type="checkbox"><span class="tr"></span><span class="kn"></span></label></div>
+      </div>
+    </div>
+
+    <div class="card acc" id="acc">
+      <div class="acc-h">
+        <div class="card-h" style="padding:0;border:0;flex:1">
+          <div class="ico"><svg width="16" height="16"><use href="#i-sliders"/></svg></div>
+          <div class="tt"><div class="t">Функции в матче</div><div class="d">Дополнительные переключатели</div></div>
+        </div>
+        <svg class="chev" width="16" height="16"><use href="#i-chev"/></svg>
+      </div>
+      <div class="acc-b"><div><div class="inner">
+        <div class="row"><div class="l"><div class="n">Кольца радиусов атаки</div></div><label class="tg"><input type="checkbox" checked><span class="tr"></span><span class="kn"></span></label></div>
+        <div class="row"><div class="l"><div class="n">Метки простаивающих крестьян</div></div><label class="tg"><input type="checkbox"><span class="tr"></span><span class="kn"></span></label></div>
+      </div></div></div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card">
+      <div class="card-h">
+        <div class="ico"><svg width="16" height="16"><use href="#i-moon"/></svg></div>
+        <div class="tt"><div class="t">Ночной слой</div><div class="d">Затемняет всё, что не видят ваши юниты</div></div>
+        <div class="right"><label class="tg" title="Включить ночной слой"><input type="checkbox" id="night" checked><span class="tr"></span><span class="kn"></span></label></div>
+      </div>
+      <div class="card-b" id="nightBody">
+        <div class="row"><div class="l"><div class="n">Затемнение</div></div>
+          <div class="sl"><input type="range" min="0" max="1" step="0.01" value="0.55" data-fmt="2"><span class="val">0.55</span></div></div>
+        <div class="row"><div class="l"><div class="n">Очищать там, где видят юниты</div><div class="h">Дыры в затемнении по обзору</div></div>
+          <label class="tg"><input type="checkbox" checked><span class="tr"></span><span class="kn"></span></label></div>
+        <div class="row child"><div class="l"><div class="n">Радиус обзора</div></div>
+          <div class="sl"><input type="range" min="0.5" max="2" step="0.01" value="1" data-fmt="2" data-suf="×"><span class="val">1.00×</span></div></div>
+        <div class="row child"><div class="l"><div class="n">Мягкий край</div></div>
+          <div class="sl"><input type="range" min="0" max="24" step="1" value="6" data-fmt="0" data-suf=" px"><span class="val">6 px</span></div></div>
+        <div class="row child"><div class="l"><div class="n">Сглаживание</div></div>
+          <div class="sl"><input type="range" min="0" max="300" step="5" value="90" data-fmt="0" data-suf=" мс"><span class="val">90 мс</span></div></div>
+        <div class="row child"><div class="l"><div class="n">Только свои юниты</div></div>
+          <label class="tg"><input type="checkbox" checked><span class="tr"></span><span class="kn"></span></label></div>
+        <div class="row child"><div class="l"><div class="n">И здания</div></div>
+          <label class="tg"><input type="checkbox" checked><span class="tr"></span><span class="kn"></span></label></div>
+        <div class="row off"><div class="l"><div class="n">Не затемнять HUD <span class="lock"><svg width="12" height="12"><use href="#i-lock"/></svg>нет в этой сборке</span></div></div>
+          <label class="tg"><input type="checkbox" disabled><span class="tr"></span><span class="kn"></span></label></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const win = $('#win'), nav = $('#nav'), ind = $('#ind'), page = $('#page');
+
+function moveIndicator(el, instant) {
+  if (!el || el.offsetParent === null || el.getBoundingClientRect().height < 4) { ind.style.opacity = 0; return; }
+  const nr = nav.getBoundingClientRect(), r = el.getBoundingClientRect();
+  // Rects come zoomed (the "III" scale sets zoom on .win); top/height below are
+  // CSS px inside that zoom and get zoomed again, so divide it back out.
+  const z = nav.offsetHeight ? nr.height / nav.offsetHeight : 1;
+  if (instant) ind.style.transition = 'none';
+  ind.style.opacity = 1;
+  ind.style.top = ((r.top - nr.top) / z + nav.scrollTop) + 'px';
+  ind.style.height = (r.height / z) + 'px';
+  ind.style.left = ((r.left - nr.left) / z) + 'px';
+  // right is from the padding box, which stops at the scrollbar.
+  ind.style.right = ((nr.left + (nav.clientLeft + nav.clientWidth) * z - r.right) / z) + 'px';
+  if (instant) { ind.offsetHeight; ind.style.transition = ''; }
+}
+const current = () => $('.item.on', nav);
+
+function wireSliders(root) {
+  $$('.sl input[type=range]', root).forEach(inp => {
+    const val = inp.nextElementSibling;
+    const upd = () => {
+      const p = (inp.value - inp.min) / (inp.max - inp.min) * 100;
+      inp.style.setProperty('--p', p + '%');
+      val.textContent = Number(inp.value).toFixed(+inp.dataset.fmt || 0) + (inp.dataset.suf || '');
+    };
+    inp.addEventListener('input', () => { upd(); markDirty(); });
+    upd();
+  });
+  $$('.tg input', root).forEach(i => i.addEventListener('change', markDirty));
+}
+
+function markDirty() { $('#dirtyBar').className = 'bar warn'; $('#dirtyText').textContent = 'Не сохранено'; }
+$('#save').addEventListener('click', () => { $('#dirtyBar').className = 'bar ok'; $('#dirtyText').textContent = 'Сохранено'; });
+
+function renderPage(item) {
+  $('#crumb').textContent = item.dataset.crumb;
+  $('#title').textContent = item.dataset.title;
+  $('#sub').textContent = item.dataset.sub;
+  page.classList.remove('enter'); page.offsetWidth; page.classList.add('enter');
+  page.innerHTML = '';
+  if (item.dataset.page === 'cam') {
+    page.appendChild($('#tpl-cam').content.cloneNode(true));
+    const night = $('#night', page), nb = $('#nightBody', page);
+    night.addEventListener('change', () => nb.classList.toggle('dim', !night.checked));
+    $('.acc-h', page).addEventListener('click', () => $('#acc', page).classList.toggle('open'));
+  } else {
+    const t = item.dataset.title;
+    const tg = on => `<label class="tg"><input type="checkbox" ${on ? 'checked' : ''}><span class="tr"></span><span class="kn"></span></label>`;
+    page.innerHTML = `<div class="col">
+      <div class="card ph"><div class="card-h"><div class="ico"><svg width="16" height="16"><use href="#i-sliders"/></svg></div>
+        <div class="tt"><div class="t">${t}</div><div class="d">Содержимое переносится как есть, меняется оформление</div></div></div>
+        <div class="card-b">${[1,2,3].map(n => `<div class="row"><div class="l"><div class="skel" style="width:${40+n*12}%"></div><div class="skel" style="width:${22+n*6}%;margin-top:8px;height:8px;opacity:.6"></div></div>${tg(n % 2)}</div>`).join('')}</div></div></div>
+      <div class="col">
+      <div class="card ph"><div class="card-b" style="padding-top:12px">${[1,2].map(n => `<div class="row"><div class="l"><div class="skel" style="width:${50+n*10}%"></div></div><div class="sl"><input type="range" min="0" max="100" value="${30+n*25}" data-fmt="0"><span class="val"></span></div></div>`).join('')}</div></div>
+      <div class="card ph"><div class="card-b" style="padding-top:12px">${[1,2].map(n => `<div class="row"><div class="l"><div class="skel" style="width:${45+n*8}%"></div></div>${tg(n == 1)}</div>`).join('')}</div></div></div>`;
+  }
+  wireSliders(page);
+}
+
+nav.addEventListener('click', e => {
+  const it = e.target.closest('.item');
+  if (!it) return;
+  if (it.dataset.fold) {
+    if (win.classList.contains('compact')) return;
+    const sub = document.getElementById(it.dataset.fold);
+    it.classList.toggle('shut'); sub.classList.toggle('shut');
+    setTimeout(() => moveIndicator(current()), 300);
+    return;
+  }
+  $$('.item.on', nav).forEach(x => x.classList.remove('on'));
+  it.classList.add('on');
+  moveIndicator(it);
+  renderPage(it);
+});
+nav.addEventListener('scroll', () => moveIndicator(current(), true));
+const railTip = document.createElement('div');
+railTip.className = 'rail-tip';
+document.body.appendChild(railTip);
+const hideTip = () => railTip.classList.remove('show');
+nav.addEventListener('mouseover', e => {
+  const it = e.target.closest('.item');
+  if (!it || !win.classList.contains('compact')) { hideTip(); return; }
+  const r = it.getBoundingClientRect();
+  railTip.textContent = it.dataset.label;
+  railTip.style.left = (r.right + 10) + 'px';
+  railTip.style.top = (r.top + r.height / 2) + 'px';
+  railTip.classList.add('show');
+});
+nav.addEventListener('mouseleave', hideTip);
+nav.addEventListener('scroll', hideTip);
+nav.addEventListener('mousedown', hideTip);
+
+$$('.sub').forEach(s => s.style.maxHeight = s.scrollHeight + 'px');
+$('#q').addEventListener('input', e => {
+  const q = e.target.value.trim().toLowerCase();
+  $$('.item[data-page]', nav).forEach(it => { it.style.display = !q || it.dataset.label.toLowerCase().includes(q) ? '' : 'none'; });
+  moveIndicator(current(), true);
+});
+document.addEventListener('keydown', e => { if (e.ctrlKey && e.key.toLowerCase() === 'k') { e.preventDefault(); setCompact(false); $('#q').focus(); } });
+$('#searchBox').addEventListener('click', () => { if (win.classList.contains('compact')) { setCompact(false); setTimeout(() => $('#q').focus(), 320); } });
+
+/* ---- stretching: the layout follows the window ---- */
+let manualCompact = null; // null = decide by width
+function applyWidthRules() {
+  const w = win.getBoundingClientRect().width;
+  const compact = manualCompact === null ? w < 820 : manualCompact;
+  win.classList.toggle('compact', compact);
+  win.classList.toggle('tiny', w < 720);
+  $('#collapse').title = compact ? 'Развернуть панель' : 'Свернуть панель';
+}
+function setCompact(v) { manualCompact = v; applyWidthRules(); settleIndicator(); hideTip(); }
+function settleIndicator() { moveIndicator(current(), true); setTimeout(() => moveIndicator(current(), true), 340); }
+$('#collapse').addEventListener('click', () => setCompact(!win.classList.contains('compact')));
+
+let resizeTimer = 0;
+new ResizeObserver(() => {
+  const r = win.getBoundingClientRect();
+  $('#sizeTag').textContent = Math.round(r.width) + ' × ' + Math.round(r.height);
+  win.classList.add('resizing');
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => win.classList.remove('resizing'), 700);
+  const was = win.classList.contains('compact');
+  applyWidthRules();
+  if (was !== win.classList.contains('compact')) settleIndicator(); else moveIndicator(current(), true);
+}).observe(win);
+win.addEventListener('transitionend', e => { if (e.target === win) moveIndicator(current(), true); });
+
+function sizeTo(w, h) { manualCompact = null; win.style.width = w + 'px'; win.style.height = h + 'px'; }
+$('#szS').addEventListener('click', () => sizeTo(640, 560));
+$('#szM').addEventListener('click', () => sizeTo(900, 680));
+$('#szL').addEventListener('click', () => sizeTo(Math.min(1180, innerWidth - 32), Math.min(760, innerHeight - 32)));
+
+$$('.sw').forEach(s => s.addEventListener('click', () => {
+  $$('.sw').forEach(x => x.classList.remove('on')); s.classList.add('on');
+  document.body.dataset.accent = s.dataset.acc;
+}));
+
+/* ---- "more" menu ---- */
+const moreBtn = $('#moreBtn'), moreMenu = $('#moreMenu');
+function toast(text) {
+  const t = $('#toast'); t.textContent = text; t.classList.add('show');
+  clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove('show'), 1800);
+}
+function openMenu() {
+  const r = moreBtn.getBoundingClientRect();
+  moreMenu.style.top = (r.bottom + 6) + 'px';
+  moreMenu.style.left = Math.max(8, r.right - moreMenu.offsetWidth) + 'px';
+  $('#railLbl').textContent = win.classList.contains('compact') ? 'Развернуть панель' : 'Свернуть панель';
+  moreMenu.classList.add('open'); moreBtn.classList.add('active');
+}
+function closeMenu() { moreMenu.classList.remove('open'); moreBtn.classList.remove('active'); }
+moreBtn.addEventListener('click', e => { e.stopPropagation(); moreMenu.classList.contains('open') ? closeMenu() : openMenu(); });
+document.addEventListener('mousedown', e => { const t = e.target instanceof Element ? e.target : null; if (!t || (!moreMenu.contains(t) && !t.closest('#moreBtn'))) closeMenu(); });
+let zoom = 100, lang = 'ru';
+moreMenu.addEventListener('click', e => {
+  const el = e.target.closest('[data-act]');
+  const act = el ? el.dataset.act : '';
+  if (!act || act === 'noop') return;
+  if (act === 'zoom-' || act === 'zoom+') {
+    zoom = Math.max(80, Math.min(130, zoom + (act === 'zoom+' ? 10 : -10)));
+    win.style.zoom = zoom / 100; $('#zoomVal').textContent = zoom + '%';
+    settleIndicator(); return;
+  }
+  if (act === 'lang') {
+    lang = lang === 'ru' ? 'en' : 'ru';
+    $('#langVal').textContent = lang === 'ru' ? 'Русский' : 'English';
+    toast('Язык меню переключается сразу, как и сейчас');
+    return;
+  }
+  closeMenu();
+  if (act === 'rail') setCompact(!win.classList.contains('compact'));
+  if (act === 'size') { win.style.width = ''; win.style.height = ''; manualCompact = null; applyWidthRules(); settleIndicator(); toast('Размер окна сброшен'); }
+  if (act === 'unload') toast('В оверлее здесь будет выгрузка с подтверждением');
+});
+
+/* ---- close / reopen (Insert) ---- */
+function hideWin() { closeMenu(); hideTip(); win.classList.remove('shown'); win.classList.add('hidden'); $('#reopen').classList.add('show'); }
+function showWin() { win.classList.remove('hidden'); win.classList.add('shown'); $('#reopen').classList.remove('show'); setTimeout(() => moveIndicator(current(), true), 30); }
+$('#closeBtn').addEventListener('click', hideWin);
+$('#reopen').addEventListener('click', showWin);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Insert') { win.classList.contains('hidden') ? showWin() : hideWin(); }
+  if (e.key === 'Escape') closeMenu();
+});
+
+renderPage(current());
+applyWidthRules();
+requestAnimationFrame(() => moveIndicator(current(), true));
+</script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+toolkit_id,toolkit_rva_or_script,aoe4hook_path,status,owner_agent,notes,integrity_risk
+F001,0x6D3A0/0x6D970 FOWCTRL1+8 FullReveal,InternalInjector/maphack_fowctrl.cpp; engine.cpp EngineCrackFullReveal; ui.cpp DrawScarToolkitTab Full Reveal; Documents\AOE4HSettings\Scar Scripts\Menu\Scripts\Maphack\,hook_partial,overlay-cpp,Product Full Reveal = overlay radar hold + UC SCAR FOW_UIRevealAll* + in-module FOWCTRL1+8. Helper PE inner fog consume unknown and not cloned. No FogCmp/FogByte/PAGE_GUARD.,scar_fow_natives DualFlag vs humans; own-slab data write only
+F002,020_Auto_queue_villagers_from_idle_Town_Centers; HK ecx=2 AF2640 TCIDLE01,Documents\AOE4HSettings\Scar Scripts\Menu\Scripts\AutoQueue\auto_queue.scar; ui.cpp DrawScriptsFeaturesPane Idle TCs,hook_has,scar-plugins,SCAR idle-TC auto-queue ported. Toolkit also had helper TCIDLE01+8 WPM (see WPM-TCIDLE01).,sim_write Entity_QueueProductionItemByPBG OOS vs humans
+F003,004+008+011 Enemy Near TC XAML; HK ecx=4,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\EnemyNearTC\enemy_near_tc.scar; ui.cpp StkPair Enemy near TC,hook_has,scar-plugins,Premium XAML + unit breakdown + radius slider. Read+UI.,read_ui
+F004,0x6B510 FOWCTRL1+16/+20 zoom 200.f; HK ecx=16,InternalInjector/zoom.cpp (36–68); visfog.cpp; Config camera min/max; NOT FOWCTRL1+20,hook_partial,sibling-0133652d,Camera sliders exist. +16/+20 consume is sibling ZoomLUA (not 200.f live). This agent did not close it. SCARTOOLKIT_REFUSED_PORTS.md.,camera_vtables data
+F005,AEA540 SendInput auto-vill/macro; [autovill] interval/clicks/layout,(none),missing,overlay-cpp,"Click-interval production macro is host SendInput, not SCAR 020. No AttachThreadInput/SetForegroundWindow/SendInput groups A–D.",synthetic_input
+F006,AICTLR01+8 lock army; HK ecx=18; blob 002_729.txt,"ui.cpp Unlock all AI locks = AI_UnlockAll (inverse, designer locks)",missing,overlay-cpp,"No helper AICTLR01 WPM lock army. Overlay AI tab Enable/UnlockAll is SCAR natives, not toolkit lock-army flag.",data_wpm_helper
+F007,AICTLR01+10 lock villager; HK ecx=19,(none),missing,overlay-cpp,No Villagers: Locked WPM +0x0A. Combo AI Lock Villagers.,data_wpm_helper
+F008,AICTLR01+9 lock building queue,(none),missing,overlay-cpp,No building-queue lock byte. Help blob lists research/building locks.,data_wpm_helper
+F009,AI profiles [ai_profiles]/[ai_profile_*]; 012 personality swap name drift,InternalInjector/ai_custom_template.cpp; scar_ai_catalog.h; ui.cpp AI personality/econ; Documents\AOE4HSettings\AI Templates\,hook_partial,overlay-cpp,"Overlay has personality combo, custom .ini templates, difficulty. Not toolkit hotkeys.ini [ai_profiles] list/active schema.",scar_ai_natives
+F010,AI civ upgrade groups (research locks),(none),missing,overlay-cpp,Help blob only; no dedicated scar or overlay UI.,none
+F011,HK dispatcher 0x7ABD0 ecx 1–23; hotkeys.ini exe dir; unbind 0x88290,hooks.cpp INSERT only; Config\config.ini (no slotN_action),hook_partial,overlay-ui,"Menu toggle is INSERT. No RegisterHotKey 100+slot, no 23-action combo, no HWID unbind modal.",none
+F012,072/074 ScoresAllPlayers,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\ScoresNative\scores_native.scar; hud.scar observer scores,hook_has,scar-plugins,Native scores show/hide + hud.scar observer cards.,read_ui
+F013,GrantRes who=allies/enemies/everyone/local,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\GrantRes\grant_res.scar; ui.cpp Grant resources,hook_has,scar-plugins,Who combo Local/Allies/Enemies/Everyone. grant_allies.scar is a thin wrapper unused by UI.,sim_write Player_SetResource
+F014,047_CheatFoW.scar FOW_PlayerRevealAll (not Full Reveal),Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\CheatFoW\cheat_fow.scar; ui.cpp FoW toggle (skirmish/OOS),hook_has,scar-plugins,Skirmish/OOS wrap. Distinct from F001.,desync DualFlag MP
+F015,012_Skirmish_SCARToolkit_AI_Shutdown_silent.scar,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\AiShutdown\ai_shutdown.scar,hook_has,scar-plugins,Enemy AI_Enable/AI_KillAllTasks through ST.Sim.,sim_write vs AI
+F016,013 InstantWinHybrid World_SetPlayerWin,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\InstantWin\instant_win.scar,hook_has,scar-plugins,Skirmish/SP only.,sim_write
+F017,014 Convert selected enemy squads,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\ConvertSelected\convert_selected.scar,hook_has,scar-plugins,Squad_SetPlayerOwner on selection.,sim_write
+F018,045 kill animals + 028 landmarks,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\KillAnimals\kill_animals.scar,hook_has,scar-plugins,Kill animals + Kill enemy landmarks buttons. Not 029/031 army/vill wipe.,sim_write Entity_Kill
+F019,082_SpawnSheep.scar,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\Spawn\spawn.scar StkSpawn.Once sheep,hook_has,scar-plugins,Combo unit Sheep.,sim_write spawn
+F020,058_CheatSpawnHandcannon_Once.scar,spawn.scar scar_handcannon,hook_has,scar-plugins,,sim_write spawn
+F021,061_SpawnPM_Once + 066_CheatPhotonMan_Once,spawn.scar unit_photon_man,hook_has,scar-plugins,,sim_write spawn
+F022,018 champs / 025 bosses / 030 bandits packs,spawn.scar StkSpawn.Pack rogue_champs|bandits|bosses,hook_has,scar-plugins,,sim_write spawn
+F023,056_CheatSpawnGreatTrebuchet_Once.scar,spawn.scar unit_great_trebuchet_rogue,hook_has,scar-plugins,,sim_write spawn
+F024,057_CheatSpawnRogueMangonel_Once.scar,spawn.scar unit_mangonel_rogue,hook_has,scar-plugins,,sim_write spawn
+F025,055_CheatSpawnRogueNestOfBees_Once.scar,spawn.scar unit_giant_nest_of_bees_rogue,hook_has,scar-plugins,,sim_write spawn
+F026,030_CheatSpawnBanditPack_Once.scar,spawn.scar Pack bandits,hook_has,scar-plugins,Also under F022.,sim_write spawn
+F027,025_CheatSpawnRogueBosses_Once.scar,spawn.scar Pack bosses,hook_has,scar-plugins,Also under F022.,sim_write spawn
+F028,018_CheatSpawnRogueChamps_Once.scar,spawn.scar Pack rogue_champs,hook_has,scar-plugins,Also under F022.,sim_write spawn
+F029,019 ON / 089 OFF auto-heal,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\AutoHeal\auto_heal.scar,hook_has,scar-plugins,StkPair Auto-heal / Heal off.,sim_write SGroup_SetAvgHealth
+F030,022 on / 076 off invuln,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\Invuln\invuln.scar,hook_has,scar-plugins,,sim_write invuln
+F031,021_Modify_UnitSpeedAlways %.1f,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\CombatMods\combat_mods.scar CombatMods.Speed,hook_has,scar-plugins,Multiplier slider.,sim_write
+F032,053_CheatApplyDamage_Selected %.3f,combat_mods.scar CombatMods.Damage,hook_has,scar-plugins,,sim_write
+F033,048_CheatApplyRange_Selected %.3f,combat_mods.scar CombatMods.Range,hook_has,scar-plugins,,sim_write
+F034,063/064/078/084 GrantRes {RES}/{AMT}; assembler 0x83010,grant_res.scar; ui.cpp Grant; stk_lib.scar ST.Sim,hook_has,scar-plugins,Host substitutes amounts from Scripts resource fields. No CRT assembler site.,sim_write
+F035,071_SetPop_Custom {CAP},Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\Rates\rates.scar StkRates.Pop,hook_has,scar-plugins,Slider 50–1000 all non-Gaia.,sim_write
+F036,049/050/065/068 production {M},rates.scar StkRates.Prod,hook_has,scar-plugins,Who combo.,sim_write
+F037,051/052/067/070 sight {M},rates.scar StkRates.Sight,hook_has,scar-plugins,,sim_write
+F038,023/024/026/027 gather {M},rates.scar StkRates.Gather,hook_has,scar-plugins,,sim_write
+F039,032/034/035/036 build rate {M},rates.scar StkRates.Build,hook_has,scar-plugins,,sim_write
+F040,083_jeanne_exp_add.scar,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\JeanneXp\jeanne_xp.scar,hook_has,scar-plugins,,sim_write state model
+F041,072/074 scores (same pair as F012),scores_native.scar,hook_has,scar-plugins,Duplicate of F012.,read_ui
+F042,003 player hints / 005 selected hints,PlayerHints\player_hints.scar; SelectedHints\selected_hints.scar,hook_has,scar-plugins,,read_ui HintPoint
+F043,006_Idle_Villager_Alert_with_Flashing_XAML_Overlay; HK ecx=3,Documents\AOE4HSettings\Scar Scripts\Menu\Scripts\IdleBuildings\idle_buildings.scar IdleVillagers,hook_has,scar-plugins,XAML IdleVillagerOverlay + event-cue fallback. Scripts→Features IdleVillagers.,read_ui
+F044,008_EnemyTC_ShowOverlay.scar,enemy_near_tc.scar EnemyTCOverlay,hook_has,scar-plugins,Covered with F003.,read_ui
+F045,001_Smart_nearest_sheep_herder + 069 stop,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\SheepHerder\sheep_herder.scar,hook_has,scar-plugins,Start/Stop. Cmd_Move local; MP_SAFE blocks vs humans.,cmd_move
+F046,090 paste-here; 098 Rule_AddOneShot; 099 CustomScript; HK ecx=15 RunScriptSafe,ui.cpp Run buffer g_customScarBuf; scar.cpp ScarExecuteCustomScript,hook_partial,overlay-ui,Buffer run exists. No dedicated 098 Rule_AddOneShot wrapper UI. 099 was incomplete function CustomScript().,user_lua
+F047,Run raw Lua inject sites AF04B0,ui.cpp Run buffer; Files pane Execute,hook_has,overlay-cpp,"In-process Game_ScarDoString, not VirtualAllocEx+CRT.",user_lua
+F048,Save/load scripts; 039 {PATH} loader,ui.cpp Scripts→Files; docs_layout.cpp; Config autoload opt-in,hook_partial,overlay-ui,Files list + AUTO per row. No toolkit named editor save/load slots. No dofile {PATH}.,none
+F049,039_script_8.scar dofile/loadfile {PATH} ##ForceLoader,(sibling 0133652d owns ui.cpp — sandboxed Documents\AOE4HSettings only),missing,sibling-0133652d,Not closed here. See SCARTOOLKIT_REFUSED_PORTS.md. Arbitrary disk/HTTP dofile stays refused.,dofile_disk
+F050,085 cue; 095/096 debug HUD; 097 Debug_Clear,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\Debug\debug_shots.scar,hook_has,scar-plugins,,debug_ui
+F051,License key [license] 0x2B980 WinLicense,(none — overlay already unlicensed),wont_port,wont-port,Nothing to port. No activate.php/HWID/X-STK-Auth/NtTerminateProcess. SCARTOOLKIT_REFUSED_PORTS.md.,license
+F052,HWID bind,(none — overlay already unlicensed),wont_port,wont-port,HWID SHA-256 bind is toolkit DRM. Nothing to port.,license
+F053,Ban/expire/trial,(none — overlay already unlicensed),wont_port,wont-port,No ban/expire/trial gate in HOOK. Nothing to port.,license
+F054,Forced update scartoolkit.com scar_update.php auto_updater.ps1,(none),wont_port,wont-port,No live update. Do not POST scar_update.php.,network
+F055,Discord billy_977,(none),wont_port,wont-port,,none
+F056,B897E0 OpenProcess(0x43A) RelicCardinal.exe,DllInjector APC LoadLibraryW InternalInjector.dll (already in-process),hook_has,overlay-cpp,Destination is in-process overlay. Toolkit external OpenProcess path not used.,none
+F057,steamapps vs WindowsApps scar_config.php / _ws.php,(none),wont_port,wont-port,No GET scar_config.php. Offsets from Config\offsets_16.3.11308.0.ini + AOB in offsets.cpp.,network
+F058,WinHTTP GET scar_config.php,(none),wont_port,wont-port,Use saved JSON only in recovery tree; do not hit production.,network
+F059,AF04B0 VirtualAllocEx+WPM+CRT helper game RVA 0xB7F150 (not Game_ScarDoString 0xAA9B00),scar.cpp Game_ScarDoString 0xAA9B00 in-process (explicitly not CRT helper),wont_port,wont-port,Do not port Dodge-style CRT or toolkit SCAR CRT into Relic. Overlay calls Game_ScarDoString in the same process.,rwx_crt
+F060,B8CB70 watchdog Game closed / not detected,overlay_guard.cpp HWND/Present skip; engine match-state,hook_partial,overlay-cpp,In-process; no re-OpenProcess attach loop.,none
+F061,48-entry FNV process blocker AF8290,(none),wont_port,wont-port,Toolkit-side anti-analysis. Not a game feature.,self_integrity
+F062,007_CS.scar Modify_EntityMaxHealth,combat_mods.scar CombatMods.Health multiply/add,hook_has,scar-plugins,,sim_write
+F063,009/010 sea/land monsters,spawn.scar StkSpawn.Monster land|sea,hook_has,scar-plugins,,sim_write spawn
+F064,015/016/033/042/059/060 campaign medal / MissionOMatic,debug_shots.scar StkDebug.CampaignCheat,hook_has,scar-plugins,No-op off those maps.,campaign_only
+F065,017 werewolf,spawn.scar StkSpawn.Werewolf / combo Werewolf,hook_has,scar-plugins,,sim_write spawn
+F066,038/040/041/044 ENV gift/deer/relic/boar,spawn.scar StkSpawn.Env,hook_has,scar-plugins,,sim_write
+F067,043 World_EnableSharedLineOfSight,cheat_fow.scar CheatFoW.SharedLos,hook_has,scar-plugins,,sim_write
+F068,054_SpawnCheatArmy.scar,spawn.scar StkSpawn.CheatArmy photon fallback,hook_has,scar-plugins,,sim_write spawn
+F069,062_CheatSpawnRogueCannon_Once.scar,spawn.scar unit_cannon_rogue,hook_has,scar-plugins,,sim_write spawn
+F070,073_CheatSpawn.scar %s/%d template,"spawn.scar StkSpawn.Once(bp, count)",hook_has,scar-plugins,Generic Once covers sprintf template.,sim_write spawn
+F071,075_CheatReplaceSheepWithWolves.scar,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\SheepWolves\sheep_wolves.scar,hook_has,scar-plugins,,sim_write
+F072,077_CheatInstantBuildAndGather.scar,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\InstantBuild\instant_build.scar,hook_has,scar-plugins,,sim_write
+F073,079 ChatCheatAgeUpMultiplayer,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\AgeUp\age_up.scar,hook_has,scar-plugins,,sim_write
+F074,080/081/087 Misc_SetSimRate,debug_shots.scar StkDebug.SimTurbo/Slow/Default,hook_has,scar-plugins,Skirmish/SP.,sim_rate
+F075,086_CheatHideAllUIExceptForChat.scar,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\HideUi\hide_ui.scar,hook_has,scar-plugins,,ui_hide
+F076,091 %s%s%s HUD flags / 092 Rule_Remove Update1v1HUD; HK ecx=6,Documents\AOE4HSettings\Scar Scripts\hud.scar ShowUniversalHUD / UniversalHUD_Flags / UniversalHUD_Destroy; ui.cpp HUD flags,hook_partial,scar-plugins,"091 flags wired on UniversalHUD. 092 destroy is Unload HUD / UniversalHUD_Destroy, not the exact 1v1 presenter script.",read_ui
+F077,093 Music_UnsetForce,debug_shots.scar StkDebug.MusicUnset,hook_has,scar-plugins,,none
+F078,094 AI_Enable local on/off,ai_shutdown.scar AiShutdown.Local; ui.cpp Local AI on/off; Scripts→AI Enable,hook_has,scar-plugins,,scar_ai
+F079,029+031 army/vill Entity_Kill stitch; port plan counts only,(none for wipe; no counts-only UI),missing,scar-plugins,Kill-group not ported (intentional). Counts-only UI not implemented either.,sim_write Entity_Kill — do not port wipe
+F080,ScarToolkit_ESP2D HWND 0x74A10; 2DESP001+8; HK ecx=23; GDI UpdateLayeredWindow,InternalInjector/esp.cpp D3D12; radar.cpp; Config [esp]/[radar],hook_partial,overlay-cpp,"In-process D3D12 ESP+radar (kind filters, sheep/villager highlight, TC rings). Not GDI class ScarToolkit_ESP2D or helper 2DESP001 flag.",overlay_draw
+F081,AF04B0/AF0290/AF0010 inject+state walk magic 0x53434152,scar.cpp ScarDoString + VM ready/startconditions; offsets.cpp 0xAA9B00,hook_partial,scar-injection,In-process DoString + cooldown. Does not CRT into 0xB7F150 or walk toolkit QueryScarState (state=2 dead in toolkit anyway).,inproc_scar
+F082,blobs/001_3294.txt ASCII-art,(none),wont_port,wont-port,Not Lua. Possible logo dump.,none
+F083,blobs 068/069 HLSL; ImGui/D3D11 0x88290,ui_d3d12.cpp ImGui DX12; d3dcompile_dyn.cpp,hook_partial,overlay-cpp,Own D3D12/ImGui path. Toolkit D3D11 host 0x88290 NotRecovered and not cloned.,none
+HK-ECX-00,0x7B882 default epilogue None,n/a,wont_port,wont-port,No feature.,none
+HK-ECX-01,0x7AC18 RevealMap ADDBE0 FOWCTRL1+11,ui.cpp Reveal Map (Memory) ScarRevealMapOneShot,hook_partial,overlay-ui,Button exists; no RegisterHotKey slot.,own_slab +11
+HK-ECX-02,0x7ACF3 IdleTCAlert AF2640/AF28C0 TCIDLE01,auto_queue.scar Idle TCs,hook_partial,overlay-ui,SCAR path yes; no hotkey; no TCIDLE01 WPM.,sim_write
+HK-ECX-03,0x7AD1B IdleVillagerAlert AF04B0,idle_buildings.scar IdleVillagers,hook_partial,overlay-ui,Start/Stop UI; no hotkey.,read_ui
+HK-ECX-04,0x7AD93 EnemyNearTC AF04B0,enemy_near_tc.scar,hook_partial,overlay-ui,Start/Stop UI; no hotkey.,read_ui
+HK-ECX-05,0x7AE81 Resource overlay ADEFD0/ADEDF0 RESHUD02 (combo mislabel TeamHUD),hud.scar / radar observer HUD,missing,overlay-cpp,No RESHUD02 layered HWND (590×24*rows). Observer HUD is a different surface.,overlay_hwnd
+HK-ECX-06,0x7AF44 HUD1v1 AF04B0,hud.scar ShowUniversalHUD,hook_partial,scar-plugins,UniversalHUD not exact 1v1 presenter. No hotkey.,read_ui
+HK-ECX-07,0x7AFEA Scores all players AF04B0,scores_native.scar,hook_partial,overlay-ui,Buttons; no hotkey.,read_ui
+HK-ECX-08,0x7B02E Debug ShowDebugHUD AF1FF0,debug_shots.scar Show debug HUD,hook_partial,overlay-ui,Buttons; no hotkey.,debug_ui
+HK-ECX-09,0x7B038 Production Macro master AEB960/AEBA10,(none),missing,overlay-cpp,Four engine enable bytes + start/stop. Highest-value gap with F005.,synthetic_input
+HK-ECX-10,0x7B0D4 Production Macro Group 4 B116E0,(none),missing,overlay-cpp,Ctrl-group 4 cycle.,synthetic_input
+HK-ECX-11,0x7B159 Production Macro Group 5,(none),missing,overlay-cpp,,synthetic_input
+HK-ECX-12,0x7B1FD Production Macro Group 6,(none),missing,overlay-cpp,4-step cycle dword_7FF777D6D430.,synthetic_input
+HK-ECX-13,0x7B302 Production Macro Group 7,(none),missing,overlay-cpp,,synthetic_input
+HK-ECX-14,0x7B407 Sheep ESP SHEEPSP1+8,esp.cpp/radar.cpp highlight_sheep; enemy_near_tc StartMinimap,hook_partial,overlay-cpp,"Sheep highlight + minimap rings. No SHEEPSP1 WPM, no icon/scale/tracer widgets, no hotkey.",overlay_draw
+HK-ECX-15,0x7B490 RunScriptSafe editor→AF04B0,ui.cpp Run buffer,hook_partial,overlay-ui,Buffer run; no hotkey.,user_lua
+HK-ECX-16,0x7AC29 CameraZoom FOWCTRL1+20/+16,zoom.cpp,hook_partial,overlay-cpp,Camera sliders not helper 200.f. No hotkey.,camera
+HK-ECX-17,0x7B545 FullReveal ADD970/ADD3A0,ui.cpp Full Reveal; INSERT menu,hook_partial,overlay-ui,Toggle in menu; no dedicated hotkey.,see F001
+HK-ECX-18,0x7B562 AIFeatures lock WPM +8/+9,(none),missing,overlay-cpp,See F006/F008.,data_wpm_helper
+HK-ECX-19,0x7B671 AI Lock Villagers +0x0A,(none),missing,overlay-cpp,See F007.,data_wpm_helper
+HK-ECX-20,0x7B882 default epilogue (no feature),n/a,wont_port,wont-port,Security cookie path.,none
+HK-ECX-21,0x7B6DC Resource overlay HWND alt copy (not in 20-entry combo),hud.scar,missing,overlay-cpp,Same gap as ecx=5. Status strings Overlay: DLL not injected / Data not found.,overlay_hwnd
+HK-ECX-22,0x7B731 Player ESP PLRESP01+8,esp.cpp g_espEnabled,hook_partial,overlay-cpp,"D3D12 player/unit ESP. No PLRESP01 WPM, no Enemy Tracer flag, no hotkey.",overlay_draw
+HK-ECX-23,0x7B7B1 2D ESP + KillTimer/DestroyWindow,esp.cpp enable/disable,hook_partial,overlay-cpp,No ScarToolkit_ESP2D HWND lifecycle.,overlay_draw
+HK-OVERLAY-200,WndProc 0xA0C20 wParam 0xC8 click-through TOPMOST,(none — INSERT shows/hides menu; Present hook is not click-through toggle),missing,overlay-ui,Toolkit Overlay active (click-through) via RegisterHotKey id 200. Overlay has no equivalent chrome hotkey.,none
+HK-INI,hotkeys.ini exe dir [hotkeys]/[editor]/[ui]/[aoe4world]/[license]/[ai_lock]/[ai_profiles]/[autovill],Documents\AOE4HSettings\Config\config.ini,hook_partial,overlay-ui,Different schema (radar/esp/camera/scripts). No slotN_action/vk/mod. aoe4world steam_id/profile_id not in hotkeys.ini shape.,none
+WPM-FOWCTRL1-SCAN,ADBDA0 0x6BDA0 VirtualQueryEx RW magic FOWCTRL1,maphack_fowctrl.cpp plants slab in InternalInjector (.fowctrl); not a Relic RW scan,hook_partial,helper-pe,Product slab lives in overlay DLL (implTag 'AOE4'). Toolkit scanned Relic RW for helper-planted block.,own_module_rw
+WPM-FOWCTRL1-HS,ADC000 0x6C000 challenge+40 / response+28 / xor+32 / ack+36,maphack_fowctrl.cpp acks any nonzero +32; response 'HOOK',hook_partial,helper-pe,Original host_secret is in ScarToolKIT EXE not Relic — do not forge. Overlay handshake is a compatibility shim.,none
+WPM-FOWCTRL1-P8,ADD3A0 +8 Full Reveal byte,MapHackFowCtrlSetHold; AoE4Hook_MapHackOn export,hook_partial,overlay-cpp,"Mirrors hold onto +8. Consumer is overlay EngineCrackFullReveal, not unknown helper fog fill.",data_write_own_slab
+WPM-FOWCTRL1-P11,ADDBE0 +11 Reveal Map one-shot,AoE4Hook_RevealMapOneShot; ScarRevealMapOneShot,hook_partial,overlay-cpp,One-shot UC SCAR explore/reveal entities. Inner helper algorithm absent.,scar_fow
+WPM-FOWCTRL1-ZOOM,ADB510 +16 enable +20 float 200.f,maphack_fowctrl stores; zoom.cpp separate 36–68,missing,sibling-0133652d,Not closed here. Sibling consumes via zoom.cpp; must not apply 200.f live. SCARTOOLKIT_REFUSED_PORTS.md.,camera
+WPM-TCIDLE01,AF2640 scan +8 Idle TC,auto_queue.scar (SCAR substitute),missing,overlay-cpp,No TCIDLE01 magic slab. Feature exists via SCAR F002.,data_wpm_helper
+WPM-SHEEPSP1,AE3030 +8 Sheep/TC ESP; icon/scale/tracer UI,radar/esp highlight_sheep; EnemyNearTC.StartMinimap,missing,overlay-cpp,No SHEEPSP1 slab. Visual subset via overlay ESP/radar.,data_wpm_helper
+WPM-PLRESP01,AE3560 +8 Player ESP,esp.cpp,missing,overlay-cpp,No PLRESP01 slab. D3D12 ESP is the substitute (F080 partial).,data_wpm_helper
+WPM-2DESP001,AE3B30 +8 + AE4A10 HWND,esp.cpp,missing,overlay-cpp,No 2DESP001 or GDI ESP2D window.,data_wpm_helper
+WPM-RESHUD02,ADE940 / ADEFD0 OpenResourceOverlay 0x6EFD0,hud.scar observer; radar observer HUD,missing,overlay-cpp,No second D3D11 swapchain resource overlay HWND.,overlay_hwnd
+WPM-AICTLR01,AE1770 +8/+9/+10 army/building/vill,ui.cpp AI_UnlockAll only,missing,overlay-cpp,Highest-value native lock gap.,data_wpm_helper
+WPM-MAPPER,B355D0 RVA 0xC55D0 map helper PE; ADB650 bring-up; asset.php,(none — original helper PE = 0 bytes; our_fow_helper.dll is NOT injected),wont_port,wont-port,asset.php 403 / no second MZ. Do not reconstruct mapper or inject. FOWCTRL1 +8/+11 already in-module. SCARTOOLKIT_REFUSED_PORTS.md.,remote_pe_map
+WPM-DODGE,B5B990/B5BD10 RVA 0xEB990 CRT 0x29 stub VirtualAllocEx+CRT,(none — no SCAR/SendInput/overlay Dodge to wire),wont_port,wont-port,RWX-only method. Searched 99 scars + AOE4HSettings + overlay SendInput (macros only). World_LeaveGameMatch is not Dodge. SCARTOOLKIT_REFUSED_PORTS.md.,rwx_crt
+CPP-ATTACH,src/process/attach.cpp B897E0 0x1197E0,DllInjector + InternalInjector dllmain (in-process),hook_has,overlay-cpp,Different primitive; product is already inside Relic.,none
+CPP-AOB,src/process/aob.cpp B85A90 ParseAob 48B scar_config AOB,offsets.cpp ScarDoString/FogCmp/camera AOBs (game RVAs),hook_partial,overlay-cpp,Overlay scans Relic for its own symbols. Does not consume toolkit scar_config.php AOB for 0xB7F150 CRT helper.,none
+CPP-INJECT,src/scar/inject.cpp AF04B0 CRT,scar.cpp Game_ScarDoString,wont_port,wont-port,CRT inject path excluded. Overlay in-process DoString is the product equivalent (F081 partial).,rwx_crt
+CPP-SCAR-STATE,QueryScarState AF0290 Walk AF0010,scar.cpp ScarIsReady/ScarVmIsCallable/startconditions 2s,hook_partial,scar-injection,Different ready gate. Toolkit state=2 never stored.,none
+CPP-FOW,src/fow/memory_fow.cpp,maphack_fowctrl.cpp + engine.cpp UC combo,hook_partial,overlay-cpp,See F001. Handshake poll stubbed in recovery; product shim is live in-module.,see F001
+CPP-ESP,src/render/esp_overlay.cpp EnsureEspOverlay stub,esp.cpp radar.cpp ui_d3d12.cpp,hook_partial,overlay-cpp,Full D3D12 ESP; not GDI ESP2D reconstruction.,overlay_draw
+CPP-HOTKEYS-INI,src/config/hotkeys_ini.cpp AED970/AEBDF0,config.cpp ConfigLoad/Save,hook_partial,overlay-ui,Parses overlay config.ini not toolkit hotkeys.ini.,none
+CPP-SERVER-CFG,src/config/server_config.cpp scar_config JSON,Config\offsets_16.3.11308.0.ini,wont_port,wont-port,No scartoolkit.com config GET.,network
+CPP-HTTP,src/network/http_client.cpp WinHTTP :443,native_overrides.cpp WinHttp aoe4world.com GET /api/v0/players/,hook_partial,overlay-cpp,Public aoe4world only. No X-STK-Auth / activate.php / asset.php.,network_read
+CPP-UPDATER,src/updater/auto_updater.cpp 0x1F80C0 PowerShell,(none),wont_port,wont-port,,network
+CPP-HOST-UI,src/ui/host_ui.cpp AF8290 0x88290 size 0xDE2A D3D11 ImGui 1.92.1,ui.cpp D3D12 ImGui; tabs Native/ESP/Radar/Scripts/ScarToolkit/Camera/World,hook_partial,overlay-ui,Different IA: sidebar tabs not Lobby/Online/Offline/Custom/Settings. 0x88290 NotRecovered as source rebuild.,none
+CPP-LOBBY,Overlay_DrawLobbyPanel B5E670 0xEE670 size 0x5C51,native_overrides.cpp Scan lobby / Force civ / aoe4world ranks; ui.cpp DrawNativeOverridesTab,hook_partial,overlay-cpp,Civ scan+force+ELO from aoe4world. Not a clone of Overlay_DrawLobbyPanel widgets (Dodge/AddAI/Kick/Lock/Premium).,lobby_heap_write civ votes
+CPP-THEMIDA,ADA5C0/ADA720 IAT hide PE-header wipe .themida 3855 funcs,(none),wont_port,wont-port,Themida/anti-debug/IAT hide excluded.,self_pe
+CPP-LICENSE,A883B0/A9B980 WinLicense,(none — overlay already unlicensed),wont_port,wont-port,HOOK is not ScarToolKIT DRM. No activate/HWID/X-STK-Auth/NtTerminateProcess port. SCARTOOLKIT_REFUSED_PORTS.md.,license
+UI-TAB-LOBBY,UI.Tab.Lobby AF8290 tab 0; ##tab 0x8A56F,ui.cpp Native tab (lobby civ/level) — not named Lobby,hook_partial,overlay-ui,Lobby features live under Native. No five-tab i18n bar.,none
+UI-TAB-ONLINE,UI.Tab.Online RevealTools/Alerts/HUDs/ESPBuildings/PlayerMacros,ESP + Radar + ScarToolkit Maphack + Scripts Features,hook_partial,overlay-ui,Split across overlay tabs.,none
+UI-TAB-OFFLINE,UI.Tab.Offline trainer,ui.cpp DrawScarToolkitTab Skirmish trainer,hook_has,overlay-ui,ScarToolkit sidebar is the offline trainer.,sim_write
+UI-TAB-CUSTOM,UI.Tab.CustomScripts editor + force loader + debug,ScarToolkit Run buffer + Debug one-shots + Scripts Files,hook_partial,overlay-ui,No ##ForceLoader.,user_lua
+UI-TAB-SETTINGS,UI.Tab.Settings license/language/theme/hotkeys,config.ini save/load; no language/theme/license,hook_partial,overlay-ui,"Manual Config Save. No 6-locale UI, no editor theme, no license.",none
+UI-LOBBY-DODGE,Lobby.Button.Dodge 0xEEFCB inside 0xEE670,(ui.cpp DrawStkLobbyPane hint only — no button),wont_port,wont-port,No HOOK-safe substitute. ui.cpp not edited (0133652d). Logs\needed_cpp_dodge.txt. SCARTOOLKIT_REFUSED_PORTS.md.,rwx_crt
+UI-LOBBY-SCAN,Lobby Scan (unresolved callee; Overlay_DrawLobbyPanel),native_overrides.cpp NativeOverridesScanCivs; ui.cpp Scan lobby,hook_has,overlay-cpp,"Different implementation (heap civ scan, not toolkit RPM walker clone).",lobby_read
+UI-LOBBY-LOCK,Lobby Lock/Unlock,(none),missing,overlay-cpp,No lobby slot lock widgets.,lobby
+UI-LOBBY-ADDAI,Lobby Add AI ##AddAIDiff ##PreSelCiv,"Scripts→AI Enable is in-match, not lobby Add AI",missing,overlay-cpp,Cannot add lobby AI from overlay Native tab.,lobby
+UI-LOBBY-KICK,Lobby Kick ##Kick X##kick,(none),missing,overlay-cpp,,lobby
+UI-LOBBY-PREMIUM,##LobbyPremium,(none),wont_port,wont-port,License-gated lobby chrome.,license
+UI-LOBBY-CIV,##civ_%llX Force civ columns,ui.cpp Force civ / Apply civ / Hold 500ms / Restore,hook_has,overlay-cpp,CivForcer-style PBG vote write. Hold timer 500 ms (CivForcer parity note in native_overrides.h).,lobby_heap_write
+UI-LOBBY-ELO,Lobby ELO columns; [aoe4world] steam_id/profile_id,native_overrides.cpp aoe4world GET; ui.cpp Rank/Most/1v1,hook_has,overlay-cpp,Public API. UA not SCARToolkit/1.0.,network_read
+UI-ONLINE-SHEEP-TRACER,Sheep Tracer##espTracerSheep 0x8CEBA,(none dedicated; esp heading/waypoints are not tracer),missing,overlay-cpp,Need helper or overlay line-tracer from local to sheep/TC.,overlay_draw
+UI-ONLINE-ENEMY-TRACER,Enemy Tracer##espTracerEnemy 0x8CEDD,(none),missing,overlay-cpp,,overlay_draw
+UI-ONLINE-ESP-BLDGS,Online.ESP.Barracks..Wall + Archery/Blacksmith/Dock/Gate/House/Keep/Landmark/Market/Monastery/Outpost/Siege/Stable cap 5,config.h espFilter[kCfgKinds] resource/relic/building/unit/tree/left/animal,hook_partial,overlay-cpp,"Kind filters, not per-PBG building checkboxes with cap 5 popup.",overlay_draw
+UI-ONLINE-SHEEP-ICON,Icon##sheepIcon Size##sheepScale SHEEPSP1 overlay opts,radarDotSize / esp highlight_sheep (no icon atlas / scale widget),missing,overlay-cpp,,overlay_draw
+UI-ONLINE-ZOOMLUA,Online.ZoomLUA.* SCAR camera (not FOWCTRL1+16),visfog.cpp SCAR atmosphere at zoom threshold; Camera visfog_*.scar,hook_partial,sibling-0133652d,"Not closed here. Sibling owns zoom.cpp consume (not 200.f). visfog is not ZoomLUA. SCARTOOLKIT_REFUSED_PORTS.md.",scar_camera
+UI-ONLINE-AUTOENABLE,"AF2940 Auto-enables Full Reveal, Idle TC, Sheep ESP & Zoom each match",g_fullRevealAuto (config.cpp forces fullRevealAuto=0); no bundle,missing,overlay-cpp,No 1/sec match bundle. fullRevealAuto exists in struct but is saved as 0.,see F001
+UI-ONLINE-MACRO-KEYS,Edit Keys##editkeys QWERTY/AZERTY ##KeyboardLayout [autovill],(none),missing,overlay-ui,Tied to F005 SendInput macro.,synthetic_input
+UI-SETTINGS-LANG,Language##UI 0..5 EN/ZH/ES/RU/FR/AR g_uiLanguage 0x4FFD0,(none — English UI only),missing,overlay-ui,Six i18n pair-tables in toolkit. Overlay has no locale combo.,none
+UI-SETTINGS-THEME,Theme##Editor [editor] theme=,(none),missing,overlay-ui,,none
+UI-SETTINGS-UNBIND,##UnbindReason HWID unbind POST,(none — overlay already unlicensed),wont_port,wont-port,HWID unbind POST is toolkit DRM. Nothing to port. SCARTOOLKIT_REFUSED_PORTS.md.,license
+UI-FONTS,Fonts/NotoSans-Regular.ttf 18.f; Icons.ttf unused path,ui.cpp ImGui default / Proggy; no Noto load,missing,overlay-ui,Arabic/SC/icon load unresolved in toolkit too.,none
+UI-BLOCKER,MessageBox cannot run while application is open,(none),wont_port,wont-port,F061.,self_integrity
+UI-TOAST-MAINT,Broadcast.GameUpdated / Maintenance / Outage toasts,(none),wont_port,wont-port,Toolkit.com status toasts.,network
+SCAR-001,001_Smart_nearest_sheep_herder_BP_driven_scout.scar,Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit/SheepHerder/sheep_herder.scar,hook_has,scar-plugins,F045,see_F_row
+SCAR-002,002_CustomScript.scar minimap 50/100m rings,enemy_near_tc.scar StartMinimap; radar/esp TC rings,hook_has,scar-plugins,F080 companion,see_F_row
+SCAR-003,003_CustomScript_2.scar player hints,Documents\AOE4HSettings\Scar Scripts\Menu\PlayerHints/player_hints.scar,hook_has,scar-plugins,F042,see_F_row
+SCAR-004,004_Premium_Enemy_Near_TC_Alert_with_Flashing_XAML_Overlay_Unit_Breakdown.scar,Documents\AOE4HSettings\Scar Scripts\Menu\EnemyNearTC/enemy_near_tc.scar,hook_has,scar-plugins,F003,see_F_row
+SCAR-005,005_script.scar selected hints,Documents\AOE4HSettings\Scar Scripts\Menu\SelectedHints/selected_hints.scar,hook_has,scar-plugins,F042,see_F_row
+SCAR-006,006_Idle_Villager_Alert_with_Flashing_XAML_Overlay.scar,Documents\AOE4HSettings\Scar Scripts\Menu\IdleBuildings/idle_buildings.scar IdleVillagers,hook_has,scar-plugins,F043,see_F_row
+SCAR-007,007_CS.scar max HP,Documents\AOE4HSettings\Scar Scripts\Menu\CombatMods/combat_mods.scar Health,hook_has,scar-plugins,F062,see_F_row
+SCAR-008,008_EnemyTC_ShowOverlay.scar,Documents\AOE4HSettings\Scar Scripts\Menu\enemy_near_tc.scar,hook_has,scar-plugins,F044,see_F_row
+SCAR-009,009_CustomScript_3.scar land monsters,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Monster land,hook_has,scar-plugins,F063,see_F_row
+SCAR-010,010_CustomScript_4.scar sea monsters,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Monster sea,hook_has,scar-plugins,F063,see_F_row
+SCAR-011,011_script_2.scar count enemies near TC,Documents\AOE4HSettings\Scar Scripts\Menu\enemy_near_tc.scar SetRadius,hook_has,scar-plugins,F003,see_F_row
+SCAR-012,012_Skirmish_SCARToolkit_AI_Shutdown_silent.scar,Documents\AOE4HSettings\Scar Scripts\Menu\AiShutdown/ai_shutdown.scar,hook_has,scar-plugins,F015,see_F_row
+SCAR-013,013_script_3.scar InstantWin,Documents\AOE4HSettings\Scar Scripts\Menu\InstantWin/instant_win.scar,hook_has,scar-plugins,F016,see_F_row
+SCAR-014,014_Convert_ONLY_enemy_squads_in_your_current_selection.scar,Documents\AOE4HSettings\Scar Scripts\Menu\ConvertSelected/convert_selected.scar,hook_has,scar-plugins,F017,see_F_row
+SCAR-015,015_CustomScript_5.scar campaign,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar CampaignCheat,hook_has,scar-plugins,F064,see_F_row
+SCAR-016,016_CustomScript_6.scar campaign,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar CampaignCheat,hook_has,scar-plugins,F064,see_F_row
+SCAR-017,017_CustomScript_7.scar werewolf,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Werewolf,hook_has,scar-plugins,F065,see_F_row
+SCAR-018,018_CheatSpawnRogueChamps_Once.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Pack rogue_champs,hook_has,scar-plugins,F028,see_F_row
+SCAR-019,019_script_4.scar auto-heal ON,Documents\AOE4HSettings\Scar Scripts\Menu\AutoHeal/auto_heal.scar Start,hook_has,scar-plugins,F029,see_F_row
+SCAR-020,020_Auto_queue_villagers_from_idle_Town_Centers_skirmish_only.scar,Documents\AOE4HSettings\Scar Scripts\Menu\AutoQueue/auto_queue.scar,hook_has,scar-plugins,F002,see_F_row
+SCAR-021,021_Modify_UnitSpeedAlways.scar,Documents\AOE4HSettings\Scar Scripts\Menu\combat_mods.scar Speed,hook_has,scar-plugins,F031,see_F_row
+SCAR-022,022_script_5.scar invuln ON,Documents\AOE4HSettings\Scar Scripts\Menu\Invuln/invuln.scar On,hook_has,scar-plugins,F030,see_F_row
+SCAR-023,023_CheatApplyGather_Custom.scar,Documents\AOE4HSettings\Scar Scripts\Menu\Rates/rates.scar Gather,hook_has,scar-plugins,F038,see_F_row
+SCAR-024,024_CheatApplyGather_Custom_2.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Gather,hook_has,scar-plugins,F038,see_F_row
+SCAR-025,025_CheatSpawnRogueBosses_Once.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Pack bosses,hook_has,scar-plugins,F027,see_F_row
+SCAR-026,026_CheatApplyGather_Custom_3.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Gather,hook_has,scar-plugins,F038,see_F_row
+SCAR-027,027_CheatApplyGather_Custom_4.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Gather,hook_has,scar-plugins,F038,see_F_row
+SCAR-028,028_CustomScript_8.scar kill landmarks,Documents\AOE4HSettings\Scar Scripts\Menu\KillAnimals/kill_animals.scar Landmarks,hook_has,scar-plugins,F018,see_F_row
+SCAR-029,029_script_6.scar army/vill kill suffix,(not ported — wipe),wont_port,wont-port,F079 wipe excluded,sim_write Entity_Kill
+SCAR-030,030_CheatSpawnBanditPack_Once.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Pack bandits,hook_has,scar-plugins,F026,see_F_row
+SCAR-031,031_CustomScript_9.scar army/vill kill prefix,(not ported — wipe),wont_port,wont-port,F079 wipe excluded,sim_write Entity_Kill
+SCAR-032,032_CheatApplyBuild_Custom.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Build,hook_has,scar-plugins,F039,see_F_row
+SCAR-033,033_CustomScript_10.scar campaign,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar CampaignCheat,hook_has,scar-plugins,F064,see_F_row
+SCAR-034,034_CheatApplyBuild_Custom_2.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Build,hook_has,scar-plugins,F039,see_F_row
+SCAR-035,035_CheatApplyBuild_Custom_3.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Build,hook_has,scar-plugins,F039,see_F_row
+SCAR-036,036_CheatApplyBuild_Custom_4.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Build,hook_has,scar-plugins,F039,see_F_row
+SCAR-037,037_script_7.scar stop Enemy Near TC overlay,ui.cpp Stop##enemytc,hook_has,scar-plugins,F003 stop,see_F_row
+SCAR-038,038_CS_2.scar ENV gift,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Env gift,hook_has,scar-plugins,F066,see_F_row
+SCAR-039,039_script_8.scar dofile {PATH} force loader,(sibling 0133652d — Documents\AOE4HSettings sandbox only),missing,sibling-0133652d,F049. Not closed here. See SCARTOOLKIT_REFUSED_PORTS.md.,dofile_disk
+SCAR-040,040_CS_3.scar ENV deer,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Env deer,hook_has,scar-plugins,F066,see_F_row
+SCAR-041,041_CS_4.scar ENV relic,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Env relic,hook_has,scar-plugins,F066,see_F_row
+SCAR-042,042_CustomScript_11.scar campaign,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar CampaignCheat,hook_has,scar-plugins,F064,see_F_row
+SCAR-043,043_CustomScript_12.scar shared LoS,Documents\AOE4HSettings\Scar Scripts\Menu\cheat_fow.scar SharedLos,hook_has,scar-plugins,F067,see_F_row
+SCAR-044,044_CS_5.scar ENV boar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Env boar,hook_has,scar-plugins,F066,see_F_row
+SCAR-045,045_run_once_after_2s_so_the_map_is_fully_up.scar kill animals,Documents\AOE4HSettings\Scar Scripts\Menu\kill_animals.scar Run,hook_has,scar-plugins,F018,see_F_row
+SCAR-046,046_script_9.scar stop IdleVillager overlay,Documents\AOE4HSettings\Scar Scripts\Menu\IdleVillagers.Stop in idle_buildings.scar,hook_has,scar-plugins,F043 stop,see_F_row
+SCAR-047,047_CheatFoW.scar,Documents\AOE4HSettings\Scar Scripts\Menu\CheatFoW/cheat_fow.scar,hook_has,scar-plugins,F014,see_F_row
+SCAR-048,048_CheatApplyRange_Selected.scar,Documents\AOE4HSettings\Scar Scripts\Menu\combat_mods.scar Range,hook_has,scar-plugins,F033,see_F_row
+SCAR-049,049_CheatApplyProd_Custom.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Prod,hook_has,scar-plugins,F036,see_F_row
+SCAR-050,050_CheatApplyProd_Custom_2.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Prod,hook_has,scar-plugins,F036,see_F_row
+SCAR-051,051_CheatApplySight_Custom.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Sight,hook_has,scar-plugins,F037,see_F_row
+SCAR-052,052_CheatApplySight_Custom_2.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Sight,hook_has,scar-plugins,F037,see_F_row
+SCAR-053,053_CheatApplyDamage_Selected.scar,Documents\AOE4HSettings\Scar Scripts\Menu\combat_mods.scar Damage,hook_has,scar-plugins,F032,see_F_row
+SCAR-054,054_SpawnCheatArmy.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar CheatArmy,hook_has,scar-plugins,F068,see_F_row
+SCAR-055,055_CheatSpawnRogueNestOfBees_Once.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar nest of bees,hook_has,scar-plugins,F025,see_F_row
+SCAR-056,056_CheatSpawnGreatTrebuchet_Once.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar trebuchet,hook_has,scar-plugins,F023,see_F_row
+SCAR-057,057_CheatSpawnRogueMangonel_Once.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar mangonel,hook_has,scar-plugins,F024,see_F_row
+SCAR-058,058_CheatSpawnHandcannon_Once.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar handcannon,hook_has,scar-plugins,F020,see_F_row
+SCAR-059,059_CustomScript_13.scar campaign,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar CampaignCheat,hook_has,scar-plugins,F064,see_F_row
+SCAR-060,060_CustomScript_14.scar campaign,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar CampaignCheat,hook_has,scar-plugins,F064,see_F_row
+SCAR-061,061_SpawnPM_Once.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar photon man,hook_has,scar-plugins,F021,see_F_row
+SCAR-062,062_CheatSpawnRogueCannon_Once.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar rogue cannon,hook_has,scar-plugins,F069,see_F_row
+SCAR-063,063_GrantRes.scar,Documents\AOE4HSettings\Scar Scripts\Menu\GrantRes/grant_res.scar,hook_has,scar-plugins,F034,see_F_row
+SCAR-064,064_GrantRes_2.scar,Documents\AOE4HSettings\Scar Scripts\Menu\grant_res.scar,hook_has,scar-plugins,F034,see_F_row
+SCAR-065,065_CheatApplyProd_Custom_3.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Prod,hook_has,scar-plugins,F036,see_F_row
+SCAR-066,066_CheatPhotonMan_Once.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar photon man,hook_has,scar-plugins,F021,see_F_row
+SCAR-067,067_CheatApplySight_Custom_3.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Sight,hook_has,scar-plugins,F037,see_F_row
+SCAR-068,068_CheatApplyProd_Custom_4.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Prod,hook_has,scar-plugins,F036,see_F_row
+SCAR-069,069_Stop_the_sheep_herder_tick_rule_if_present.scar,Documents\AOE4HSettings\Scar Scripts\Menu\sheep_herder.scar Stop,hook_has,scar-plugins,F045 stop,see_F_row
+SCAR-070,070_CheatApplySight_Custom_4.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Sight,hook_has,scar-plugins,F037,see_F_row
+SCAR-071,071_SetPop_Custom.scar,Documents\AOE4HSettings\Scar Scripts\Menu\rates.scar Pop,hook_has,scar-plugins,F035,see_F_row
+SCAR-072,072_ScoresAllPlayers_Hide.scar,Documents\AOE4HSettings\Scar Scripts\Menu\ScoresNative/scores_native.scar Hide,hook_has,scar-plugins,F012,see_F_row
+SCAR-073,073_CheatSpawn.scar %s/%d,"Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Once(bp,count)",hook_has,scar-plugins,F070,see_F_row
+SCAR-074,074_ScoresAllPlayers_Show.scar,Documents\AOE4HSettings\Scar Scripts\Menu\scores_native.scar Show,hook_has,scar-plugins,F012,see_F_row
+SCAR-075,075_CheatReplaceSheepWithWolves.scar,Documents\AOE4HSettings\Scar Scripts\Menu\SheepWolves/sheep_wolves.scar,hook_has,scar-plugins,F071,see_F_row
+SCAR-076,076_script_10.scar invuln OFF,Documents\AOE4HSettings\Scar Scripts\Menu\invuln.scar Off,hook_has,scar-plugins,F030,see_F_row
+SCAR-077,077_CheatInstantBuildAndGather.scar,Documents\AOE4HSettings\Scar Scripts\Menu\InstantBuild/instant_build.scar,hook_has,scar-plugins,F072,see_F_row
+SCAR-078,078_GrantRes_3.scar,Documents\AOE4HSettings\Scar Scripts\Menu\grant_res.scar,hook_has,scar-plugins,F034,see_F_row
+SCAR-079,079_CustomScript_15.scar age up,Documents\AOE4HSettings\Scar Scripts\Menu\AgeUp/age_up.scar,hook_has,scar-plugins,F073,see_F_row
+SCAR-080,080_script_11.scar sim turbo,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar SimTurbo,hook_has,scar-plugins,F074,see_F_row
+SCAR-081,081_script_12.scar sim slow,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar SimSlow,hook_has,scar-plugins,F074,see_F_row
+SCAR-082,082_SpawnSheep.scar,Documents\AOE4HSettings\Scar Scripts\Menu\spawn.scar Sheep,hook_has,scar-plugins,F019,see_F_row
+SCAR-083,083_jeanne_exp_add.scar,Documents\AOE4HSettings\Scar Scripts\Menu\JeanneXp/jeanne_xp.scar,hook_has,scar-plugins,F040,see_F_row
+SCAR-084,084_GrantRes_4.scar add-to-current,Documents\AOE4HSettings\Scar Scripts\Menu\grant_res.scar; Scripts Features Add (084),hook_has,scar-plugins,F034,see_F_row
+SCAR-085,085_script_13.scar select-one cue,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar SelectCue,hook_has,scar-plugins,F050,see_F_row
+SCAR-086,086_CheatHideAllUIExceptForChat.scar,Documents\AOE4HSettings\Scar Scripts\Menu\HideUi/hide_ui.scar,hook_has,scar-plugins,F075,see_F_row
+SCAR-087,087_script_14.scar sim default,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar SimRateDefault,hook_has,scar-plugins,F074,see_F_row
+SCAR-088,088_Stop_the_auto_queue_rule_if_present.scar,ui.cpp Stop##autoqueue,hook_has,scar-plugins,F002 stop,see_F_row
+SCAR-089,089_script_15.scar auto-heal OFF,Documents\AOE4HSettings\Scar Scripts\Menu\auto_heal.scar Stop,hook_has,scar-plugins,F029,see_F_row
+SCAR-090,090_CustomScript_16.scar paste-here editor,ui.cpp Run buffer,hook_partial,scar-plugins,F046/F047,see_F_row
+SCAR-091,091_script_16.scar g_1v1ShowUpgrades/Buildings/Units,hud.scar UniversalHUD_Flags; ui.cpp HUD flags,hook_partial,scar-plugins,F076,see_F_row
+SCAR-092,092_script_17.scar Rule_Remove Update1v1HUD,hud.scar UniversalHUD_Destroy / Unload HUD,hook_partial,scar-plugins,F076,see_F_row
+SCAR-093,093_script_18.scar Music_UnsetForce,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar MusicUnset,hook_has,scar-plugins,F077,see_F_row
+SCAR-094,094_script_19.scar local AI_Enable,Documents\AOE4HSettings\Scar Scripts\Menu\ai_shutdown.scar Local,hook_has,scar-plugins,F078,see_F_row
+SCAR-095,095_script_20.scar ShowDebugHUD,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar ShowDebugHud,hook_has,scar-plugins,F050,see_F_row
+SCAR-096,096_script_21.scar HideDebugHUD,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar HideDebugHud,hook_has,scar-plugins,F050,see_F_row
+SCAR-097,097_script_22.scar Debug_Clear,Documents\AOE4HSettings\Scar Scripts\Menu\debug_shots.scar Clear,hook_has,scar-plugins,F050,see_F_row
+SCAR-098,098_script_23.scar Rule_AddOneShot(CustomScript),"Documents\AOE4HSettings\Scar Scripts\Menu\Run buffer (raw), no OneShot wrapper UI",hook_partial,scar-plugins,F046,see_F_row
+SCAR-099,099_CustomScript_17.scar incomplete CustomScript(),Documents\AOE4HSettings\Scar Scripts\Menu\Run buffer,hook_partial,scar-plugins,F046,see_F_row
+NESP-SWM,(toolkit: none — overlay NativeEsp),Documents\AOE4HSettings\NativeEspData\spatial_world_model.scar,hook_has,native-esp,Overlay-only. Not a toolkit feature; listed so implementers do not treat SWM as a ScarToolKIT gap.,read_bridge
+NESP-INTEL,(toolkit: none),Documents\AOE4HSettings\NativeEspData\unit_intelligence.scar,hook_has,native-esp,Overlay-only unit intel.,read_bridge
+NESP-BRIDGE,(toolkit: none),Documents\AOE4HSettings\NativeEspData\aoe4hook_bridge.scar,hook_has,native-esp,C++ world feed → Lua AOE4HOOK_*. Toolkit used RPM walker 0xEE670 instead.,read_bridge
+NESP-NATIVES,(toolkit: 138 engine natives in corpus),Documents\AOE4HSettings\NativeEspData\scar_natives_live.scar; InternalInjector/scar_natives.cpp,hook_has,native-esp,Live native catalog. Toolkit corpus natives.txt is static extract.,none
+SYS-LOCAL-RULES,(toolkit: none — overlay checksum policy),Documents\AOE4HSettings\Scar Scripts\System\local_rules.scar,hook_has,scar-plugins,Prepended; AUTO opt-in. Toolkit had no MP_SAFE wrappers.,checksum
+SYS-WRAPPERS,(toolkit: none),Documents\AOE4HSettings\Scar Scripts\System\checksum_wrappers.scar,hook_has,scar-plugins,Prepended to overlay ScarDoString.,checksum
+PLUGIN-GRANT-ALLIES,063 GrantRes allies (dedicated file),Documents\AOE4HSettings\Scar Scripts\Menu\ScarToolkit\GrantAllies\grant_allies.scar,hook_partial,overlay-ui,"File present and in docs_layout kMenuScars; ScarToolkit UI calls GrantRes.Run(..., 'allies') instead of GrantAllies.Run.",sim_write
+RELIC-FOGCMP,Toolkit does NOT reference FogCmp 0x8D956F / FogByte 0x7B41F90,offsets.cpp still resolves FogCmp for RA telemetry; product maphack does not patch .text,wont_port,wont-port,VirtualProtectEx/FogCmp/FogByte patches on Relic excluded as port-targets. Do not treat overlay FogCmp resolution as a ScarToolKIT feature to clone.,relic_text

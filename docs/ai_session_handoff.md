@@ -3,13 +3,13 @@
 Дата: **2026-09-08**. Репозиторий: `AOE4HOOK`. Билд игры: **16.3.11308.0**.
 
 Это **текущий контракт**, не дневник. Длинные логи крашей:
-archive/AI_SESSION_HANDOFF_diary.md.
+[archive/AI_SESSION_HANDOFF_diary.md](archive/AI_SESSION_HANDOFF_diary.md).
 
 Сверься с кодом до правок: `ai_session.cpp`, `ai_runtime.cpp`, `ai_production.cpp`,
 `ai_counter_math.h`, `stk_lua_lock.cpp`, `stk_ai_track.cpp`.
-Пользовательский экран: [AI_BOT.md](ai_bot.md). Локи: [AI_UNIT_CONTROL.md](AI_UNIT_CONTROL.md).
+Пользовательский экран: [AI_BOT.md](AI_BOT.md). Локи: [AI_UNIT_CONTROL.md](AI_UNIT_CONTROL.md).
 Scoring: [AI_SCORING_PIPELINE.md](AI_SCORING_PIPELINE.md),
-ADR-001.
+[ADR-001](decisions/ADR-001-cpp-ai-runtime.md).
 
 Язык UI: английские ключи + русский через `UiTr` / `UiTrVisible`.
 Кнопка: **Enable AI** / **Disable AI** (не «Eco AI»). Настройки: `Documents\AOE4HSettings`.
@@ -23,7 +23,7 @@ ADR-001.
 
 Две песочные игры до победы. RA-окно не выделялось (`lastSlots=0`), DualFlag `0x0001`.
 Конфиг `ra_neutralize=0` / `session_hold=0`, `slotSkip=0`. Это **не** тест `.text` neutralize.
-Таблица и FPS: UPDATE_GUIDE.md §9.5.
+Таблица и FPS: [UPDATE_GUIDE.md](UPDATE_GUIDE.md) §9.5.
 
 ---
 

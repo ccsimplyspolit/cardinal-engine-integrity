@@ -4,15 +4,15 @@ Sources: ScarDoc `Essence_ScarFunctions.api`, Relic
 `sdk/scar/sga/cardinal/Data/ai/cardinal_scoring_functions.scar`,
 `docs/HYBRID_NATIVE_AUDIT.md`, overlay `ai_scoring_catalog.h`,
 `ai_session.cpp` / `ai_runtime.cpp` / `ai_production.cpp`.
-Handshake / army lock: [AI_BOT.md](ai_bot.md), [AI_SESSION_HANDOFF.md](AI_SESSION_HANDOFF.md).
-Decision: decisions/ADR-001-cpp-ai-runtime.md.
+Handshake / army lock: [AI_BOT.md](AI_BOT.md), [AI_SESSION_HANDOFF.md](AI_SESSION_HANDOFF.md).
+Decision: [decisions/ADR-001-cpp-ai-runtime.md](decisions/ADR-001-cpp-ai-runtime.md).
 Inventory of every hook body (Relic's and the overlay's): `python tools/audit_ai_scoring.py`
-→ ai_audit/scoring_inventory.md; it finds the scoring sources
+→ [ai_audit/scoring_inventory.md](ai_audit/scoring_inventory.md); it finds the scoring sources
 itself and `--check` fails in the host tests when the committed copy is stale.
 
 IDA Hex-Rays of `Evaluate` is no longer a blocker. Factory / Evaluate **RVAs**
 were re-checked against gamesource 16.3 (`0x7FF7A5500000`) on 2026-09-14; see
-[HYBRID_NATIVE_AUDIT.md](hybrid_native_subsystem_audit.md). The older pe-sieve IDB base
+[HYBRID_NATIVE_AUDIT.md](HYBRID_NATIVE_AUDIT.md). The older pe-sieve IDB base
 `0x7FF6F65C0000` is the same RVAs, different VAs. Do not mix dump VAs.
 
 ## Three different control layers
@@ -70,7 +70,7 @@ It is not a train scorer. `AIPlayer_SetStrategicBaseIntention` is not
 9. `StrategicIntention` Evaluate `0x2CFDCD0` is the weighted mean of
    `clamp(level, 0, 1)`: a zero level zeroes the candidate. `PopCapGenerator`
    Evaluate `0x2D02910` is 0/1. Details and game data:
-   findings/2026-09-26-economy-derivation.md.
+   [findings/2026-09-26-economy-derivation.md](findings/2026-09-26-economy-derivation.md).
 
 `TimeToAcquire(aiPlayer, maxSec, gather, buildThis, buildReqs)` factory
 `0x2C59620`, Evaluate **`0x2CFF6C0`**. Object: maxSec@+0x18, minScore@+0x1C

@@ -5,7 +5,7 @@
 
 Вкладка **AI BOT** — одна сессия (`DrawAiSessionPane`): **Enable AI** включает Relic ИИ, лочит боевую армию за игроком и по желанию подмешивает контрпик из данных оверлея. Memory AOB, Lua-локи и Scar-билдер с этой вкладки убраны (код в DLL ещё есть).
 
-Словарь мира, ID сущностей и AV/OOS факты SCAR здесь **не** дублируются. Автор `.scar` читает `CPP_BRIDGES.md`. Аудит Relic-нативов Fine-tune / hybrid: `[HYBRID_NATIVE_AUDIT.md](hybrid_native_subsystem_audit.md)`. Production scoring vs PushScore vs personality: `[AI_SCORING_PIPELINE.md](AI_SCORING_PIPELINE.md)` (ADR-001). Карта папок: `PLUGINS.md`.
+Словарь мира, ID сущностей и AV/OOS факты SCAR здесь **не** дублируются. Автор `.scar` читает `[CPP_BRIDGES.md](CPP_BRIDGES.md)`. Аудит Relic-нативов Fine-tune / hybrid: `[HYBRID_NATIVE_AUDIT.md](HYBRID_NATIVE_AUDIT.md)`. Production scoring vs PushScore vs personality: `[AI_SCORING_PIPELINE.md](AI_SCORING_PIPELINE.md)` ([ADR-001](decisions/ADR-001-cpp-ai-runtime.md)). Карта папок: `[PLUGINS.md](PLUGINS.md)`.
 
 Не воссоздавайте `AOE4HOOK\plugins`, `AOE4HOOK-SCAR-Plugins`, `Documents\ScarScripts`.
 
@@ -132,7 +132,7 @@ UI на вкладке: `Starting in %u s` → `Counterpick in %u s` → ста�
 
 Контрпик: C++ считает на collect worker при каждом `AiPlannerUpdate` (~**2 с**, пока `AiRuntimeArmed()`). Удержание роли **35 с** (`kHoldSec` / `AiCounterShouldCommit`). Apply — hashed `__EcoAct_Apply` на оконном потоке (`WM_SCAR_AI_COMMIT`). Lua `__EcoCounter_Tick` **мёртв**. Relic `Rule_AddInterval` нет. `PublishPlan()` сессии **не** шлёт `AOE4HOOK_AI_PLAN`, пока runtime armed (`kPlanIntervalMs` 10 с остаётся только для fallback, если runtime выключен и нет world-feed).
 
-Army lock: один скан стоящих, пока `AI_IsEnabled` ложь. После Enable — ScarToolKIT `ai_lock_army.lua` / `Hybrid_OnSpawn`: Relic `Rule_AddPlayerEvent(GE_EntitySpawn)` + `AI_LockSquad` на `event.entity`. **Нет** overlay `Local.AddPlayerEvent` (world-feed / `event.id`, поздно vs think, 01:09:13). Scan / cache-id после Enable только `pending-ai-live`. C++ relock **scan-only** — не `LockOneSid` (01:24 burst 50166–50178 → 4A70). WouldStrip отказывает сиду, который think уже трекает. `Cmd_Stop` не зовём (`rva=0x1ED5529`). Unlocked tracking не `L.safe` (23:34 4A70). Пока лок жив, Relic offense/naval и attack/front/clump = 0, **`iEcon` не ниже 1.0** (STK villager boom). `combat` и `siege` остаются как у роли: это намерения **производства** (`Infantry` / `RangedInfantry` / `CombatSiege` / `MilitaryProductionBuilding` умножают `StrategicIntention({combat=1})`, Evaluate `0x2CFDCD0` без нижней границы). С нулём армию не тренировал никто: 26.09 23:33 против 7 рыцарей ИИ не строил ни контр, ни казарм и ушёл в эпоху (разбор). Фильтр армии **отрицательный** (eco + scout): civ-unique игроку, синоби (30.09) и Жанна д'Арк во всех формах, крестьянка тоже (`isJeanne`, тип отряда `jeanne_d_arc`, 01.10). До handover `religion=1` и `monkCap>=3`. Relic's 3 монаха у ИИ; лишние обычные монахи при живом think не LockSquad (spawn pending). **Нет** `__ArmyLock_Tick` / `Hybrid_SweepLocks` / `AI_LockSquads`. Enable-true если `empty-unlocked==0` после heap-stamp (live eco WouldStrip не паркует, как STK). `kEcoOpen` не UnlockSquad; stamp каждый live-тик. Stamp `stkOnSpawn+keepLock+noEn4A70+heapLock+emptyEn+noOpenUnl+tickStamp`. Инжект только `internal\x64\Release\DllInjector.exe` + соседний DLL.
+Army lock: один скан стоящих, пока `AI_IsEnabled` ложь. После Enable — ScarToolKIT `ai_lock_army.lua` / `Hybrid_OnSpawn`: Relic `Rule_AddPlayerEvent(GE_EntitySpawn)` + `AI_LockSquad` на `event.entity`. **Нет** overlay `Local.AddPlayerEvent` (world-feed / `event.id`, поздно vs think, 01:09:13). Scan / cache-id после Enable только `pending-ai-live`. C++ relock **scan-only** — не `LockOneSid` (01:24 burst 50166–50178 → 4A70). WouldStrip отказывает сиду, который think уже трекает. `Cmd_Stop` не зовём (`rva=0x1ED5529`). Unlocked tracking не `L.safe` (23:34 4A70). Пока лок жив, Relic offense/naval и attack/front/clump = 0, **`iEcon` не ниже 1.0** (STK villager boom). `combat` и `siege` остаются как у роли: это намерения **производства** (`Infantry` / `RangedInfantry` / `CombatSiege` / `MilitaryProductionBuilding` умножают `StrategicIntention({combat=1})`, Evaluate `0x2CFDCD0` без нижней границы). С нулём армию не тренировал никто: 26.09 23:33 против 7 рыцарей ИИ не строил ни контр, ни казарм и ушёл в эпоху ([разбор](findings/2026-09-26-economy-derivation.md)). Фильтр армии **отрицательный** (eco + scout): civ-unique игроку, синоби (30.09) и Жанна д'Арк во всех формах, крестьянка тоже (`isJeanne`, тип отряда `jeanne_d_arc`, 01.10). До handover `religion=1` и `monkCap>=3`. Relic's 3 монаха у ИИ; лишние обычные монахи при живом think не LockSquad (spawn pending). **Нет** `__ArmyLock_Tick` / `Hybrid_SweepLocks` / `AI_LockSquads`. Enable-true если `empty-unlocked==0` после heap-stamp (live eco WouldStrip не паркует, как STK). `kEcoOpen` не UnlockSquad; stamp каждый live-тик. Stamp `stkOnSpawn+keepLock+noEn4A70+heapLock+emptyEn+noOpenUnl+tickStamp`. Инжект только `internal\x64\Release\DllInjector.exe` + соседний DLL.
 
 ### 3.2 Disable
 
@@ -165,7 +165,7 @@ Hybrid `K.counterCut` / Files AUTO с этой вкладки **не** запу�
 
 ### 3.4 C++ think / thin SCAR
 
-**Think in C++. Act through Relic.** Relic по-прежнему тренирует. Overlay режет семьи и объясняет. Полный пайплайн: [AI_SCORING_PIPELINE.md](AI_SCORING_PIPELINE.md). ADR: ADR-001.
+**Think in C++. Act through Relic.** Relic по-прежнему тренирует. Overlay режет семьи и объясняет. Полный пайплайн: [AI_SCORING_PIPELINE.md](AI_SCORING_PIPELINE.md). ADR: [ADR-001](decisions/ADR-001-cpp-ai-runtime.md).
 
 ```text
 collect worker → AiPlannerUpdate (~2 s armed)
@@ -489,7 +489,7 @@ Lua-стемы GetPersonality (не ключи SetPersonality): `cardinal_defaul
   это говорят). Disable оставляет `+0x40` на боевых строках, а включение Full AI
   пропускает гейт пустых незалоченных строк (`rva=0x2A45959`). Эксперимент с
   передачей посреди матча — `kAiFullAiMidMatchHandover` (выключен, см.
-  2026-09-27 cloud plan).
+  [2026-09-27 cloud plan](findings/2026-09-27-cloud-plan.md)).
 - **Замок крестьян хоткеем** (`HotkeysScarLockVillagers`) не зависит от режима.
   В `workers_only` он забирает у ИИ крестьян, которых тот должен распределять, —
   при этом режиме держите его выключенным.
@@ -776,4 +776,4 @@ Lua Features Activate, оба Scar-лока Off, AUTO hybrid выкл. Fine-tune
 | `AOE4HOOK/docs/SCARTOOLKIT_FULL_PARITY.md`         | Соответствие STK ↔ вкладки оверлея          |
 
 
-Игра 16.3.11308.0. Схема snapshot **10**. Метка моста `16.3.11308.bridge12`. Lua 5.3 (LUA_RUNTIME.md).
+Игра 16.3.11308.0. Схема snapshot **10**. Метка моста `16.3.11308.bridge12`. Lua 5.3 ([LUA_RUNTIME.md](LUA_RUNTIME.md)).

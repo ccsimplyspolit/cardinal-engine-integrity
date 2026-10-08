@@ -1,0 +1,1325 @@
+{
+  "source": "K:/aoe4_dlc/dumps/RelicCardinal_26392_20260827_011254/00007ff7007b0000.RelicCardinal.exe.bin",
+  "sha256": "6d9aeb2af681a08213c0b2c2c3d343d001599bb6de96485da93807817e31d4b9",
+  "image_base": "0x7ff7007b0000",
+  "image_size": "0x8c3d000",
+  "layout": "mapped image; file offset equals RVA; PE .pdata bounds used where present",
+  "symbols": "names assigned by prior repository notes; bytes independently exported; not PDB names"
+}
+
+{"name": "GatheringEvaluate", "rva": "0x2d00120", "end_rva": "0x2d00872", "sha256": "52edb6801b0f2fe1899df089165229609bd599623070cfac0efc7f2097b62f5c", "bounds": "PE runtime function entry"}
+RVA 02D00120 VA 00007FF7034B0120  48 8b c4                        mov      rax, rsp
+RVA 02D00123 VA 00007FF7034B0123  48 89 58 18                     mov      qword ptr [rax + 0x18], rbx
+RVA 02D00127 VA 00007FF7034B0127  48 89 50 10                     mov      qword ptr [rax + 0x10], rdx
+RVA 02D0012B VA 00007FF7034B012B  48 89 48 08                     mov      qword ptr [rax + 8], rcx
+RVA 02D0012F VA 00007FF7034B012F  55                              push     rbp
+RVA 02D00130 VA 00007FF7034B0130  56                              push     rsi
+RVA 02D00131 VA 00007FF7034B0131  57                              push     rdi
+RVA 02D00132 VA 00007FF7034B0132  41 54                           push     r12
+RVA 02D00134 VA 00007FF7034B0134  41 55                           push     r13
+RVA 02D00136 VA 00007FF7034B0136  41 56                           push     r14
+RVA 02D00138 VA 00007FF7034B0138  41 57                           push     r15
+RVA 02D0013A VA 00007FF7034B013A  48 8d 68 a8                     lea      rbp, [rax - 0x58]
+RVA 02D0013E VA 00007FF7034B013E  48 81 ec 20 01 00 00            sub      rsp, 0x120
+RVA 02D00145 VA 00007FF7034B0145  0f 29 70 b8                     movaps   xmmword ptr [rax - 0x48], xmm6
+RVA 02D00149 VA 00007FF7034B0149  4c 8b e2                        mov      r12, rdx
+RVA 02D0014C VA 00007FF7034B014C  4c 8b e9                        mov      r13, rcx
+RVA 02D0014F VA 00007FF7034B014F  4c 8b 71 10                     mov      r14, qword ptr [rcx + 0x10]
+RVA 02D00153 VA 00007FF7034B0153  4c 89 75 90                     mov      qword ptr [rbp - 0x70], r14
+RVA 02D00157 VA 00007FF7034B0157  49 8b 51 08                     mov      rdx, qword ptr [r9 + 8]
+RVA 02D0015B VA 00007FF7034B015B  4d 8b 8e 18 10 00 00            mov      r9, qword ptr [r14 + 0x1018]
+RVA 02D00162 VA 00007FF7034B0162  48 8b c2                        mov      rax, rdx
+RVA 02D00165 VA 00007FF7034B0165  48 c1 e8 08                     shr      rax, 8
+RVA 02D00169 VA 00007FF7034B0169  44 0f b6 c0                     movzx    r8d, al
+RVA 02D0016D VA 00007FF7034B016D  0f b6 c2                        movzx    eax, dl
+RVA 02D00170 VA 00007FF7034B0170  48 b9 25 23 22 84 e4 9c f2 cb   movabs   rcx, 0xcbf29ce484222325
+RVA 02D0017A VA 00007FF7034B017A  48 33 c1                        xor      rax, rcx
+RVA 02D0017D VA 00007FF7034B017D  49 ba b3 01 00 00 00 01 00 00   movabs   r10, 0x100000001b3
+RVA 02D00187 VA 00007FF7034B0187  49 0f af c2                     imul     rax, r10
+RVA 02D0018B VA 00007FF7034B018B  4c 33 c0                        xor      r8, rax
+RVA 02D0018E VA 00007FF7034B018E  4d 0f af c2                     imul     r8, r10
+RVA 02D00192 VA 00007FF7034B0192  48 8b c2                        mov      rax, rdx
+RVA 02D00195 VA 00007FF7034B0195  48 c1 e8 10                     shr      rax, 0x10
+RVA 02D00199 VA 00007FF7034B0199  0f b6 c8                        movzx    ecx, al
+RVA 02D0019C VA 00007FF7034B019C  4c 33 c1                        xor      r8, rcx
+RVA 02D0019F VA 00007FF7034B019F  4d 0f af c2                     imul     r8, r10
+RVA 02D001A3 VA 00007FF7034B01A3  48 8b c2                        mov      rax, rdx
+RVA 02D001A6 VA 00007FF7034B01A6  48 c1 e8 18                     shr      rax, 0x18
+RVA 02D001AA VA 00007FF7034B01AA  0f b6 c8                        movzx    ecx, al
+RVA 02D001AD VA 00007FF7034B01AD  4c 33 c1                        xor      r8, rcx
+RVA 02D001B0 VA 00007FF7034B01B0  4d 0f af c2                     imul     r8, r10
+RVA 02D001B4 VA 00007FF7034B01B4  48 8b c2                        mov      rax, rdx
+RVA 02D001B7 VA 00007FF7034B01B7  48 c1 e8 20                     shr      rax, 0x20
+RVA 02D001BB VA 00007FF7034B01BB  0f b6 c8                        movzx    ecx, al
+RVA 02D001BE VA 00007FF7034B01BE  4c 33 c1                        xor      r8, rcx
+RVA 02D001C1 VA 00007FF7034B01C1  4d 0f af c2                     imul     r8, r10
+RVA 02D001C5 VA 00007FF7034B01C5  48 8b c2                        mov      rax, rdx
+RVA 02D001C8 VA 00007FF7034B01C8  48 c1 e8 28                     shr      rax, 0x28
+RVA 02D001CC VA 00007FF7034B01CC  0f b6 c8                        movzx    ecx, al
+RVA 02D001CF VA 00007FF7034B01CF  4c 33 c1                        xor      r8, rcx
+RVA 02D001D2 VA 00007FF7034B01D2  4d 0f af c2                     imul     r8, r10
+RVA 02D001D6 VA 00007FF7034B01D6  48 8b c2                        mov      rax, rdx
+RVA 02D001D9 VA 00007FF7034B01D9  48 c1 e8 30                     shr      rax, 0x30
+RVA 02D001DD VA 00007FF7034B01DD  0f b6 c8                        movzx    ecx, al
+RVA 02D001E0 VA 00007FF7034B01E0  4c 33 c1                        xor      r8, rcx
+RVA 02D001E3 VA 00007FF7034B01E3  4d 0f af c2                     imul     r8, r10
+RVA 02D001E7 VA 00007FF7034B01E7  48 8b c2                        mov      rax, rdx
+RVA 02D001EA VA 00007FF7034B01EA  48 c1 e8 38                     shr      rax, 0x38
+RVA 02D001EE VA 00007FF7034B01EE  4c 33 c0                        xor      r8, rax
+RVA 02D001F1 VA 00007FF7034B01F1  4d 0f af c2                     imul     r8, r10
+RVA 02D001F5 VA 00007FF7034B01F5  49 8b 89 b8 01 00 00            mov      rcx, qword ptr [r9 + 0x1b8]
+RVA 02D001FC VA 00007FF7034B01FC  49 23 c8                        and      rcx, r8
+RVA 02D001FF VA 00007FF7034B01FF  48 03 c9                        add      rcx, rcx
+RVA 02D00202 VA 00007FF7034B0202  4d 8b 91 a0 01 00 00            mov      r10, qword ptr [r9 + 0x1a0]
+RVA 02D00209 VA 00007FF7034B0209  49 8b 44 ca 08                  mov      rax, qword ptr [r10 + rcx*8 + 8]
+RVA 02D0020E VA 00007FF7034B020E  4d 8b 81 90 01 00 00            mov      r8, qword ptr [r9 + 0x190]
+RVA 02D00215 VA 00007FF7034B0215  49 3b c0                        cmp      rax, r8
+RVA 02D00218 VA 00007FF7034B0218  74 1b                           je       0x7ff7034b0235
+RVA 02D0021A VA 00007FF7034B021A  49 8b 0c ca                     mov      rcx, qword ptr [r10 + rcx*8]
+RVA 02D0021E VA 00007FF7034B021E  48 3b 50 10                     cmp      rdx, qword ptr [rax + 0x10]
+RVA 02D00222 VA 00007FF7034B0222  74 13                           je       0x7ff7034b0237
+RVA 02D00224 VA 00007FF7034B0224  48 3b c1                        cmp      rax, rcx
+RVA 02D00227 VA 00007FF7034B0227  74 0c                           je       0x7ff7034b0235
+RVA 02D00229 VA 00007FF7034B0229  48 8b 40 08                     mov      rax, qword ptr [rax + 8]
+RVA 02D0022D VA 00007FF7034B022D  48 3b 50 10                     cmp      rdx, qword ptr [rax + 0x10]
+RVA 02D00231 VA 00007FF7034B0231  75 f1                           jne      0x7ff7034b0224
+RVA 02D00233 VA 00007FF7034B0233  eb 02                           jmp      0x7ff7034b0237
+RVA 02D00235 VA 00007FF7034B0235  33 c0                           xor      eax, eax
+RVA 02D00237 VA 00007FF7034B0237  48 85 c0                        test     rax, rax
+RVA 02D0023A VA 00007FF7034B023A  49 0f 44 c0                     cmove    rax, r8
+RVA 02D0023E VA 00007FF7034B023E  48 8d 48 18                     lea      rcx, [rax + 0x18]
+RVA 02D00242 VA 00007FF7034B0242  33 db                           xor      ebx, ebx
+RVA 02D00244 VA 00007FF7034B0244  49 3b c0                        cmp      rax, r8
+RVA 02D00247 VA 00007FF7034B0247  48 0f 45 d9                     cmovne   rbx, rcx
+RVA 02D0024B VA 00007FF7034B024B  48 85 db                        test     rbx, rbx
+RVA 02D0024E VA 00007FF7034B024E  0f 84 25 05 00 00               je       0x7ff7034b0779
+RVA 02D00254 VA 00007FF7034B0254  48 8b 43 08                     mov      rax, qword ptr [rbx + 8]
+RVA 02D00258 VA 00007FF7034B0258  48 39 03                        cmp      qword ptr [rbx], rax
+RVA 02D0025B VA 00007FF7034B025B  0f 84 18 05 00 00               je       0x7ff7034b0779
+RVA 02D00261 VA 00007FF7034B0261  4d 8b be c8 0e 00 00            mov      r15, qword ptr [r14 + 0xec8]
+RVA 02D00268 VA 00007FF7034B0268  4c 89 7c 24 70                  mov      qword ptr [rsp + 0x70], r15
+RVA 02D0026D VA 00007FF7034B026D  4c 8d 45 a0                     lea      r8, [rbp - 0x60]
+RVA 02D00271 VA 00007FF7034B0271  49 8b cf                        mov      rcx, r15
+RVA 02D00274 VA 00007FF7034B0274  e8 87 c6 e1 ff                  call     0x7ff7032cc900
+RVA 02D00279 VA 00007FF7034B0279  84 c0                           test     al, al
+RVA 02D0027B VA 00007FF7034B027B  0f 84 f8 04 00 00               je       0x7ff7034b0779
+RVA 02D00281 VA 00007FF7034B0281  e8 6a 72 0f ff                  call     0x7ff7025a74f0
+RVA 02D00286 VA 00007FF7034B0286  48 8b f8                        mov      rdi, rax
+RVA 02D00289 VA 00007FF7034B0289  48 89 44 24 50                  mov      qword ptr [rsp + 0x50], rax
+RVA 02D0028E VA 00007FF7034B028E  0f 57 f6                        xorps    xmm6, xmm6
+RVA 02D00291 VA 00007FF7034B0291  c7 44 24 28 00 00 00 00         mov      dword ptr [rsp + 0x28], 0
+RVA 02D00299 VA 00007FF7034B0299  0f 57 c0                        xorps    xmm0, xmm0
+RVA 02D0029C VA 00007FF7034B029C  33 c0                           xor      eax, eax
+RVA 02D0029E VA 00007FF7034B029E  0f 11 44 24 2c                  movups   xmmword ptr [rsp + 0x2c], xmm0
+RVA 02D002A3 VA 00007FF7034B02A3  0f 11 44 24 3c                  movups   xmmword ptr [rsp + 0x3c], xmm0
+RVA 02D002A8 VA 00007FF7034B02A8  89 44 24 4c                     mov      dword ptr [rsp + 0x4c], eax
+RVA 02D002AC VA 00007FF7034B02AC  0f 10 44 24 28                  movups   xmm0, xmmword ptr [rsp + 0x28]
+RVA 02D002B1 VA 00007FF7034B02B1  0f 11 45 b0                     movups   xmmword ptr [rbp - 0x50], xmm0
+RVA 02D002B5 VA 00007FF7034B02B5  0f 10 4c 24 38                  movups   xmm1, xmmword ptr [rsp + 0x38]
+RVA 02D002BA VA 00007FF7034B02BA  0f 11 4d c0                     movups   xmmword ptr [rbp - 0x40], xmm1
+RVA 02D002BE VA 00007FF7034B02BE  f2 0f 10 44 24 48               movsd    xmm0, qword ptr [rsp + 0x48]
+RVA 02D002C4 VA 00007FF7034B02C4  f2 0f 11 45 d0                  movsd    qword ptr [rbp - 0x30], xmm0
+RVA 02D002C9 VA 00007FF7034B02C9  89 44 24 28                     mov      dword ptr [rsp + 0x28], eax
+RVA 02D002CD VA 00007FF7034B02CD  0f 57 c0                        xorps    xmm0, xmm0
+RVA 02D002D0 VA 00007FF7034B02D0  0f 11 44 24 2c                  movups   xmmword ptr [rsp + 0x2c], xmm0
+RVA 02D002D5 VA 00007FF7034B02D5  0f 11 44 24 3c                  movups   xmmword ptr [rsp + 0x3c], xmm0
+RVA 02D002DA VA 00007FF7034B02DA  89 44 24 4c                     mov      dword ptr [rsp + 0x4c], eax
+RVA 02D002DE VA 00007FF7034B02DE  0f 10 44 24 28                  movups   xmm0, xmmword ptr [rsp + 0x28]
+RVA 02D002E3 VA 00007FF7034B02E3  0f 11 45 d8                     movups   xmmword ptr [rbp - 0x28], xmm0
+RVA 02D002E7 VA 00007FF7034B02E7  0f 10 4c 24 38                  movups   xmm1, xmmword ptr [rsp + 0x38]
+RVA 02D002EC VA 00007FF7034B02EC  0f 11 4d e8                     movups   xmmword ptr [rbp - 0x18], xmm1
+RVA 02D002F0 VA 00007FF7034B02F0  f2 0f 10 44 24 48               movsd    xmm0, qword ptr [rsp + 0x48]
+RVA 02D002F6 VA 00007FF7034B02F6  f2 0f 11 45 f8                  movsd    qword ptr [rbp - 8], xmm0
+RVA 02D002FB VA 00007FF7034B02FB  48 8b 33                        mov      rsi, qword ptr [rbx]
+RVA 02D002FE VA 00007FF7034B02FE  48 89 75 98                     mov      qword ptr [rbp - 0x68], rsi
+RVA 02D00302 VA 00007FF7034B0302  48 8b 43 08                     mov      rax, qword ptr [rbx + 8]
+RVA 02D00306 VA 00007FF7034B0306  48 89 45 78                     mov      qword ptr [rbp + 0x78], rax
+RVA 02D0030A VA 00007FF7034B030A  48 3b f0                        cmp      rsi, rax
+RVA 02D0030D VA 00007FF7034B030D  0f 84 fa 03 00 00               je       0x7ff7034b070d
+RVA 02D00313 VA 00007FF7034B0313  48 8b f8                        mov      rdi, rax
+RVA 02D00316 VA 00007FF7034B0316  66 66 0f 1f 84 00 00 00 00 00   nop      word ptr [rax + rax]
+RVA 02D00320 VA 00007FF7034B0320  48 8b 36                        mov      rsi, qword ptr [rsi]
+RVA 02D00323 VA 00007FF7034B0323  48 85 f6                        test     rsi, rsi
+RVA 02D00326 VA 00007FF7034B0326  0f 84 c3 03 00 00               je       0x7ff7034b06ef
+RVA 02D0032C VA 00007FF7034B032C  81 7e 60 00 00 2e 00            cmp      dword ptr [rsi + 0x60], 0x2e0000
+RVA 02D00333 VA 00007FF7034B0333  0f 85 b6 03 00 00               jne      0x7ff7034b06ef
+RVA 02D00339 VA 00007FF7034B0339  48 c7 44 24 20 00 00 00 00      mov      qword ptr [rsp + 0x20], 0
+RVA 02D00342 VA 00007FF7034B0342  4c 8d 44 24 20                  lea      r8, [rsp + 0x20]
+RVA 02D00347 VA 00007FF7034B0347  48 8b d6                        mov      rdx, rsi
+RVA 02D0034A VA 00007FF7034B034A  49 8b cf                        mov      rcx, r15
+RVA 02D0034D VA 00007FF7034B034D  e8 5e d1 e1 ff                  call     0x7ff7032cd4b0
+RVA 02D00352 VA 00007FF7034B0352  84 c0                           test     al, al
+RVA 02D00354 VA 00007FF7034B0354  0f 84 95 03 00 00               je       0x7ff7034b06ef
+RVA 02D0035A VA 00007FF7034B035A  48 8b 44 24 20                  mov      rax, qword ptr [rsp + 0x20]
+RVA 02D0035F VA 00007FF7034B035F  80 b8 a9 02 00 00 00            cmp      byte ptr [rax + 0x2a9], 0
+RVA 02D00366 VA 00007FF7034B0366  0f 84 83 03 00 00               je       0x7ff7034b06ef
+RVA 02D0036C VA 00007FF7034B036C  0f 57 c0                        xorps    xmm0, xmm0
+RVA 02D0036F VA 00007FF7034B036F  f3 0f 7f 44 24 58               movdqu   xmmword ptr [rsp + 0x58], xmm0
+RVA 02D00375 VA 00007FF7034B0375  45 33 e4                        xor      r12d, r12d
+RVA 02D00378 VA 00007FF7034B0378  4c 89 65 88                     mov      qword ptr [rbp - 0x78], r12
+RVA 02D0037C VA 00007FF7034B037C  4c 89 64 24 68                  mov      qword ptr [rsp + 0x68], r12
+RVA 02D00381 VA 00007FF7034B0381  49 8b 9e c8 0e 00 00            mov      rbx, qword ptr [r14 + 0xec8]
+RVA 02D00388 VA 00007FF7034B0388  48 85 db                        test     rbx, rbx
+RVA 02D0038B VA 00007FF7034B038B  0f 84 95 00 00 00               je       0x7ff7034b0426
+RVA 02D00391 VA 00007FF7034B0391  4c 8b b3 18 02 00 00            mov      r14, qword ptr [rbx + 0x218]
+RVA 02D00398 VA 00007FF7034B0398  48 8b 9b 10 02 00 00            mov      rbx, qword ptr [rbx + 0x210]
+RVA 02D0039F VA 00007FF7034B039F  49 3b de                        cmp      rbx, r14
+RVA 02D003A2 VA 00007FF7034B03A2  0f 84 7e 00 00 00               je       0x7ff7034b0426
+RVA 02D003A8 VA 00007FF7034B03A8  4c 8b 6c 24 60                  mov      r13, qword ptr [rsp + 0x60]
+RVA 02D003AD VA 00007FF7034B03AD  0f 1f 00                        nop      dword ptr [rax]
+RVA 02D003B0 VA 00007FF7034B03B0  48 8b 3b                        mov      rdi, qword ptr [rbx]
+RVA 02D003B3 VA 00007FF7034B03B3  48 8b cf                        mov      rcx, rdi
+RVA 02D003B6 VA 00007FF7034B03B6  e8 85 19 e9 ff                  call     0x7ff703341d40
+RVA 02D003BB VA 00007FF7034B03BB  48 85 c0                        test     rax, rax
+RVA 02D003BE VA 00007FF7034B03BE  74 55                           je       0x7ff7034b0415
+RVA 02D003C0 VA 00007FF7034B03C0  48 8d 55 00                     lea      rdx, [rbp]
+RVA 02D003C4 VA 00007FF7034B03C4  48 8b c8                        mov      rcx, rax
+RVA 02D003C7 VA 00007FF7034B03C7  e8 e4 bd 6f fd                  call     0x7ff700bac1b0
+RVA 02D003CC VA 00007FF7034B03CC  8b 08                           mov      ecx, dword ptr [rax]
+RVA 02D003CE VA 00007FF7034B03CE  39 8f 58 03 00 00               cmp      dword ptr [rdi + 0x358], ecx
+RVA 02D003D4 VA 00007FF7034B03D4  75 3f                           jne      0x7ff7034b0415
+RVA 02D003D6 VA 00007FF7034B03D6  48 8b 0b                        mov      rcx, qword ptr [rbx]
+RVA 02D003D9 VA 00007FF7034B03D9  e8 62 19 e9 ff                  call     0x7ff703341d40
+RVA 02D003DE VA 00007FF7034B03DE  48 39 70 38                     cmp      qword ptr [rax + 0x38], rsi
+RVA 02D003E2 VA 00007FF7034B03E2  75 31                           jne      0x7ff7034b0415
+RVA 02D003E4 VA 00007FF7034B03E4  4d 3b ec                        cmp      r13, r12
+RVA 02D003E7 VA 00007FF7034B03E7  74 12                           je       0x7ff7034b03fb
+RVA 02D003E9 VA 00007FF7034B03E9  48 8b 03                        mov      rax, qword ptr [rbx]
+RVA 02D003EC VA 00007FF7034B03EC  49 89 45 00                     mov      qword ptr [r13], rax
+RVA 02D003F0 VA 00007FF7034B03F0  49 83 c5 08                     add      r13, 8
+RVA 02D003F4 VA 00007FF7034B03F4  4c 89 6c 24 60                  mov      qword ptr [rsp + 0x60], r13
+RVA 02D003F9 VA 00007FF7034B03F9  eb 1a                           jmp      0x7ff7034b0415
+RVA 02D003FB VA 00007FF7034B03FB  4c 8b c3                        mov      r8, rbx
+RVA 02D003FE VA 00007FF7034B03FE  49 8b d5                        mov      rdx, r13
+RVA 02D00401 VA 00007FF7034B0401  48 8d 4c 24 58                  lea      rcx, [rsp + 0x58]
+RVA 02D00406 VA 00007FF7034B0406  e8 b5 07 d8 ff                  call     0x7ff703230bc0
+RVA 02D0040B VA 00007FF7034B040B  4c 8b 64 24 68                  mov      r12, qword ptr [rsp + 0x68]
+RVA 02D00410 VA 00007FF7034B0410  4c 8b 6c 24 60                  mov      r13, qword ptr [rsp + 0x60]
+RVA 02D00415 VA 00007FF7034B0415  48 83 c3 08                     add      rbx, 8
+RVA 02D00419 VA 00007FF7034B0419  49 3b de                        cmp      rbx, r14
+RVA 02D0041C VA 00007FF7034B041C  75 92                           jne      0x7ff7034b03b0
+RVA 02D0041E VA 00007FF7034B041E  4c 89 65 88                     mov      qword ptr [rbp - 0x78], r12
+RVA 02D00422 VA 00007FF7034B0422  4c 8b 6d 60                     mov      r13, qword ptr [rbp + 0x60]
+RVA 02D00426 VA 00007FF7034B0426  48 8b 4c 24 58                  mov      rcx, qword ptr [rsp + 0x58]
+RVA 02D0042B VA 00007FF7034B042B  48 89 4d a8                     mov      qword ptr [rbp - 0x58], rcx
+RVA 02D0042F VA 00007FF7034B042F  48 8b c1                        mov      rax, rcx
+RVA 02D00432 VA 00007FF7034B0432  48 89 4d 80                     mov      qword ptr [rbp - 0x80], rcx
+RVA 02D00436 VA 00007FF7034B0436  48 3b 4c 24 60                  cmp      rcx, qword ptr [rsp + 0x60]
+RVA 02D0043B VA 00007FF7034B043B  0f 84 63 02 00 00               je       0x7ff7034b06a4
+RVA 02D00441 VA 00007FF7034B0441  48 8b 08                        mov      rcx, qword ptr [rax]
+RVA 02D00444 VA 00007FF7034B0444  e8 f7 18 e9 ff                  call     0x7ff703341d40
+RVA 02D00449 VA 00007FF7034B0449  4c 8b c0                        mov      r8, rax
+RVA 02D0044C VA 00007FF7034B044C  48 85 c0                        test     rax, rax
+RVA 02D0044F VA 00007FF7034B044F  0f 84 34 02 00 00               je       0x7ff7034b0689
+RVA 02D00455 VA 00007FF7034B0455  8b 90 50 01 00 00               mov      edx, dword ptr [rax + 0x150]
+RVA 02D0045B VA 00007FF7034B045B  41 ba 80 00 00 00               mov      r10d, 0x80
+RVA 02D00461 VA 00007FF7034B0461  4c 89 54 24 78                  mov      qword ptr [rsp + 0x78], r10
+RVA 02D00466 VA 00007FF7034B0466  4c 8d 1d b3 85 74 05            lea      r11, [rip + 0x57485b3]
+RVA 02D0046D VA 00007FF7034B046D  83 fa ff                        cmp      edx, -1
+RVA 02D00470 VA 00007FF7034B0470  75 09                           jne      0x7ff7034b047b
+RVA 02D00472 VA 00007FF7034B0472  45 33 c9                        xor      r9d, r9d
+RVA 02D00475 VA 00007FF7034B0475  33 db                           xor      ebx, ebx
+RVA 02D00477 VA 00007FF7034B0477  33 c9                           xor      ecx, ecx
+RVA 02D00479 VA 00007FF7034B0479  eb 36                           jmp      0x7ff7034b04b1
+RVA 02D0047B VA 00007FF7034B047B  65 48 8b 04 25 58 00 00 00      mov      rax, qword ptr gs:[0x58]
+RVA 02D00484 VA 00007FF7034B0484  48 8b 08                        mov      rcx, qword ptr [rax]
+RVA 02D00487 VA 00007FF7034B0487  41 8b 04 0a                     mov      eax, dword ptr [r10 + rcx]
+RVA 02D0048B VA 00007FF7034B048B  4d 8b 0c c3                     mov      r9, qword ptr [r11 + rax*8]
+RVA 02D0048F VA 00007FF7034B048F  4c 03 ca                        add      r9, rdx
+RVA 02D00492 VA 00007FF7034B0492  4c 89 54 24 78                  mov      qword ptr [rsp + 0x78], r10
+RVA 02D00497 VA 00007FF7034B0497  49 8b d9                        mov      rbx, r9
+RVA 02D0049A VA 00007FF7034B049A  65 48 8b 04 25 58 00 00 00      mov      rax, qword ptr gs:[0x58]
+RVA 02D004A3 VA 00007FF7034B04A3  48 8b 08                        mov      rcx, qword ptr [rax]
+RVA 02D004A6 VA 00007FF7034B04A6  41 8b 04 0a                     mov      eax, dword ptr [r10 + rcx]
+RVA 02D004AA VA 00007FF7034B04AA  49 8b 0c c3                     mov      rcx, qword ptr [r11 + rax*8]
+RVA 02D004AE VA 00007FF7034B04AE  48 03 ca                        add      rcx, rdx
+RVA 02D004B1 VA 00007FF7034B04B1  41 8b 80 54 01 00 00            mov      eax, dword ptr [r8 + 0x154]
+RVA 02D004B8 VA 00007FF7034B04B8  48 8d 3c 81                     lea      rdi, [rcx + rax*4]
+RVA 02D004BC VA 00007FF7034B04BC  4c 3b cf                        cmp      r9, rdi
+RVA 02D004BF VA 00007FF7034B04BF  0f 84 c4 01 00 00               je       0x7ff7034b0689
+RVA 02D004C5 VA 00007FF7034B04C5  8b 13                           mov      edx, dword ptr [rbx]
+RVA 02D004C7 VA 00007FF7034B04C7  83 fa ff                        cmp      edx, -1
+RVA 02D004CA VA 00007FF7034B04CA  75 04                           jne      0x7ff7034b04d0
+RVA 02D004CC VA 00007FF7034B04CC  33 d2                           xor      edx, edx
+RVA 02D004CE VA 00007FF7034B04CE  eb 14                           jmp      0x7ff7034b04e4
+RVA 02D004D0 VA 00007FF7034B04D0  65 48 8b 04 25 58 00 00 00      mov      rax, qword ptr gs:[0x58]
+RVA 02D004D9 VA 00007FF7034B04D9  48 8b 08                        mov      rcx, qword ptr [rax]
+RVA 02D004DC VA 00007FF7034B04DC  41 8b 04 0a                     mov      eax, dword ptr [r10 + rcx]
+RVA 02D004E0 VA 00007FF7034B04E0  49 03 14 c3                     add      rdx, qword ptr [r11 + rax*8]
+RVA 02D004E4 VA 00007FF7034B04E4  48 c7 44 24 20 00 00 00 00      mov      qword ptr [rsp + 0x20], 0
+RVA 02D004ED VA 00007FF7034B04ED  4c 8d 44 24 20                  lea      r8, [rsp + 0x20]
+RVA 02D004F2 VA 00007FF7034B04F2  48 8b 52 38                     mov      rdx, qword ptr [rdx + 0x38]
+RVA 02D004F6 VA 00007FF7034B04F6  49 8b cf                        mov      rcx, r15
+RVA 02D004F9 VA 00007FF7034B04F9  e8 62 cc e1 ff                  call     0x7ff7032cd160
+RVA 02D004FE VA 00007FF7034B04FE  84 c0                           test     al, al
+RVA 02D00500 VA 00007FF7034B0500  0f 84 6a 01 00 00               je       0x7ff7034b0670
+RVA 02D00506 VA 00007FF7034B0506  4c 8b 64 24 20                  mov      r12, qword ptr [rsp + 0x20]
+RVA 02D0050B VA 00007FF7034B050B  49 81 c4 20 01 00 00            add      r12, 0x120
+RVA 02D00512 VA 00007FF7034B0512  45 33 ff                        xor      r15d, r15d
+RVA 02D00515 VA 00007FF7034B0515  4c 8b 74 24 50                  mov      r14, qword ptr [rsp + 0x50]
+RVA 02D0051A VA 00007FF7034B051A  4d 85 f6                        test     r14, r14
+RVA 02D0051D VA 00007FF7034B051D  0f 84 48 01 00 00               je       0x7ff7034b066b
+RVA 02D00523 VA 00007FF7034B0523  41 0f 2f 74 24 18               comiss   xmm6, xmmword ptr [r12 + 0x18]
+RVA 02D00529 VA 00007FF7034B0529  0f 83 2d 01 00 00               jae      0x7ff7034b065c
+RVA 02D0052F VA 00007FF7034B052F  4d 8b 0c 24                     mov      r9, qword ptr [r12]
+RVA 02D00533 VA 00007FF7034B0533  49 8b c1                        mov      rax, r9
+RVA 02D00536 VA 00007FF7034B0536  49 8b 74 24 08                  mov      rsi, qword ptr [r12 + 8]
+RVA 02D0053B VA 00007FF7034B053B  4c 3b ce                        cmp      r9, rsi
+RVA 02D0053E VA 00007FF7034B053E  0f 84 18 01 00 00               je       0x7ff7034b065c
+RVA 02D00544 VA 00007FF7034B0544  44 39 78 04                     cmp      dword ptr [rax + 4], r15d
+RVA 02D00548 VA 00007FF7034B0548  75 14                           jne      0x7ff7034b055e
+RVA 02D0054A VA 00007FF7034B054A  f3 0f 10 40 08                  movss    xmm0, dword ptr [rax + 8]
+RVA 02D0054F VA 00007FF7034B054F  0f 2f c6                        comiss   xmm0, xmm6
+RVA 02D00552 VA 00007FF7034B0552  76 0a                           jbe      0x7ff7034b055e
+RVA 02D00554 VA 00007FF7034B0554  f3 0f 10 40 0c                  movss    xmm0, dword ptr [rax + 0xc]
+RVA 02D00559 VA 00007FF7034B0559  0f 2f c6                        comiss   xmm0, xmm6
+RVA 02D0055C VA 00007FF7034B055C  77 0e                           ja       0x7ff7034b056c
+RVA 02D0055E VA 00007FF7034B055E  48 83 c0 10                     add      rax, 0x10
+RVA 02D00562 VA 00007FF7034B0562  48 3b c6                        cmp      rax, rsi
+RVA 02D00565 VA 00007FF7034B0565  75 dd                           jne      0x7ff7034b0544
+RVA 02D00567 VA 00007FF7034B0567  e9 f0 00 00 00                  jmp      0x7ff7034b065c
+RVA 02D0056C VA 00007FF7034B056C  f3 41 0f 10 55 1c               movss    xmm2, dword ptr [r13 + 0x1c]
+RVA 02D00572 VA 00007FF7034B0572  41 8b d7                        mov      edx, r15d
+RVA 02D00575 VA 00007FF7034B0575  49 8b cc                        mov      rcx, r12
+RVA 02D00578 VA 00007FF7034B0578  e8 43 10 f7 ff                  call     0x7ff7034215c0
+RVA 02D0057D VA 00007FF7034B057D  f3 42 0f 58 44 bd b0            addss    xmm0, dword ptr [rbp + r15*4 - 0x50]
+RVA 02D00584 VA 00007FF7034B0584  f3 42 0f 11 44 bd b0            movss    dword ptr [rbp + r15*4 - 0x50], xmm0
+RVA 02D0058B VA 00007FF7034B058B  0f 57 c0                        xorps    xmm0, xmm0
+RVA 02D0058E VA 00007FF7034B058E  f3 0f 7f 44 24 28               movdqu   xmmword ptr [rsp + 0x28], xmm0
+RVA 02D00594 VA 00007FF7034B0594  48 c7 44 24 38 00 00 00 00      mov      qword ptr [rsp + 0x38], 0
+RVA 02D0059D VA 00007FF7034B059D  49 2b f1                        sub      rsi, r9
+RVA 02D005A0 VA 00007FF7034B05A0  48 c1 fe 04                     sar      rsi, 4
+RVA 02D005A4 VA 00007FF7034B05A4  48 85 f6                        test     rsi, rsi
+RVA 02D005A7 VA 00007FF7034B05A7  74 58                           je       0x7ff7034b0601
+RVA 02D005A9 VA 00007FF7034B05A9  48 b8 ff ff ff ff ff ff ff 0f   movabs   rax, 0xfffffffffffffff
+RVA 02D005B3 VA 00007FF7034B05B3  48 3b f0                        cmp      rsi, rax
+RVA 02D005B6 VA 00007FF7034B05B6  0f 87 b0 02 00 00               ja       0x7ff7034b086c
+RVA 02D005BC VA 00007FF7034B05BC  48 c1 e6 04                     shl      rsi, 4
+RVA 02D005C0 VA 00007FF7034B05C0  48 8b ce                        mov      rcx, rsi
+RVA 02D005C3 VA 00007FF7034B05C3  e8 38 fe 6c fd                  call     0x7ff700b80400
+RVA 02D005C8 VA 00007FF7034B05C8  4c 8b f0                        mov      r14, rax
+RVA 02D005CB VA 00007FF7034B05CB  48 89 44 24 28                  mov      qword ptr [rsp + 0x28], rax
+RVA 02D005D0 VA 00007FF7034B05D0  48 8d 0c 06                     lea      rcx, [rsi + rax]
+RVA 02D005D4 VA 00007FF7034B05D4  48 89 4c 24 38                  mov      qword ptr [rsp + 0x38], rcx
+RVA 02D005D9 VA 00007FF7034B05D9  49 8b 74 24 08                  mov      rsi, qword ptr [r12 + 8]
+RVA 02D005DE VA 00007FF7034B05DE  49 8b 14 24                     mov      rdx, qword ptr [r12]
+RVA 02D005E2 VA 00007FF7034B05E2  48 2b f2                        sub      rsi, rdx
+RVA 02D005E5 VA 00007FF7034B05E5  4c 8b c6                        mov      r8, rsi
+RVA 02D005E8 VA 00007FF7034B05E8  48 8b c8                        mov      rcx, rax
+RVA 02D005EB VA 00007FF7034B05EB  e8 34 32 2b 02                  call     0x7ff705763824
+RVA 02D005F0 VA 00007FF7034B05F0  48 83 e6 f0                     and      rsi, 0xfffffffffffffff0
+RVA 02D005F4 VA 00007FF7034B05F4  49 03 f6                        add      rsi, r14
+RVA 02D005F7 VA 00007FF7034B05F7  48 89 74 24 30                  mov      qword ptr [rsp + 0x30], rsi
+RVA 02D005FC VA 00007FF7034B05FC  4c 8b 74 24 50                  mov      r14, qword ptr [rsp + 0x50]
+RVA 02D00601 VA 00007FF7034B0601  f3 41 0f 10 44 24 18            movss    xmm0, dword ptr [r12 + 0x18]
+RVA 02D00608 VA 00007FF7034B0608  f3 0f 11 44 24 40               movss    dword ptr [rsp + 0x40], xmm0
+RVA 02D0060E VA 00007FF7034B060E  48 8b 45 a0                     mov      rax, qword ptr [rbp - 0x60]
+RVA 02D00612 VA 00007FF7034B0612  48 8d 90 90 01 00 00            lea      rdx, [rax + 0x190]
+RVA 02D00619 VA 00007FF7034B0619  48 8d 88 50 01 00 00            lea      rcx, [rax + 0x150]
+RVA 02D00620 VA 00007FF7034B0620  4c 8d 44 24 28                  lea      r8, [rsp + 0x28]
+RVA 02D00625 VA 00007FF7034B0625  e8 36 f6 ff ff                  call     0x7ff7034afc60
+RVA 02D0062A VA 00007FF7034B062A  48 8b 45 60                     mov      rax, qword ptr [rbp + 0x60]
+RVA 02D0062E VA 00007FF7034B062E  f3 0f 10 50 1c                  movss    xmm2, dword ptr [rax + 0x1c]
+RVA 02D00633 VA 00007FF7034B0633  41 8b d7                        mov      edx, r15d
+RVA 02D00636 VA 00007FF7034B0636  48 8d 4c 24 28                  lea      rcx, [rsp + 0x28]
+RVA 02D0063B VA 00007FF7034B063B  e8 80 0f f7 ff                  call     0x7ff7034215c0
+RVA 02D00640 VA 00007FF7034B0640  f3 42 0f 58 44 bd d8            addss    xmm0, dword ptr [rbp + r15*4 - 0x28]
+RVA 02D00647 VA 00007FF7034B0647  f3 42 0f 11 44 bd d8            movss    dword ptr [rbp + r15*4 - 0x28], xmm0
+RVA 02D0064E VA 00007FF7034B064E  48 8d 4c 24 28                  lea      rcx, [rsp + 0x28]
+RVA 02D00653 VA 00007FF7034B0653  e8 48 fe db ff                  call     0x7ff7032704a0
+RVA 02D00658 VA 00007FF7034B0658  4c 8b 6d 60                     mov      r13, qword ptr [rbp + 0x60]
+RVA 02D0065C VA 00007FF7034B065C  41 ff c7                        inc      r15d
+RVA 02D0065F VA 00007FF7034B065F  41 8b c7                        mov      eax, r15d
+RVA 02D00662 VA 00007FF7034B0662  49 3b c6                        cmp      rax, r14
+RVA 02D00665 VA 00007FF7034B0665  0f 82 b8 fe ff ff               jb       0x7ff7034b0523
+RVA 02D0066B VA 00007FF7034B066B  4c 8b 7c 24 70                  mov      r15, qword ptr [rsp + 0x70]
+RVA 02D00670 VA 00007FF7034B0670  48 83 c3 04                     add      rbx, 4
+RVA 02D00674 VA 00007FF7034B0674  48 3b df                        cmp      rbx, rdi
+RVA 02D00677 VA 00007FF7034B0677  4c 8b 54 24 78                  mov      r10, qword ptr [rsp + 0x78]
+RVA 02D0067C VA 00007FF7034B067C  4c 8d 1d 9d 83 74 05            lea      r11, [rip + 0x574839d]
+RVA 02D00683 VA 00007FF7034B0683  0f 85 3c fe ff ff               jne      0x7ff7034b04c5
+RVA 02D00689 VA 00007FF7034B0689  48 8b 45 80                     mov      rax, qword ptr [rbp - 0x80]
+RVA 02D0068D VA 00007FF7034B068D  48 83 c0 08                     add      rax, 8
+RVA 02D00691 VA 00007FF7034B0691  48 89 45 80                     mov      qword ptr [rbp - 0x80], rax
+RVA 02D00695 VA 00007FF7034B0695  48 3b 44 24 60                  cmp      rax, qword ptr [rsp + 0x60]
+RVA 02D0069A VA 00007FF7034B069A  0f 85 a1 fd ff ff               jne      0x7ff7034b0441
+RVA 02D006A0 VA 00007FF7034B06A0  48 8b 4d a8                     mov      rcx, qword ptr [rbp - 0x58]
+RVA 02D006A4 VA 00007FF7034B06A4  48 85 c9                        test     rcx, rcx
+RVA 02D006A7 VA 00007FF7034B06A7  74 3e                           je       0x7ff7034b06e7
+RVA 02D006A9 VA 00007FF7034B06A9  48 8b 55 88                     mov      rdx, qword ptr [rbp - 0x78]
+RVA 02D006AD VA 00007FF7034B06AD  48 2b d1                        sub      rdx, rcx
+RVA 02D006B0 VA 00007FF7034B06B0  48 c1 fa 03                     sar      rdx, 3
+RVA 02D006B4 VA 00007FF7034B06B4  48 8d 14 d5 00 00 00 00         lea      rdx, [rdx*8]
+RVA 02D006BC VA 00007FF7034B06BC  48 8b c1                        mov      rax, rcx
+RVA 02D006BF VA 00007FF7034B06BF  48 81 fa 00 10 00 00            cmp      rdx, 0x1000
+RVA 02D006C6 VA 00007FF7034B06C6  72 19                           jb       0x7ff7034b06e1
+RVA 02D006C8 VA 00007FF7034B06C8  48 83 c2 27                     add      rdx, 0x27
+RVA 02D006CC VA 00007FF7034B06CC  48 8b 49 f8                     mov      rcx, qword ptr [rcx - 8]
+RVA 02D006D0 VA 00007FF7034B06D0  48 2b c1                        sub      rax, rcx
+RVA 02D006D3 VA 00007FF7034B06D3  48 83 c0 f8                     add      rax, -8
+RVA 02D006D7 VA 00007FF7034B06D7  48 83 f8 1f                     cmp      rax, 0x1f
+RVA 02D006DB VA 00007FF7034B06DB  0f 87 c6 00 00 00               ja       0x7ff7034b07a7
+RVA 02D006E1 VA 00007FF7034B06E1  e8 ca f9 2a 02                  call     0x7ff7057600b0
+RVA 02D006E6 VA 00007FF7034B06E6  90                              nop      
+RVA 02D006E7 VA 00007FF7034B06E7  48 8b 7d 78                     mov      rdi, qword ptr [rbp + 0x78]
+RVA 02D006EB VA 00007FF7034B06EB  4c 8b 75 90                     mov      r14, qword ptr [rbp - 0x70]
+RVA 02D006EF VA 00007FF7034B06EF  48 8b 75 98                     mov      rsi, qword ptr [rbp - 0x68]
+RVA 02D006F3 VA 00007FF7034B06F3  48 83 c6 08                     add      rsi, 8
+RVA 02D006F7 VA 00007FF7034B06F7  48 89 75 98                     mov      qword ptr [rbp - 0x68], rsi
+RVA 02D006FB VA 00007FF7034B06FB  48 3b f7                        cmp      rsi, rdi
+RVA 02D006FE VA 00007FF7034B06FE  0f 85 1c fc ff ff               jne      0x7ff7034b0320
+RVA 02D00704 VA 00007FF7034B0704  48 8b 7c 24 50                  mov      rdi, qword ptr [rsp + 0x50]
+RVA 02D00709 VA 00007FF7034B0709  4c 8b 65 68                     mov      r12, qword ptr [rbp + 0x68]
+RVA 02D0070D VA 00007FF7034B070D  e8 6e 42 92 00                  call     0x7ff703dd4980
+RVA 02D00712 VA 00007FF7034B0712  4c 8d 45 b0                     lea      r8, [rbp - 0x50]
+RVA 02D00716 VA 00007FF7034B0716  48 8b 88 f0 02 00 00            mov      rcx, qword ptr [rax + 0x2f0]
+RVA 02D0071D VA 00007FF7034B071D  48 2b 88 e8 02 00 00            sub      rcx, qword ptr [rax + 0x2e8]
+RVA 02D00724 VA 00007FF7034B0724  48 b8 ab aa aa aa aa aa aa 2a   movabs   rax, 0x2aaaaaaaaaaaaaab
+RVA 02D0072E VA 00007FF7034B072E  48 f7 e9                        imul     rcx
+RVA 02D00731 VA 00007FF7034B0731  48 c1 fa 03                     sar      rdx, 3
+RVA 02D00735 VA 00007FF7034B0735  48 8b c2                        mov      rax, rdx
+RVA 02D00738 VA 00007FF7034B0738  48 c1 e8 3f                     shr      rax, 0x3f
+RVA 02D0073C VA 00007FF7034B073C  48 03 d0                        add      rdx, rax
+RVA 02D0073F VA 00007FF7034B073F  48 8d 4d b0                     lea      rcx, [rbp - 0x50]
+RVA 02D00743 VA 00007FF7034B0743  48 8d 0c 91                     lea      rcx, [rcx + rdx*4]
+RVA 02D00747 VA 00007FF7034B0747  48 8d 45 b0                     lea      rax, [rbp - 0x50]
+RVA 02D0074B VA 00007FF7034B074B  48 3b c1                        cmp      rax, rcx
+RVA 02D0074E VA 00007FF7034B074E  74 29                           je       0x7ff7034b0779
+RVA 02D00750 VA 00007FF7034B0750  f3 0f 10 0d 60 d9 91 03         movss    xmm1, dword ptr [rip + 0x391d960]
+RVA 02D00758 VA 00007FF7034B0758  0f 1f 84 00 00 00 00 00         nop      dword ptr [rax + rax]
+RVA 02D00760 VA 00007FF7034B0760  41 8b 00                        mov      eax, dword ptr [r8]
+RVA 02D00763 VA 00007FF7034B0763  0f ba f0 1f                     btr      eax, 0x1f
+RVA 02D00767 VA 00007FF7034B0767  66 0f 6e c0                     movd     xmm0, eax
+RVA 02D0076B VA 00007FF7034B076B  0f 2f c8                        comiss   xmm1, xmm0
+RVA 02D0076E VA 00007FF7034B076E  72 3e                           jb       0x7ff7034b07ae
+RVA 02D00770 VA 00007FF7034B0770  49 83 c0 04                     add      r8, 4
+RVA 02D00774 VA 00007FF7034B0774  4c 3b c1                        cmp      r8, rcx
+RVA 02D00777 VA 00007FF7034B0777  75 e7                           jne      0x7ff7034b0760
+RVA 02D00779 VA 00007FF7034B0779  41 c7 04 24 00 00 00 00         mov      dword ptr [r12], 0
+RVA 02D00781 VA 00007FF7034B0781  49 8b c4                        mov      rax, r12
+RVA 02D00784 VA 00007FF7034B0784  48 8b 9c 24 70 01 00 00         mov      rbx, qword ptr [rsp + 0x170]
+RVA 02D0078C VA 00007FF7034B078C  0f 28 b4 24 10 01 00 00         movaps   xmm6, xmmword ptr [rsp + 0x110]
+RVA 02D00794 VA 00007FF7034B0794  48 81 c4 20 01 00 00            add      rsp, 0x120
+RVA 02D0079B VA 00007FF7034B079B  41 5f                           pop      r15
+RVA 02D0079D VA 00007FF7034B079D  41 5e                           pop      r14
+RVA 02D0079F VA 00007FF7034B079F  41 5d                           pop      r13
+RVA 02D007A1 VA 00007FF7034B07A1  41 5c                           pop      r12
+RVA 02D007A3 VA 00007FF7034B07A3  5f                              pop      rdi
+RVA 02D007A4 VA 00007FF7034B07A4  5e                              pop      rsi
+RVA 02D007A5 VA 00007FF7034B07A5  5d                              pop      rbp
+RVA 02D007A6 VA 00007FF7034B07A6  c3                              ret      
+RVA 02D007A7 VA 00007FF7034B07A7  ff 15 73 f9 9d 02               call     qword ptr [rip + 0x29df973]
+RVA 02D007AD VA 00007FF7034B07AD  90                              nop      
+RVA 02D007AE VA 00007FF7034B07AE  41 0f 10 86 a0 12 00 00         movups   xmm0, xmmword ptr [r14 + 0x12a0]
+RVA 02D007B6 VA 00007FF7034B07B6  0f 11 44 24 28                  movups   xmmword ptr [rsp + 0x28], xmm0
+RVA 02D007BB VA 00007FF7034B07BB  41 0f 10 8e b0 12 00 00         movups   xmm1, xmmword ptr [r14 + 0x12b0]
+RVA 02D007C3 VA 00007FF7034B07C3  0f 11 4c 24 38                  movups   xmmword ptr [rsp + 0x38], xmm1
+RVA 02D007C8 VA 00007FF7034B07C8  f2 41 0f 10 86 c0 12 00 00      movsd    xmm0, qword ptr [r14 + 0x12c0]
+RVA 02D007D1 VA 00007FF7034B07D1  f2 0f 11 44 24 48               movsd    qword ptr [rsp + 0x48], xmm0
+RVA 02D007D7 VA 00007FF7034B07D7  49 8b 96 88 10 00 00            mov      rdx, qword ptr [r14 + 0x1088]
+RVA 02D007DE VA 00007FF7034B07DE  48 81 c2 d0 00 00 00            add      rdx, 0xd0
+RVA 02D007E5 VA 00007FF7034B07E5  48 8d 4c 24 28                  lea      rcx, [rsp + 0x28]
+RVA 02D007EA VA 00007FF7034B07EA  e8 71 77 0f ff                  call     0x7ff7025a7f60
+RVA 02D007EF VA 00007FF7034B07EF  0f 28 ce                        movaps   xmm1, xmm6
+RVA 02D007F2 VA 00007FF7034B07F2  f3 0f 11 75 60                  movss    dword ptr [rbp + 0x60], xmm6
+RVA 02D007F7 VA 00007FF7034B07F7  33 c9                           xor      ecx, ecx
+RVA 02D007F9 VA 00007FF7034B07F9  48 85 ff                        test     rdi, rdi
+RVA 02D007FC VA 00007FF7034B07FC  74 48                           je       0x7ff7034b0846
+RVA 02D007FE VA 00007FF7034B07FE  33 c0                           xor      eax, eax
+RVA 02D00800 VA 00007FF7034B0800  f3 0f 10 54 85 b0               movss    xmm2, dword ptr [rbp + rax*4 - 0x50]
+RVA 02D00806 VA 00007FF7034B0806  0f 2f d6                        comiss   xmm2, xmm6
+RVA 02D00809 VA 00007FF7034B0809  76 32                           jbe      0x7ff7034b083d
+RVA 02D0080B VA 00007FF7034B080B  f3 0f 10 44 84 28               movss    xmm0, dword ptr [rsp + rax*4 + 0x28]
+RVA 02D00811 VA 00007FF7034B0811  0f 2f c6                        comiss   xmm0, xmm6
+RVA 02D00814 VA 00007FF7034B0814  76 27                           jbe      0x7ff7034b083d
+RVA 02D00816 VA 00007FF7034B0816  f3 0f 10 44 85 d8               movss    xmm0, dword ptr [rbp + rax*4 - 0x28]
+RVA 02D0081C VA 00007FF7034B081C  f3 0f 5e c2                     divss    xmm0, xmm2
+RVA 02D00820 VA 00007FF7034B0820  f3 0f 11 45 78                  movss    dword ptr [rbp + 0x78], xmm0
+RVA 02D00825 VA 00007FF7034B0825  48 8d 45 78                     lea      rax, [rbp + 0x78]
+RVA 02D00829 VA 00007FF7034B0829  48 8d 55 60                     lea      rdx, [rbp + 0x60]
+RVA 02D0082D VA 00007FF7034B082D  0f 2f c1                        comiss   xmm0, xmm1
+RVA 02D00830 VA 00007FF7034B0830  48 0f 46 c2                     cmovbe   rax, rdx
+RVA 02D00834 VA 00007FF7034B0834  f3 0f 10 08                     movss    xmm1, dword ptr [rax]
+RVA 02D00838 VA 00007FF7034B0838  f3 0f 11 4d 60                  movss    dword ptr [rbp + 0x60], xmm1
+RVA 02D0083D VA 00007FF7034B083D  ff c1                           inc      ecx
+RVA 02D0083F VA 00007FF7034B083F  8b c1                           mov      eax, ecx
+RVA 02D00841 VA 00007FF7034B0841  48 3b c7                        cmp      rax, rdi
+RVA 02D00844 VA 00007FF7034B0844  72 ba                           jb       0x7ff7034b0800
+RVA 02D00846 VA 00007FF7034B0846  f3 0f 10 05 7e db 91 03         movss    xmm0, dword ptr [rip + 0x391db7e]
+RVA 02D0084E VA 00007FF7034B084E  0f 2f c1                        comiss   xmm0, xmm1
+RVA 02D00851 VA 00007FF7034B0851  0f 83 22 ff ff ff               jae      0x7ff7034b0779
+RVA 02D00857 VA 00007FF7034B0857  f3 0f 5c c8                     subss    xmm1, xmm0
+RVA 02D0085B VA 00007FF7034B085B  f3 41 0f 59 4d 18               mulss    xmm1, dword ptr [r13 + 0x18]
+RVA 02D00861 VA 00007FF7034B0861  f3 41 0f 11 0c 24               movss    dword ptr [r12], xmm1
+RVA 02D00867 VA 00007FF7034B0867  e9 15 ff ff ff                  jmp      0x7ff7034b0781
+RVA 02D0086C VA 00007FF7034B086C  e8 6f 17 dc ff                  call     0x7ff703271fe0
+RVA 02D00871 VA 00007FF7034B0871  cc                              int3     
+
+{"name": "GatheringFactory", "rva": "0x2c59a90", "end_rva": "0x2c59bc4", "sha256": "ff10de188703d6880fc705d2030c44308e415f0fe0d6d4bbad2e1db846c030ea", "bounds": "PE runtime function entry"}
+RVA 02C59A90 VA 00007FF703409A90  48 89 5c 24 10                  mov      qword ptr [rsp + 0x10], rbx
+RVA 02C59A95 VA 00007FF703409A95  57                              push     rdi
+RVA 02C59A96 VA 00007FF703409A96  48 81 ec 80 00 00 00            sub      rsp, 0x80
+RVA 02C59A9D VA 00007FF703409A9D  0f 29 74 24 70                  movaps   xmmword ptr [rsp + 0x70], xmm6
+RVA 02C59AA2 VA 00007FF703409AA2  0f 29 7c 24 60                  movaps   xmmword ptr [rsp + 0x60], xmm7
+RVA 02C59AA7 VA 00007FF703409AA7  0f 28 f2                        movaps   xmm6, xmm2
+RVA 02C59AAA VA 00007FF703409AAA  0f 28 f9                        movaps   xmm7, xmm1
+RVA 02C59AAD VA 00007FF703409AAD  48 8b b9 a0 3e 00 00            mov      rdi, qword ptr [rcx + 0x3ea0]
+RVA 02C59AB4 VA 00007FF703409AB4  80 bf 94 00 00 00 00            cmp      byte ptr [rdi + 0x94], 0
+RVA 02C59ABB VA 00007FF703409ABB  0f 84 d0 00 00 00               je       0x7ff703409b91
+RVA 02C59AC1 VA 00007FF703409AC1  8b 87 90 00 00 00               mov      eax, dword ptr [rdi + 0x90]
+RVA 02C59AC7 VA 00007FF703409AC7  89 84 24 90 00 00 00            mov      dword ptr [rsp + 0x90], eax
+RVA 02C59ACE VA 00007FF703409ACE  ff c0                           inc      eax
+RVA 02C59AD0 VA 00007FF703409AD0  89 87 90 00 00 00               mov      dword ptr [rdi + 0x90], eax
+RVA 02C59AD6 VA 00007FF703409AD6  48 8b 0d 4b f8 86 05            mov      rcx, qword ptr [rip + 0x586f84b]
+RVA 02C59ADD VA 00007FF703409ADD  48 8d 05 1c 18 b3 04            lea      rax, [rip + 0x4b3181c]
+RVA 02C59AE4 VA 00007FF703409AE4  48 85 c9                        test     rcx, rcx
+RVA 02C59AE7 VA 00007FF703409AE7  48 0f 44 c8                     cmove    rcx, rax
+RVA 02C59AEB VA 00007FF703409AEB  48 8b 01                        mov      rax, qword ptr [rcx]
+RVA 02C59AEE VA 00007FF703409AEE  ba 20 00 00 00                  mov      edx, 0x20
+RVA 02C59AF3 VA 00007FF703409AF3  ff 10                           call     qword ptr [rax]
+RVA 02C59AF5 VA 00007FF703409AF5  48 8b d8                        mov      rbx, rax
+RVA 02C59AF8 VA 00007FF703409AF8  48 89 84 24 a8 00 00 00         mov      qword ptr [rsp + 0xa8], rax
+RVA 02C59B00 VA 00007FF703409B00  48 85 c0                        test     rax, rax
+RVA 02C59B03 VA 00007FF703409B03  74 25                           je       0x7ff703409b2a
+RVA 02C59B05 VA 00007FF703409B05  48 8b 47 08                     mov      rax, qword ptr [rdi + 8]
+RVA 02C59B09 VA 00007FF703409B09  c7 43 08 ff ff ff ff            mov      dword ptr [rbx + 8], 0xffffffff
+RVA 02C59B10 VA 00007FF703409B10  48 89 43 10                     mov      qword ptr [rbx + 0x10], rax
+RVA 02C59B14 VA 00007FF703409B14  48 8d 05 25 d4 8c 03            lea      rax, [rip + 0x38cd425]
+RVA 02C59B1B VA 00007FF703409B1B  48 89 03                        mov      qword ptr [rbx], rax
+RVA 02C59B1E VA 00007FF703409B1E  f3 0f 11 7b 18                  movss    dword ptr [rbx + 0x18], xmm7
+RVA 02C59B23 VA 00007FF703409B23  f3 0f 11 73 1c                  movss    dword ptr [rbx + 0x1c], xmm6
+RVA 02C59B28 VA 00007FF703409B28  eb 02                           jmp      0x7ff703409b2c
+RVA 02C59B2A VA 00007FF703409B2A  33 db                           xor      ebx, ebx
+RVA 02C59B2C VA 00007FF703409B2C  8b 84 24 90 00 00 00            mov      eax, dword ptr [rsp + 0x90]
+RVA 02C59B33 VA 00007FF703409B33  89 43 08                        mov      dword ptr [rbx + 8], eax
+RVA 02C59B36 VA 00007FF703409B36  48 89 9c 24 a8 00 00 00         mov      qword ptr [rsp + 0xa8], rbx
+RVA 02C59B3E VA 00007FF703409B3E  48 8d 4f 10                     lea      rcx, [rdi + 0x10]
+RVA 02C59B42 VA 00007FF703409B42  4c 8d 84 24 90 00 00 00         lea      r8, [rsp + 0x90]
+RVA 02C59B4A VA 00007FF703409B4A  48 8d 54 24 20                  lea      rdx, [rsp + 0x20]
+RVA 02C59B4F VA 00007FF703409B4F  e8 cc a7 00 00                  call     0x7ff703414320
+RVA 02C59B54 VA 00007FF703409B54  48 8b 10                        mov      rdx, qword ptr [rax]
+RVA 02C59B57 VA 00007FF703409B57  48 8b 4a 18                     mov      rcx, qword ptr [rdx + 0x18]
+RVA 02C59B5B VA 00007FF703409B5B  48 89 5a 18                     mov      qword ptr [rdx + 0x18], rbx
+RVA 02C59B5F VA 00007FF703409B5F  48 85 c9                        test     rcx, rcx
+RVA 02C59B62 VA 00007FF703409B62  74 0f                           je       0x7ff703409b73
+RVA 02C59B64 VA 00007FF703409B64  48 8b 11                        mov      rdx, qword ptr [rcx]
+RVA 02C59B67 VA 00007FF703409B67  4c 8b 02                        mov      r8, qword ptr [rdx]
+RVA 02C59B6A VA 00007FF703409B6A  ba 01 00 00 00                  mov      edx, 1
+RVA 02C59B6F VA 00007FF703409B6F  41 ff d0                        call     r8
+RVA 02C59B72 VA 00007FF703409B72  90                              nop      
+RVA 02C59B73 VA 00007FF703409B73  48 8b c3                        mov      rax, rbx
+RVA 02C59B76 VA 00007FF703409B76  48 8b 9c 24 98 00 00 00         mov      rbx, qword ptr [rsp + 0x98]
+RVA 02C59B7E VA 00007FF703409B7E  0f 28 74 24 70                  movaps   xmm6, xmmword ptr [rsp + 0x70]
+RVA 02C59B83 VA 00007FF703409B83  0f 28 7c 24 60                  movaps   xmm7, xmmword ptr [rsp + 0x60]
+RVA 02C59B88 VA 00007FF703409B88  48 81 c4 80 00 00 00            add      rsp, 0x80
+RVA 02C59B8F VA 00007FF703409B8F  5f                              pop      rdi
+RVA 02C59B90 VA 00007FF703409B90  c3                              ret      
+RVA 02C59B91 VA 00007FF703409B91  48 8d 15 38 5c 8c 03            lea      rdx, [rip + 0x38c5c38]
+RVA 02C59B98 VA 00007FF703409B98  48 8d 4c 24 38                  lea      rcx, [rsp + 0x38]
+RVA 02C59B9D VA 00007FF703409B9D  e8 de 79 77 fd                  call     0x7ff700b81580
+RVA 02C59BA2 VA 00007FF703409BA2  90                              nop      
+RVA 02C59BA3 VA 00007FF703409BA3  48 8d 54 24 38                  lea      rdx, [rsp + 0x38]
+RVA 02C59BA8 VA 00007FF703409BA8  48 8d 4c 24 20                  lea      rcx, [rsp + 0x20]
+RVA 02C59BAD VA 00007FF703409BAD  e8 de 15 f2 fd                  call     0x7ff70132b190
+RVA 02C59BB2 VA 00007FF703409BB2  48 8d 15 07 ba 8d 04            lea      rdx, [rip + 0x48dba07]
+RVA 02C59BB9 VA 00007FF703409BB9  48 8d 4c 24 20                  lea      rcx, [rsp + 0x20]
+RVA 02C59BBE VA 00007FF703409BBE  e8 55 9c 35 02                  call     0x7ff705763818
+RVA 02C59BC3 VA 00007FF703409BC3  cc                              int3     
+
+{"name": "CounterEvaluate", "rva": "0x2cfea30", "end_rva": "0x2cfeac4", "sha256": "766ee5b5c4e0ace5fcec22809d6d99dc8ada81ae15b5c0415b9dfab246e6a925", "bounds": "PE runtime function entry"}
+RVA 02CFEA30 VA 00007FF7034AEA30  48 89 5c 24 08                  mov      qword ptr [rsp + 8], rbx
+RVA 02CFEA35 VA 00007FF7034AEA35  57                              push     rdi
+RVA 02CFEA36 VA 00007FF7034AEA36  48 83 ec 30                     sub      rsp, 0x30
+RVA 02CFEA3A VA 00007FF7034AEA3A  48 8b 41 10                     mov      rax, qword ptr [rcx + 0x10]
+RVA 02CFEA3E VA 00007FF7034AEA3E  48 8b f9                        mov      rdi, rcx
+RVA 02CFEA41 VA 00007FF7034AEA41  48 8b da                        mov      rbx, rdx
+RVA 02CFEA44 VA 00007FF7034AEA44  49 8b 51 08                     mov      rdx, qword ptr [r9 + 8]
+RVA 02CFEA48 VA 00007FF7034AEA48  48 8b 88 c0 3d 00 00            mov      rcx, qword ptr [rax + 0x3dc0]
+RVA 02CFEA4F VA 00007FF7034AEA4F  48 81 c1 f8 00 00 00            add      rcx, 0xf8
+RVA 02CFEA56 VA 00007FF7034AEA56  e8 05 32 f3 ff                  call     0x7ff7033e1c60
+RVA 02CFEA5B VA 00007FF7034AEA5B  f3 0f 10 0d 69 f9 91 03         movss    xmm1, dword ptr [rip + 0x391f969]
+RVA 02CFEA63 VA 00007FF7034AEA63  48 8d 44 24 20                  lea      rax, [rsp + 0x20]
+RVA 02CFEA68 VA 00007FF7034AEA68  0f 2f c8                        comiss   xmm1, xmm0
+RVA 02CFEA6B VA 00007FF7034AEA6B  48 8d 4c 24 24                  lea      rcx, [rsp + 0x24]
+RVA 02CFEA70 VA 00007FF7034AEA70  c7 44 24 24 00 00 80 3f         mov      dword ptr [rsp + 0x24], 0x3f800000
+RVA 02CFEA78 VA 00007FF7034AEA78  f3 0f 11 44 24 20               movss    dword ptr [rsp + 0x20], xmm0
+RVA 02CFEA7E VA 00007FF7034AEA7E  0f 57 c0                        xorps    xmm0, xmm0
+RVA 02CFEA81 VA 00007FF7034AEA81  48 0f 46 c1                     cmovbe   rax, rcx
+RVA 02CFEA85 VA 00007FF7034AEA85  f3 0f 10 10                     movss    xmm2, dword ptr [rax]
+RVA 02CFEA89 VA 00007FF7034AEA89  0f 2e d0                        ucomiss  xmm2, xmm0
+RVA 02CFEA8C VA 00007FF7034AEA8C  7a 16                           jp       0x7ff7034aeaa4
+RVA 02CFEA8E VA 00007FF7034AEA8E  75 14                           jne      0x7ff7034aeaa4
+RVA 02CFEA90 VA 00007FF7034AEA90  c7 03 00 00 00 00               mov      dword ptr [rbx], 0
+RVA 02CFEA96 VA 00007FF7034AEA96  48 8b c3                        mov      rax, rbx
+RVA 02CFEA99 VA 00007FF7034AEA99  48 8b 5c 24 40                  mov      rbx, qword ptr [rsp + 0x40]
+RVA 02CFEA9E VA 00007FF7034AEA9E  48 83 c4 30                     add      rsp, 0x30
+RVA 02CFEAA2 VA 00007FF7034AEAA2  5f                              pop      rdi
+RVA 02CFEAA3 VA 00007FF7034AEAA3  c3                              ret      
+RVA 02CFEAA4 VA 00007FF7034AEAA4  f3 0f 5c 4f 18                  subss    xmm1, dword ptr [rdi + 0x18]
+RVA 02CFEAA9 VA 00007FF7034AEAA9  48 8b c3                        mov      rax, rbx
+RVA 02CFEAAC VA 00007FF7034AEAAC  f3 0f 59 ca                     mulss    xmm1, xmm2
+RVA 02CFEAB0 VA 00007FF7034AEAB0  f3 0f 58 4f 18                  addss    xmm1, dword ptr [rdi + 0x18]
+RVA 02CFEAB5 VA 00007FF7034AEAB5  f3 0f 11 0b                     movss    dword ptr [rbx], xmm1
+RVA 02CFEAB9 VA 00007FF7034AEAB9  48 8b 5c 24 40                  mov      rbx, qword ptr [rsp + 0x40]
+RVA 02CFEABE VA 00007FF7034AEABE  48 83 c4 30                     add      rsp, 0x30
+RVA 02CFEAC2 VA 00007FF7034AEAC2  5f                              pop      rdi
+RVA 02CFEAC3 VA 00007FF7034AEAC3  c3                              ret      
+
+{"name": "MultiplyEvaluate", "rva": "0x2d03940", "end_rva": "0x2d039dc", "sha256": "2825415e14e6b03d479ff688f8fb0aa754a9c0c4631fccec48a0465c3c015010", "bounds": "reviewed instruction window crossing adjacent unwind ranges"}
+RVA 02D03940 VA 00007FF7034B3940  48 89 5c 24 10                  mov      qword ptr [rsp + 0x10], rbx
+RVA 02D03945 VA 00007FF7034B3945  48 89 6c 24 18                  mov      qword ptr [rsp + 0x18], rbp
+RVA 02D0394A VA 00007FF7034B394A  56                              push     rsi
+RVA 02D0394B VA 00007FF7034B394B  57                              push     rdi
+RVA 02D0394C VA 00007FF7034B394C  41 56                           push     r14
+RVA 02D0394E VA 00007FF7034B394E  48 83 ec 40                     sub      rsp, 0x40
+RVA 02D03952 VA 00007FF7034B3952  48 8b 59 18                     mov      rbx, qword ptr [rcx + 0x18]
+RVA 02D03956 VA 00007FF7034B3956  49 8b e9                        mov      rbp, r9
+RVA 02D03959 VA 00007FF7034B3959  48 8b 71 20                     mov      rsi, qword ptr [rcx + 0x20]
+RVA 02D0395D VA 00007FF7034B395D  45 8b f0                        mov      r14d, r8d
+RVA 02D03960 VA 00007FF7034B3960  c7 02 00 00 00 00               mov      dword ptr [rdx], 0
+RVA 02D03966 VA 00007FF7034B3966  48 8b fa                        mov      rdi, rdx
+RVA 02D03969 VA 00007FF7034B3969  48 3b de                        cmp      rbx, rsi
+RVA 02D0396C VA 00007FF7034B396C  74 58                           je       0x7ff7034b39c6
+RVA 02D0396E VA 00007FF7034B396E  0f 29 74 24 30                  movaps   xmmword ptr [rsp + 0x30], xmm6
+RVA 02D03973 VA 00007FF7034B3973  f3 0f 10 35 51 aa 91 03         movss    xmm6, dword ptr [rip + 0x391aa51]
+RVA 02D0397B VA 00007FF7034B397B  0f 29 7c 24 20                  movaps   xmmword ptr [rsp + 0x20], xmm7
+RVA 02D03980 VA 00007FF7034B3980  0f 57 ff                        xorps    xmm7, xmm7
+RVA 02D03983 VA 00007FF7034B3983  0f 1f 40 00                     nop      dword ptr [rax]
+RVA 02D03987 VA 00007FF7034B3987  66 0f 1f 84 00 00 00 00 00      nop      word ptr [rax + rax]
+RVA 02D03990 VA 00007FF7034B3990  48 8b 0b                        mov      rcx, qword ptr [rbx]
+RVA 02D03993 VA 00007FF7034B3993  48 8d 54 24 60                  lea      rdx, [rsp + 0x60]
+RVA 02D03998 VA 00007FF7034B3998  4c 8b cd                        mov      r9, rbp
+RVA 02D0399B VA 00007FF7034B399B  45 8b c6                        mov      r8d, r14d
+RVA 02D0399E VA 00007FF7034B399E  48 8b 01                        mov      rax, qword ptr [rcx]
+RVA 02D039A1 VA 00007FF7034B39A1  ff 50 10                        call     qword ptr [rax + 0x10]
+RVA 02D039A4 VA 00007FF7034B39A4  f3 0f 59 74 24 60               mulss    xmm6, dword ptr [rsp + 0x60]
+RVA 02D039AA VA 00007FF7034B39AA  0f 2f fe                        comiss   xmm7, xmm6
+RVA 02D039AD VA 00007FF7034B39AD  73 09                           jae      0x7ff7034b39b8
+RVA 02D039AF VA 00007FF7034B39AF  48 83 c3 08                     add      rbx, 8
+RVA 02D039B3 VA 00007FF7034B39B3  48 3b de                        cmp      rbx, rsi
+RVA 02D039B6 VA 00007FF7034B39B6  75 d8                           jne      0x7ff7034b3990
+RVA 02D039B8 VA 00007FF7034B39B8  0f 28 7c 24 20                  movaps   xmm7, xmmword ptr [rsp + 0x20]
+RVA 02D039BD VA 00007FF7034B39BD  f3 0f 11 37                     movss    dword ptr [rdi], xmm6
+RVA 02D039C1 VA 00007FF7034B39C1  0f 28 74 24 30                  movaps   xmm6, xmmword ptr [rsp + 0x30]
+RVA 02D039C6 VA 00007FF7034B39C6  48 8b 5c 24 68                  mov      rbx, qword ptr [rsp + 0x68]
+RVA 02D039CB VA 00007FF7034B39CB  48 8b c7                        mov      rax, rdi
+RVA 02D039CE VA 00007FF7034B39CE  48 8b 6c 24 70                  mov      rbp, qword ptr [rsp + 0x70]
+RVA 02D039D3 VA 00007FF7034B39D3  48 83 c4 40                     add      rsp, 0x40
+RVA 02D039D7 VA 00007FF7034B39D7  41 5e                           pop      r14
+RVA 02D039D9 VA 00007FF7034B39D9  5f                              pop      rdi
+RVA 02D039DA VA 00007FF7034B39DA  5e                              pop      rsi
+RVA 02D039DB VA 00007FF7034B39DB  c3                              ret      
+
+{"name": "MaxEvaluate", "rva": "0x2d030d0", "end_rva": "0x2d03169", "sha256": "02eef80c3e297d4fb051885cb92ed5f109806abecc3fdee0fdd23da3e992c8ad", "bounds": "reviewed instruction window crossing adjacent unwind ranges"}
+RVA 02D030D0 VA 00007FF7034B30D0  48 89 5c 24 18                  mov      qword ptr [rsp + 0x18], rbx
+RVA 02D030D5 VA 00007FF7034B30D5  48 89 6c 24 20                  mov      qword ptr [rsp + 0x20], rbp
+RVA 02D030DA VA 00007FF7034B30DA  56                              push     rsi
+RVA 02D030DB VA 00007FF7034B30DB  57                              push     rdi
+RVA 02D030DC VA 00007FF7034B30DC  41 56                           push     r14
+RVA 02D030DE VA 00007FF7034B30DE  48 83 ec 30                     sub      rsp, 0x30
+RVA 02D030E2 VA 00007FF7034B30E2  48 8b 59 18                     mov      rbx, qword ptr [rcx + 0x18]
+RVA 02D030E6 VA 00007FF7034B30E6  49 8b e9                        mov      rbp, r9
+RVA 02D030E9 VA 00007FF7034B30E9  48 8b 71 20                     mov      rsi, qword ptr [rcx + 0x20]
+RVA 02D030ED VA 00007FF7034B30ED  45 8b f0                        mov      r14d, r8d
+RVA 02D030F0 VA 00007FF7034B30F0  c7 02 00 00 00 00               mov      dword ptr [rdx], 0
+RVA 02D030F6 VA 00007FF7034B30F6  48 8b fa                        mov      rdi, rdx
+RVA 02D030F9 VA 00007FF7034B30F9  48 3b de                        cmp      rbx, rsi
+RVA 02D030FC VA 00007FF7034B30FC  74 55                           je       0x7ff7034b3153
+RVA 02D030FE VA 00007FF7034B30FE  0f 29 74 24 20                  movaps   xmmword ptr [rsp + 0x20], xmm6
+RVA 02D03103 VA 00007FF7034B3103  0f 57 f6                        xorps    xmm6, xmm6
+RVA 02D03106 VA 00007FF7034B3106  f3 0f 11 74 24 58               movss    dword ptr [rsp + 0x58], xmm6
+RVA 02D0310C VA 00007FF7034B310C  0f 1f 40 00                     nop      dword ptr [rax]
+RVA 02D03110 VA 00007FF7034B3110  48 8b 0b                        mov      rcx, qword ptr [rbx]
+RVA 02D03113 VA 00007FF7034B3113  48 8d 54 24 50                  lea      rdx, [rsp + 0x50]
+RVA 02D03118 VA 00007FF7034B3118  4c 8b cd                        mov      r9, rbp
+RVA 02D0311B VA 00007FF7034B311B  45 8b c6                        mov      r8d, r14d
+RVA 02D0311E VA 00007FF7034B311E  48 8b 01                        mov      rax, qword ptr [rcx]
+RVA 02D03121 VA 00007FF7034B3121  ff 50 10                        call     qword ptr [rax + 0x10]
+RVA 02D03124 VA 00007FF7034B3124  0f 2f 74 24 50                  comiss   xmm6, xmmword ptr [rsp + 0x50]
+RVA 02D03129 VA 00007FF7034B3129  48 8d 44 24 58                  lea      rax, [rsp + 0x58]
+RVA 02D0312E VA 00007FF7034B312E  48 8d 4c 24 50                  lea      rcx, [rsp + 0x50]
+RVA 02D03133 VA 00007FF7034B3133  48 0f 46 c1                     cmovbe   rax, rcx
+RVA 02D03137 VA 00007FF7034B3137  48 83 c3 08                     add      rbx, 8
+RVA 02D0313B VA 00007FF7034B313B  f3 0f 10 30                     movss    xmm6, dword ptr [rax]
+RVA 02D0313F VA 00007FF7034B313F  f3 0f 11 74 24 58               movss    dword ptr [rsp + 0x58], xmm6
+RVA 02D03145 VA 00007FF7034B3145  48 3b de                        cmp      rbx, rsi
+RVA 02D03148 VA 00007FF7034B3148  75 c6                           jne      0x7ff7034b3110
+RVA 02D0314A VA 00007FF7034B314A  f3 0f 11 37                     movss    dword ptr [rdi], xmm6
+RVA 02D0314E VA 00007FF7034B314E  0f 28 74 24 20                  movaps   xmm6, xmmword ptr [rsp + 0x20]
+RVA 02D03153 VA 00007FF7034B3153  48 8b 5c 24 60                  mov      rbx, qword ptr [rsp + 0x60]
+RVA 02D03158 VA 00007FF7034B3158  48 8b c7                        mov      rax, rdi
+RVA 02D0315B VA 00007FF7034B315B  48 8b 6c 24 68                  mov      rbp, qword ptr [rsp + 0x68]
+RVA 02D03160 VA 00007FF7034B3160  48 83 c4 30                     add      rsp, 0x30
+RVA 02D03164 VA 00007FF7034B3164  41 5e                           pop      r14
+RVA 02D03166 VA 00007FF7034B3166  5f                              pop      rdi
+RVA 02D03167 VA 00007FF7034B3167  5e                              pop      rsi
+RVA 02D03168 VA 00007FF7034B3168  c3                              ret      
+
+{"name": "ClampEvaluate", "rva": "0x2d02f80", "end_rva": "0x2d02fd9", "sha256": "b4890a5fa0e06d29d72b17d48c8689d0656fa1adda2540ec1dc69afec26b303e", "bounds": "PE runtime function entry"}
+RVA 02D02F80 VA 00007FF7034B2F80  48 89 5c 24 08                  mov      qword ptr [rsp + 8], rbx
+RVA 02D02F85 VA 00007FF7034B2F85  57                              push     rdi
+RVA 02D02F86 VA 00007FF7034B2F86  48 83 ec 20                     sub      rsp, 0x20
+RVA 02D02F8A VA 00007FF7034B2F8A  48 8b d9                        mov      rbx, rcx
+RVA 02D02F8D VA 00007FF7034B2F8D  48 8b fa                        mov      rdi, rdx
+RVA 02D02F90 VA 00007FF7034B2F90  48 8b 49 20                     mov      rcx, qword ptr [rcx + 0x20]
+RVA 02D02F94 VA 00007FF7034B2F94  48 8b 01                        mov      rax, qword ptr [rcx]
+RVA 02D02F97 VA 00007FF7034B2F97  ff 50 10                        call     qword ptr [rax + 0x10]
+RVA 02D02F9A VA 00007FF7034B2F9A  f3 0f 10 43 18                  movss    xmm0, dword ptr [rbx + 0x18]
+RVA 02D02F9F VA 00007FF7034B2F9F  48 8d 4b 18                     lea      rcx, [rbx + 0x18]
+RVA 02D02FA3 VA 00007FF7034B2FA3  0f 2f 07                        comiss   xmm0, xmmword ptr [rdi]
+RVA 02D02FA6 VA 00007FF7034B2FA6  4c 8d 43 1c                     lea      r8, [rbx + 0x1c]
+RVA 02D02FAA VA 00007FF7034B2FAA  48 8b 5c 24 30                  mov      rbx, qword ptr [rsp + 0x30]
+RVA 02D02FAF VA 00007FF7034B2FAF  48 8b d7                        mov      rdx, rdi
+RVA 02D02FB2 VA 00007FF7034B2FB2  f3 0f 10 07                     movss    xmm0, dword ptr [rdi]
+RVA 02D02FB6 VA 00007FF7034B2FB6  0f 97 c0                        seta     al
+RVA 02D02FB9 VA 00007FF7034B2FB9  84 c0                           test     al, al
+RVA 02D02FBB VA 00007FF7034B2FBB  48 0f 45 d1                     cmovne   rdx, rcx
+RVA 02D02FBF VA 00007FF7034B2FBF  41 0f 2f 00                     comiss   xmm0, xmmword ptr [r8]
+RVA 02D02FC3 VA 00007FF7034B2FC3  0f 97 c0                        seta     al
+RVA 02D02FC6 VA 00007FF7034B2FC6  84 c0                           test     al, al
+RVA 02D02FC8 VA 00007FF7034B2FC8  49 0f 45 d0                     cmovne   rdx, r8
+RVA 02D02FCC VA 00007FF7034B2FCC  8b 02                           mov      eax, dword ptr [rdx]
+RVA 02D02FCE VA 00007FF7034B2FCE  89 07                           mov      dword ptr [rdi], eax
+RVA 02D02FD0 VA 00007FF7034B2FD0  48 8b c7                        mov      rax, rdi
+RVA 02D02FD3 VA 00007FF7034B2FD3  48 83 c4 20                     add      rsp, 0x20
+RVA 02D02FD7 VA 00007FF7034B2FD7  5f                              pop      rdi
+RVA 02D02FD8 VA 00007FF7034B2FD8  c3                              ret      
+
+{"name": "TimeToAcquireEvaluate", "rva": "0x2cff6c0", "end_rva": "0x2cff836", "sha256": "0fb8db9dd37ab85d9db65df318c30763f82b34fe77fb70b3bfa9a5d804b18e96", "bounds": "PE runtime function entry"}
+RVA 02CFF6C0 VA 00007FF7034AF6C0  48 89 5c 24 18                  mov      qword ptr [rsp + 0x18], rbx
+RVA 02CFF6C5 VA 00007FF7034AF6C5  55                              push     rbp
+RVA 02CFF6C6 VA 00007FF7034AF6C6  56                              push     rsi
+RVA 02CFF6C7 VA 00007FF7034AF6C7  57                              push     rdi
+RVA 02CFF6C8 VA 00007FF7034AF6C8  48 83 ec 70                     sub      rsp, 0x70
+RVA 02CFF6CC VA 00007FF7034AF6CC  48 8b 69 10                     mov      rbp, qword ptr [rcx + 0x10]
+RVA 02CFF6D0 VA 00007FF7034AF6D0  4d 8d 41 7c                     lea      r8, [r9 + 0x7c]
+RVA 02CFF6D4 VA 00007FF7034AF6D4  0f 29 74 24 60                  movaps   xmmword ptr [rsp + 0x60], xmm6
+RVA 02CFF6D9 VA 00007FF7034AF6D9  48 8b d9                        mov      rbx, rcx
+RVA 02CFF6DC VA 00007FF7034AF6DC  0f 29 7c 24 50                  movaps   xmmword ptr [rsp + 0x50], xmm7
+RVA 02CFF6E1 VA 00007FF7034AF6E1  48 8b fa                        mov      rdi, rdx
+RVA 02CFF6E4 VA 00007FF7034AF6E4  c7 02 00 00 00 00               mov      dword ptr [rdx], 0
+RVA 02CFF6EA VA 00007FF7034AF6EA  0f 57 f6                        xorps    xmm6, xmm6
+RVA 02CFF6ED VA 00007FF7034AF6ED  48 8b 8d b8 3d 00 00            mov      rcx, qword ptr [rbp + 0x3db8]
+RVA 02CFF6F4 VA 00007FF7034AF6F4  49 8b f1                        mov      rsi, r9
+RVA 02CFF6F7 VA 00007FF7034AF6F7  f3 0f 11 74 24 20               movss    dword ptr [rsp + 0x20], xmm6
+RVA 02CFF6FD VA 00007FF7034AF6FD  0f 57 ff                        xorps    xmm7, xmm7
+RVA 02CFF700 VA 00007FF7034AF700  44 0f 29 44 24 40               movaps   xmmword ptr [rsp + 0x40], xmm8
+RVA 02CFF706 VA 00007FF7034AF706  48 8d 51 54                     lea      rdx, [rcx + 0x54]
+RVA 02CFF70A VA 00007FF7034AF70A  48 83 c1 2c                     add      rcx, 0x2c
+RVA 02CFF70E VA 00007FF7034AF70E  e8 2d 0b e1 ff                  call     0x7ff7032c0240
+RVA 02CFF713 VA 00007FF7034AF713  80 7b 20 00                     cmp      byte ptr [rbx + 0x20], 0
+RVA 02CFF717 VA 00007FF7034AF717  74 0d                           je       0x7ff7034af726
+RVA 02CFF719 VA 00007FF7034AF719  0f 28 f0                        movaps   xmm6, xmm0
+RVA 02CFF71C VA 00007FF7034AF71C  f3 0f 58 f7                     addss    xmm6, xmm7
+RVA 02CFF720 VA 00007FF7034AF720  f3 0f 11 74 24 20               movss    dword ptr [rsp + 0x20], xmm6
+RVA 02CFF726 VA 00007FF7034AF726  f3 44 0f 10 86 70 01 00 00      movss    xmm8, dword ptr [rsi + 0x170]
+RVA 02CFF72F VA 00007FF7034AF72F  48 8b cd                        mov      rcx, rbp
+RVA 02CFF732 VA 00007FF7034AF732  48 8b 76 08                     mov      rsi, qword ptr [rsi + 8]
+RVA 02CFF736 VA 00007FF7034AF736  e8 d5 2d c2 ff                  call     0x7ff7030d2510
+RVA 02CFF73B VA 00007FF7034AF73B  48 8b c8                        mov      rcx, rax
+RVA 02CFF73E VA 00007FF7034AF73E  48 85 c0                        test     rax, rax
+RVA 02CFF741 VA 00007FF7034AF741  75 06                           jne      0x7ff7034af749
+RVA 02CFF743 VA 00007FF7034AF743  88 44 24 28                     mov      byte ptr [rsp + 0x28], al
+RVA 02CFF747 VA 00007FF7034AF747  eb 13                           jmp      0x7ff7034af75c
+RVA 02CFF749 VA 00007FF7034AF749  c6 44 24 28 06                  mov      byte ptr [rsp + 0x28], 6
+RVA 02CFF74E VA 00007FF7034AF74E  8b 40 08                        mov      eax, dword ptr [rax + 8]
+RVA 02CFF751 VA 00007FF7034AF751  89 44 24 2c                     mov      dword ptr [rsp + 0x2c], eax
+RVA 02CFF755 VA 00007FF7034AF755  8b 41 0c                        mov      eax, dword ptr [rcx + 0xc]
+RVA 02CFF758 VA 00007FF7034AF758  89 44 24 30                     mov      dword ptr [rsp + 0x30], eax
+RVA 02CFF75C VA 00007FF7034AF75C  48 8b d6                        mov      rdx, rsi
+RVA 02CFF75F VA 00007FF7034AF75F  48 8d 4c 24 28                  lea      rcx, [rsp + 0x28]
+RVA 02CFF764 VA 00007FF7034AF764  e8 a7 f3 26 ff                  call     0x7ff70271eb10
+RVA 02CFF769 VA 00007FF7034AF769  48 8d 8c 24 98 00 00 00         lea      rcx, [rsp + 0x98]
+RVA 02CFF771 VA 00007FF7034AF771  c7 84 24 98 00 00 00 00 00 00 00  mov      dword ptr [rsp + 0x98], 0
+RVA 02CFF77C VA 00007FF7034AF77C  66 0f 6e c0                     movd     xmm0, eax
+RVA 02CFF780 VA 00007FF7034AF780  48 8d 84 24 90 00 00 00         lea      rax, [rsp + 0x90]
+RVA 02CFF788 VA 00007FF7034AF788  0f 5b c0                        cvtdq2ps xmm0, xmm0
+RVA 02CFF78B VA 00007FF7034AF78B  f3 0f 59 05 a5 e7 74 05         mulss    xmm0, dword ptr [rip + 0x574e7a5]
+RVA 02CFF793 VA 00007FF7034AF793  f3 44 0f 5c c0                  subss    xmm8, xmm0
+RVA 02CFF798 VA 00007FF7034AF798  44 0f 2f c7                     comiss   xmm8, xmm7
+RVA 02CFF79C VA 00007FF7034AF79C  f3 44 0f 11 84 24 90 00 00 00   movss    dword ptr [rsp + 0x90], xmm8
+RVA 02CFF7A6 VA 00007FF7034AF7A6  48 0f 46 c1                     cmovbe   rax, rcx
+RVA 02CFF7AA VA 00007FF7034AF7AA  80 7b 21 00                     cmp      byte ptr [rbx + 0x21], 0
+RVA 02CFF7AE VA 00007FF7034AF7AE  74 0a                           je       0x7ff7034af7ba
+RVA 02CFF7B0 VA 00007FF7034AF7B0  f3 0f 58 f0                     addss    xmm6, xmm0
+RVA 02CFF7B4 VA 00007FF7034AF7B4  f3 0f 11 74 24 20               movss    dword ptr [rsp + 0x20], xmm6
+RVA 02CFF7BA VA 00007FF7034AF7BA  80 7b 22 00                     cmp      byte ptr [rbx + 0x22], 0
+RVA 02CFF7BE VA 00007FF7034AF7BE  74 0a                           je       0x7ff7034af7ca
+RVA 02CFF7C0 VA 00007FF7034AF7C0  f3 0f 58 30                     addss    xmm6, dword ptr [rax]
+RVA 02CFF7C4 VA 00007FF7034AF7C4  f3 0f 11 74 24 20               movss    dword ptr [rsp + 0x20], xmm6
+RVA 02CFF7CA VA 00007FF7034AF7CA  0f 2f 35 4f e9 91 03            comiss   xmm6, xmmword ptr [rip + 0x391e94f]
+RVA 02CFF7D1 VA 00007FF7034AF7D1  48 8d 44 24 20                  lea      rax, [rsp + 0x20]
+RVA 02CFF7D6 VA 00007FF7034AF7D6  c7 44 24 24 0a d7 23 3c         mov      dword ptr [rsp + 0x24], 0x3c23d70a
+RVA 02CFF7DE VA 00007FF7034AF7DE  48 8d 4c 24 24                  lea      rcx, [rsp + 0x24]
+RVA 02CFF7E3 VA 00007FF7034AF7E3  f3 0f 10 4b 1c                  movss    xmm1, dword ptr [rbx + 0x1c]
+RVA 02CFF7E8 VA 00007FF7034AF7E8  48 0f 46 c1                     cmovbe   rax, rcx
+RVA 02CFF7EC VA 00007FF7034AF7EC  f3 0f 10 10                     movss    xmm2, dword ptr [rax]
+RVA 02CFF7F0 VA 00007FF7034AF7F0  48 8b c7                        mov      rax, rdi
+RVA 02CFF7F3 VA 00007FF7034AF7F3  0f 2f 53 18                     comiss   xmm2, xmmword ptr [rbx + 0x18]
+RVA 02CFF7F7 VA 00007FF7034AF7F7  73 19                           jae      0x7ff7034af812
+RVA 02CFF7F9 VA 00007FF7034AF7F9  f3 0f 5c 0d cb eb 91 03         subss    xmm1, dword ptr [rip + 0x391ebcb]
+RVA 02CFF801 VA 00007FF7034AF801  f3 0f 5e 4b 18                  divss    xmm1, dword ptr [rbx + 0x18]
+RVA 02CFF806 VA 00007FF7034AF806  f3 0f 59 ca                     mulss    xmm1, xmm2
+RVA 02CFF80A VA 00007FF7034AF80A  f3 0f 58 0d ba eb 91 03         addss    xmm1, dword ptr [rip + 0x391ebba]
+RVA 02CFF812 VA 00007FF7034AF812  48 8b 9c 24 a0 00 00 00         mov      rbx, qword ptr [rsp + 0xa0]
+RVA 02CFF81A VA 00007FF7034AF81A  0f 28 74 24 60                  movaps   xmm6, xmmword ptr [rsp + 0x60]
+RVA 02CFF81F VA 00007FF7034AF81F  0f 28 7c 24 50                  movaps   xmm7, xmmword ptr [rsp + 0x50]
+RVA 02CFF824 VA 00007FF7034AF824  44 0f 28 44 24 40               movaps   xmm8, xmmword ptr [rsp + 0x40]
+RVA 02CFF82A VA 00007FF7034AF82A  f3 0f 11 0f                     movss    dword ptr [rdi], xmm1
+RVA 02CFF82E VA 00007FF7034AF82E  48 83 c4 70                     add      rsp, 0x70
+RVA 02CFF832 VA 00007FF7034AF832  5f                              pop      rdi
+RVA 02CFF833 VA 00007FF7034AF833  5e                              pop      rsi
+RVA 02CFF834 VA 00007FF7034AF834  5d                              pop      rbp
+RVA 02CFF835 VA 00007FF7034AF835  c3                              ret      
+
+{"name": "PresenceEvaluate", "rva": "0x2d04c30", "end_rva": "0x2d05212", "sha256": "f1e85262dbd27676358600bfed66720f596d409f959a613a99ca65e0b0f43733", "bounds": "PE runtime function entry"}
+RVA 02D04C30 VA 00007FF7034B4C30  48 89 5c 24 18                  mov      qword ptr [rsp + 0x18], rbx
+RVA 02D04C35 VA 00007FF7034B4C35  48 89 54 24 10                  mov      qword ptr [rsp + 0x10], rdx
+RVA 02D04C3A VA 00007FF7034B4C3A  55                              push     rbp
+RVA 02D04C3B VA 00007FF7034B4C3B  56                              push     rsi
+RVA 02D04C3C VA 00007FF7034B4C3C  57                              push     rdi
+RVA 02D04C3D VA 00007FF7034B4C3D  41 54                           push     r12
+RVA 02D04C3F VA 00007FF7034B4C3F  41 55                           push     r13
+RVA 02D04C41 VA 00007FF7034B4C41  41 56                           push     r14
+RVA 02D04C43 VA 00007FF7034B4C43  41 57                           push     r15
+RVA 02D04C45 VA 00007FF7034B4C45  48 83 ec 70                     sub      rsp, 0x70
+RVA 02D04C49 VA 00007FF7034B4C49  0f 29 74 24 60                  movaps   xmmword ptr [rsp + 0x60], xmm6
+RVA 02D04C4E VA 00007FF7034B4C4E  0f 29 7c 24 50                  movaps   xmmword ptr [rsp + 0x50], xmm7
+RVA 02D04C53 VA 00007FF7034B4C53  48 8b da                        mov      rbx, rdx
+RVA 02D04C56 VA 00007FF7034B4C56  4c 8b f9                        mov      r15, rcx
+RVA 02D04C59 VA 00007FF7034B4C59  0f 57 f6                        xorps    xmm6, xmm6
+RVA 02D04C5C VA 00007FF7034B4C5C  48 8b 01                        mov      rax, qword ptr [rcx]
+RVA 02D04C5F VA 00007FF7034B4C5F  4c 8b 41 10                     mov      r8, qword ptr [rcx + 0x10]
+RVA 02D04C63 VA 00007FF7034B4C63  48 8d 54 24 30                  lea      rdx, [rsp + 0x30]
+RVA 02D04C68 VA 00007FF7034B4C68  ff 50 20                        call     qword ptr [rax + 0x20]
+RVA 02D04C6B VA 00007FF7034B4C6B  90                              nop      
+RVA 02D04C6C VA 00007FF7034B4C6C  4c 8b 6c 24 30                  mov      r13, qword ptr [rsp + 0x30]
+RVA 02D04C71 VA 00007FF7034B4C71  48 8b 44 24 38                  mov      rax, qword ptr [rsp + 0x38]
+RVA 02D04C76 VA 00007FF7034B4C76  48 89 44 24 20                  mov      qword ptr [rsp + 0x20], rax
+RVA 02D04C7B VA 00007FF7034B4C7B  4c 3b e8                        cmp      r13, rax
+RVA 02D04C7E VA 00007FF7034B4C7E  0f 84 d3 01 00 00               je       0x7ff7034b4e57
+RVA 02D04C84 VA 00007FF7034B4C84  48 bd ee 49 a1 2f 44 4b 3a 28   movabs   rbp, 0x283a4b442fa149ee
+RVA 02D04C8E VA 00007FF7034B4C8E  49 be 17 c4 eb d8 e6 75 6c 46   movabs   r14, 0x466c75e6d8ebc417
+RVA 02D04C98 VA 00007FF7034B4C98  4c 8d 25 81 3d 74 05            lea      r12, [rip + 0x5743d81]
+RVA 02D04C9F VA 00007FF7034B4C9F  f3 0f 10 3d 25 97 91 03         movss    xmm7, dword ptr [rip + 0x3919725]
+RVA 02D04CA7 VA 00007FF7034B4CA7  66 0f 1f 84 00 00 00 00 00      nop      word ptr [rax + rax]
+RVA 02D04CB0 VA 00007FF7034B4CB0  49 8b 45 00                     mov      rax, qword ptr [r13]
+RVA 02D04CB4 VA 00007FF7034B4CB4  41 80 7f 30 00                  cmp      byte ptr [r15 + 0x30], 0
+RVA 02D04CB9 VA 00007FF7034B4CB9  0f 84 e5 01 00 00               je       0x7ff7034b4ea4
+RVA 02D04CBF VA 00007FF7034B4CBF  48 8b b0 10 02 00 00            mov      rsi, qword ptr [rax + 0x210]
+RVA 02D04CC6 VA 00007FF7034B4CC6  4c 8b a0 18 02 00 00            mov      r12, qword ptr [rax + 0x218]
+RVA 02D04CCD VA 00007FF7034B4CCD  49 3b f4                        cmp      rsi, r12
+RVA 02D04CD0 VA 00007FF7034B4CD0  0f 84 5e 01 00 00               je       0x7ff7034b4e34
+RVA 02D04CD6 VA 00007FF7034B4CD6  66 66 0f 1f 84 00 00 00 00 00   nop      word ptr [rax + rax]
+RVA 02D04CE0 VA 00007FF7034B4CE0  48 8b 1e                        mov      rbx, qword ptr [rsi]
+RVA 02D04CE3 VA 00007FF7034B4CE3  48 8b cb                        mov      rcx, rbx
+RVA 02D04CE6 VA 00007FF7034B4CE6  e8 55 d0 e8 ff                  call     0x7ff703341d40
+RVA 02D04CEB VA 00007FF7034B4CEB  48 85 c0                        test     rax, rax
+RVA 02D04CEE VA 00007FF7034B4CEE  0f 84 1f 01 00 00               je       0x7ff7034b4e13
+RVA 02D04CF4 VA 00007FF7034B4CF4  48 8d 54 24 28                  lea      rdx, [rsp + 0x28]
+RVA 02D04CF9 VA 00007FF7034B4CF9  48 8b c8                        mov      rcx, rax
+RVA 02D04CFC VA 00007FF7034B4CFC  e8 af 74 6f fd                  call     0x7ff700bac1b0
+RVA 02D04D01 VA 00007FF7034B4D01  8b 08                           mov      ecx, dword ptr [rax]
+RVA 02D04D03 VA 00007FF7034B4D03  39 8b 58 03 00 00               cmp      dword ptr [rbx + 0x358], ecx
+RVA 02D04D09 VA 00007FF7034B4D09  0f 85 04 01 00 00               jne      0x7ff7034b4e13
+RVA 02D04D0F VA 00007FF7034B4D0F  41 80 7f 31 00                  cmp      byte ptr [r15 + 0x31], 0
+RVA 02D04D14 VA 00007FF7034B4D14  74 19                           je       0x7ff7034b4d2f
+RVA 02D04D16 VA 00007FF7034B4D16  48 8b 06                        mov      rax, qword ptr [rsi]
+RVA 02D04D19 VA 00007FF7034B4D19  80 b8 dc 03 00 00 00            cmp      byte ptr [rax + 0x3dc], 0
+RVA 02D04D20 VA 00007FF7034B4D20  75 0d                           jne      0x7ff7034b4d2f
+RVA 02D04D22 VA 00007FF7034B4D22  83 b8 d0 03 00 00 00            cmp      dword ptr [rax + 0x3d0], 0
+RVA 02D04D29 VA 00007FF7034B4D29  0f 84 e4 00 00 00               je       0x7ff7034b4e13
+RVA 02D04D2F VA 00007FF7034B4D2F  48 8b 0e                        mov      rcx, qword ptr [rsi]
+RVA 02D04D32 VA 00007FF7034B4D32  e8 09 d0 e8 ff                  call     0x7ff703341d40
+RVA 02D04D37 VA 00007FF7034B4D37  48 8b 48 38                     mov      rcx, qword ptr [rax + 0x38]
+RVA 02D04D3B VA 00007FF7034B4D3B  e8 80 19 78 fd                  call     0x7ff700c366c0
+RVA 02D04D40 VA 00007FF7034B4D40  48 85 c0                        test     rax, rax
+RVA 02D04D43 VA 00007FF7034B4D43  0f 84 ca 00 00 00               je       0x7ff7034b4e13
+RVA 02D04D49 VA 00007FF7034B4D49  0f 57 c9                        xorps    xmm1, xmm1
+RVA 02D04D4C VA 00007FF7034B4D4C  f3 0f 11 8c 24 b0 00 00 00      movss    dword ptr [rsp + 0xb0], xmm1
+RVA 02D04D55 VA 00007FF7034B4D55  4d 8b 57 18                     mov      r10, qword ptr [r15 + 0x18]
+RVA 02D04D59 VA 00007FF7034B4D59  49 8b 6f 20                     mov      rbp, qword ptr [r15 + 0x20]
+RVA 02D04D5D VA 00007FF7034B4D5D  4c 3b d5                        cmp      r10, rbp
+RVA 02D04D60 VA 00007FF7034B4D60  0f 84 a0 00 00 00               je       0x7ff7034b4e06
+RVA 02D04D66 VA 00007FF7034B4D66  4c 8b 70 20                     mov      r14, qword ptr [rax + 0x20]
+RVA 02D04D6A VA 00007FF7034B4D6A  48 8b 58 18                     mov      rbx, qword ptr [rax + 0x18]
+RVA 02D04D6E VA 00007FF7034B4D6E  49 8b fe                        mov      rdi, r14
+RVA 02D04D71 VA 00007FF7034B4D71  48 2b fb                        sub      rdi, rbx
+RVA 02D04D74 VA 00007FF7034B4D74  48 c1 ff 02                     sar      rdi, 2
+RVA 02D04D78 VA 00007FF7034B4D78  4d 8d 5a 04                     lea      r11, [r10 + 4]
+RVA 02D04D7C VA 00007FF7034B4D7C  0f 1f 40 00                     nop      dword ptr [rax]
+RVA 02D04D80 VA 00007FF7034B4D80  45 8b 0a                        mov      r9d, dword ptr [r10]
+RVA 02D04D83 VA 00007FF7034B4D83  48 8b d7                        mov      rdx, rdi
+RVA 02D04D86 VA 00007FF7034B4D86  4c 8b c3                        mov      r8, rbx
+RVA 02D04D89 VA 00007FF7034B4D89  48 85 ff                        test     rdi, rdi
+RVA 02D04D8C VA 00007FF7034B4D8C  7e 2c                           jle      0x7ff7034b4dba
+RVA 02D04D8E VA 00007FF7034B4D8E  66 90                           nop      
+RVA 02D04D90 VA 00007FF7034B4D90  48 8b ca                        mov      rcx, rdx
+RVA 02D04D93 VA 00007FF7034B4D93  48 d1 e9                        shr      rcx, 1
+RVA 02D04D96 VA 00007FF7034B4D96  49 8d 04 88                     lea      rax, [r8 + rcx*4]
+RVA 02D04D9A VA 00007FF7034B4D9A  44 39 08                        cmp      dword ptr [rax], r9d
+RVA 02D04D9D VA 00007FF7034B4D9D  73 13                           jae      0x7ff7034b4db2
+RVA 02D04D9F VA 00007FF7034B4D9F  4c 8d 40 04                     lea      r8, [rax + 4]
+RVA 02D04DA3 VA 00007FF7034B4DA3  48 c7 c0 ff ff ff ff            mov      rax, -1
+RVA 02D04DAA VA 00007FF7034B4DAA  48 2b c1                        sub      rax, rcx
+RVA 02D04DAD VA 00007FF7034B4DAD  48 03 d0                        add      rdx, rax
+RVA 02D04DB0 VA 00007FF7034B4DB0  eb 03                           jmp      0x7ff7034b4db5
+RVA 02D04DB2 VA 00007FF7034B4DB2  48 8b d1                        mov      rdx, rcx
+RVA 02D04DB5 VA 00007FF7034B4DB5  48 85 d2                        test     rdx, rdx
+RVA 02D04DB8 VA 00007FF7034B4DB8  7f d6                           jg       0x7ff7034b4d90
+RVA 02D04DBA VA 00007FF7034B4DBA  4d 3b c6                        cmp      r8, r14
+RVA 02D04DBD VA 00007FF7034B4DBD  74 36                           je       0x7ff7034b4df5
+RVA 02D04DBF VA 00007FF7034B4DBF  45 3b 08                        cmp      r9d, dword ptr [r8]
+RVA 02D04DC2 VA 00007FF7034B4DC2  72 31                           jb       0x7ff7034b4df5
+RVA 02D04DC4 VA 00007FF7034B4DC4  48 8d 84 24 b0 00 00 00         lea      rax, [rsp + 0xb0]
+RVA 02D04DCC VA 00007FF7034B4DCC  f3 41 0f 10 03                  movss    xmm0, dword ptr [r11]
+RVA 02D04DD1 VA 00007FF7034B4DD1  0f 2f c1                        comiss   xmm0, xmm1
+RVA 02D04DD4 VA 00007FF7034B4DD4  49 0f 47 c3                     cmova    rax, r11
+RVA 02D04DD8 VA 00007FF7034B4DD8  f3 0f 10 08                     movss    xmm1, dword ptr [rax]
+RVA 02D04DDC VA 00007FF7034B4DDC  f3 0f 11 8c 24 b0 00 00 00      movss    dword ptr [rsp + 0xb0], xmm1
+RVA 02D04DE5 VA 00007FF7034B4DE5  0f 28 c1                        movaps   xmm0, xmm1
+RVA 02D04DE8 VA 00007FF7034B4DE8  f3 0f 58 c6                     addss    xmm0, xmm6
+RVA 02D04DEC VA 00007FF7034B4DEC  0f 2f c7                        comiss   xmm0, xmm7
+RVA 02D04DEF VA 00007FF7034B4DEF  0f 87 69 02 00 00               ja       0x7ff7034b505e
+RVA 02D04DF5 VA 00007FF7034B4DF5  49 83 c2 08                     add      r10, 8
+RVA 02D04DF9 VA 00007FF7034B4DF9  49 83 c3 08                     add      r11, 8
+RVA 02D04DFD VA 00007FF7034B4DFD  4c 3b d5                        cmp      r10, rbp
+RVA 02D04E00 VA 00007FF7034B4E00  0f 85 7a ff ff ff               jne      0x7ff7034b4d80
+RVA 02D04E06 VA 00007FF7034B4E06  f3 0f 58 f1                     addss    xmm6, xmm1
+RVA 02D04E0A VA 00007FF7034B4E0A  0f 2f f7                        comiss   xmm6, xmm7
+RVA 02D04E0D VA 00007FF7034B4E0D  0f 87 ae 02 00 00               ja       0x7ff7034b50c1
+RVA 02D04E13 VA 00007FF7034B4E13  48 83 c6 08                     add      rsi, 8
+RVA 02D04E17 VA 00007FF7034B4E17  49 3b f4                        cmp      rsi, r12
+RVA 02D04E1A VA 00007FF7034B4E1A  0f 85 c0 fe ff ff               jne      0x7ff7034b4ce0
+RVA 02D04E20 VA 00007FF7034B4E20  48 bd ee 49 a1 2f 44 4b 3a 28   movabs   rbp, 0x283a4b442fa149ee
+RVA 02D04E2A VA 00007FF7034B4E2A  49 be 17 c4 eb d8 e6 75 6c 46   movabs   r14, 0x466c75e6d8ebc417
+RVA 02D04E34 VA 00007FF7034B4E34  4c 8d 25 e5 3b 74 05            lea      r12, [rip + 0x5743be5]
+RVA 02D04E3B VA 00007FF7034B4E3B  49 83 c5 08                     add      r13, 8
+RVA 02D04E3F VA 00007FF7034B4E3F  4c 3b 6c 24 20                  cmp      r13, qword ptr [rsp + 0x20]
+RVA 02D04E44 VA 00007FF7034B4E44  0f 85 66 fe ff ff               jne      0x7ff7034b4cb0
+RVA 02D04E4A VA 00007FF7034B4E4A  4c 8b 6c 24 30                  mov      r13, qword ptr [rsp + 0x30]
+RVA 02D04E4F VA 00007FF7034B4E4F  48 8b 9c 24 b8 00 00 00         mov      rbx, qword ptr [rsp + 0xb8]
+RVA 02D04E57 VA 00007FF7034B4E57  4d 85 ed                        test     r13, r13
+RVA 02D04E5A VA 00007FF7034B4E5A  0f 84 89 03 00 00               je       0x7ff7034b51e9
+RVA 02D04E60 VA 00007FF7034B4E60  48 8b 44 24 40                  mov      rax, qword ptr [rsp + 0x40]
+RVA 02D04E65 VA 00007FF7034B4E65  49 2b c5                        sub      rax, r13
+RVA 02D04E68 VA 00007FF7034B4E68  48 c1 f8 03                     sar      rax, 3
+RVA 02D04E6C VA 00007FF7034B4E6C  48 8d 14 c5 00 00 00 00         lea      rdx, [rax*8]
+RVA 02D04E74 VA 00007FF7034B4E74  49 8b c5                        mov      rax, r13
+RVA 02D04E77 VA 00007FF7034B4E77  48 81 fa 00 10 00 00            cmp      rdx, 0x1000
+RVA 02D04E7E VA 00007FF7034B4E7E  0f 82 5c 03 00 00               jb       0x7ff7034b51e0
+RVA 02D04E84 VA 00007FF7034B4E84  48 83 c2 27                     add      rdx, 0x27
+RVA 02D04E88 VA 00007FF7034B4E88  4d 8b 6d f8                     mov      r13, qword ptr [r13 - 8]
+RVA 02D04E8C VA 00007FF7034B4E8C  49 2b c5                        sub      rax, r13
+RVA 02D04E8F VA 00007FF7034B4E8F  48 83 c0 f8                     add      rax, -8
+RVA 02D04E93 VA 00007FF7034B4E93  48 83 f8 1f                     cmp      rax, 0x1f
+RVA 02D04E97 VA 00007FF7034B4E97  0f 86 43 03 00 00               jbe      0x7ff7034b51e0
+RVA 02D04E9D VA 00007FF7034B4E9D  ff 15 7d b2 9d 02               call     qword ptr [rip + 0x29db27d]
+RVA 02D04EA3 VA 00007FF7034B4EA3  90                              nop      
+RVA 02D04EA4 VA 00007FF7034B4EA4  48 8b b8 30 02 00 00            mov      rdi, qword ptr [rax + 0x230]
+RVA 02D04EAB VA 00007FF7034B4EAB  48 8b b0 38 02 00 00            mov      rsi, qword ptr [rax + 0x238]
+RVA 02D04EB2 VA 00007FF7034B4EB2  48 3b fe                        cmp      rdi, rsi
+RVA 02D04EB5 VA 00007FF7034B4EB5  74 84                           je       0x7ff7034b4e3b
+RVA 02D04EB7 VA 00007FF7034B4EB7  66 0f 1f 84 00 00 00 00 00      nop      word ptr [rax + rax]
+RVA 02D04EC0 VA 00007FF7034B4EC0  48 8b 0f                        mov      rcx, qword ptr [rdi]
+RVA 02D04EC3 VA 00007FF7034B4EC3  48 8b 99 50 03 00 00            mov      rbx, qword ptr [rcx + 0x350]
+RVA 02D04ECA VA 00007FF7034B4ECA  e8 d1 a4 d9 ff                  call     0x7ff70324f3a0
+RVA 02D04ECF VA 00007FF7034B4ECF  48 8b d3                        mov      rdx, rbx
+RVA 02D04ED2 VA 00007FF7034B4ED2  48 8b c8                        mov      rcx, rax
+RVA 02D04ED5 VA 00007FF7034B4ED5  e8 46 9e d9 ff                  call     0x7ff70324ed20
+RVA 02D04EDA VA 00007FF7034B4EDA  84 c0                           test     al, al
+RVA 02D04EDC VA 00007FF7034B4EDC  0f 84 6a 01 00 00               je       0x7ff7034b504c
+RVA 02D04EE2 VA 00007FF7034B4EE2  41 80 7f 31 00                  cmp      byte ptr [r15 + 0x31], 0
+RVA 02D04EE7 VA 00007FF7034B4EE7  74 19                           je       0x7ff7034b4f02
+RVA 02D04EE9 VA 00007FF7034B4EE9  48 8b 07                        mov      rax, qword ptr [rdi]
+RVA 02D04EEC VA 00007FF7034B4EEC  80 b8 cc 03 00 00 00            cmp      byte ptr [rax + 0x3cc], 0
+RVA 02D04EF3 VA 00007FF7034B4EF3  75 0d                           jne      0x7ff7034b4f02
+RVA 02D04EF5 VA 00007FF7034B4EF5  83 b8 a0 03 00 00 00            cmp      dword ptr [rax + 0x3a0], 0
+RVA 02D04EFC VA 00007FF7034B4EFC  0f 84 4a 01 00 00               je       0x7ff7034b504c
+RVA 02D04F02 VA 00007FF7034B4F02  4c 8b 0f                        mov      r9, qword ptr [rdi]
+RVA 02D04F05 VA 00007FF7034B4F05  48 8b 05 e4 f3 78 05            mov      rax, qword ptr [rip + 0x578f3e4]
+RVA 02D04F0C VA 00007FF7034B4F0C  48 89 84 24 b0 00 00 00         mov      qword ptr [rsp + 0xb0], rax
+RVA 02D04F14 VA 00007FF7034B4F14  48 8b 84 24 b0 00 00 00         mov      rax, qword ptr [rsp + 0xb0]
+RVA 02D04F1C VA 00007FF7034B4F1C  48 2b c5                        sub      rax, rbp
+RVA 02D04F1F VA 00007FF7034B4F1F  48 89 84 24 b0 00 00 00         mov      qword ptr [rsp + 0xb0], rax
+RVA 02D04F27 VA 00007FF7034B4F27  48 8b 84 24 b0 00 00 00         mov      rax, qword ptr [rsp + 0xb0]
+RVA 02D04F2F VA 00007FF7034B4F2F  49 03 c6                        add      rax, r14
+RVA 02D04F32 VA 00007FF7034B4F32  48 89 84 24 b0 00 00 00         mov      qword ptr [rsp + 0xb0], rax
+RVA 02D04F3A VA 00007FF7034B4F3A  48 8b 8c 24 b0 00 00 00         mov      rcx, qword ptr [rsp + 0xb0]
+RVA 02D04F42 VA 00007FF7034B4F42  41 b8 80 00 00 00               mov      r8d, 0x80
+RVA 02D04F48 VA 00007FF7034B4F48  65 48 8b 04 25 58 00 00 00      mov      rax, qword ptr gs:[0x58]
+RVA 02D04F51 VA 00007FF7034B4F51  48 8b 10                        mov      rdx, qword ptr [rax]
+RVA 02D04F54 VA 00007FF7034B4F54  41 8b 04 10                     mov      eax, dword ptr [r8 + rdx]
+RVA 02D04F58 VA 00007FF7034B4F58  8b c9                           mov      ecx, ecx
+RVA 02D04F5A VA 00007FF7034B4F5A  49 03 0c c4                     add      rcx, qword ptr [r12 + rax*8]
+RVA 02D04F5E VA 00007FF7034B4F5E  48 8b 81 b8 01 00 00            mov      rax, qword ptr [rcx + 0x1b8]
+RVA 02D04F65 VA 00007FF7034B4F65  48 89 84 24 b0 00 00 00         mov      qword ptr [rsp + 0xb0], rax
+RVA 02D04F6D VA 00007FF7034B4F6D  48 8b 84 24 b0 00 00 00         mov      rax, qword ptr [rsp + 0xb0]
+RVA 02D04F75 VA 00007FF7034B4F75  48 2b c5                        sub      rax, rbp
+RVA 02D04F78 VA 00007FF7034B4F78  48 89 84 24 b0 00 00 00         mov      qword ptr [rsp + 0xb0], rax
+RVA 02D04F80 VA 00007FF7034B4F80  48 8b 84 24 b0 00 00 00         mov      rax, qword ptr [rsp + 0xb0]
+RVA 02D04F88 VA 00007FF7034B4F88  49 03 c6                        add      rax, r14
+RVA 02D04F8B VA 00007FF7034B4F8B  48 89 84 24 b0 00 00 00         mov      qword ptr [rsp + 0xb0], rax
+RVA 02D04F93 VA 00007FF7034B4F93  48 8b 8c 24 b0 00 00 00         mov      rcx, qword ptr [rsp + 0xb0]
+RVA 02D04F9B VA 00007FF7034B4F9B  41 8b 04 10                     mov      eax, dword ptr [r8 + rdx]
+RVA 02D04F9F VA 00007FF7034B4F9F  8b c9                           mov      ecx, ecx
+RVA 02D04FA1 VA 00007FF7034B4FA1  49 03 0c c4                     add      rcx, qword ptr [r12 + rax*8]
+RVA 02D04FA5 VA 00007FF7034B4FA5  49 8d 91 98 03 00 00            lea      rdx, [r9 + 0x398]
+RVA 02D04FAC VA 00007FF7034B4FAC  e8 0f 74 6f fd                  call     0x7ff700bac3c0
+RVA 02D04FB1 VA 00007FF7034B4FB1  48 8b 48 38                     mov      rcx, qword ptr [rax + 0x38]
+RVA 02D04FB5 VA 00007FF7034B4FB5  e8 76 2f 70 fd                  call     0x7ff700bb7f30
+RVA 02D04FBA VA 00007FF7034B4FBA  4c 8b d8                        mov      r11, rax
+RVA 02D04FBD VA 00007FF7034B4FBD  48 85 c0                        test     rax, rax
+RVA 02D04FC0 VA 00007FF7034B4FC0  0f 84 86 00 00 00               je       0x7ff7034b504c
+RVA 02D04FC6 VA 00007FF7034B4FC6  0f 57 c9                        xorps    xmm1, xmm1
+RVA 02D04FC9 VA 00007FF7034B4FC9  f3 0f 11 8c 24 b0 00 00 00      movss    dword ptr [rsp + 0xb0], xmm1
+RVA 02D04FD2 VA 00007FF7034B4FD2  4d 8b 47 18                     mov      r8, qword ptr [r15 + 0x18]
+RVA 02D04FD6 VA 00007FF7034B4FD6  4d 8b 57 20                     mov      r10, qword ptr [r15 + 0x20]
+RVA 02D04FDA VA 00007FF7034B4FDA  4d 3b c2                        cmp      r8, r10
+RVA 02D04FDD VA 00007FF7034B4FDD  74 60                           je       0x7ff7034b503f
+RVA 02D04FDF VA 00007FF7034B4FDF  4d 8d 48 04                     lea      r9, [r8 + 4]
+RVA 02D04FE3 VA 00007FF7034B4FE3  41 8b 00                        mov      eax, dword ptr [r8]
+RVA 02D04FE6 VA 00007FF7034B4FE6  83 f8 ff                        cmp      eax, -1
+RVA 02D04FE9 VA 00007FF7034B4FE9  74 47                           je       0x7ff7034b5032
+RVA 02D04FEB VA 00007FF7034B4FEB  8b d0                           mov      edx, eax
+RVA 02D04FED VA 00007FF7034B4FED  24 3f                           and      al, 0x3f
+RVA 02D04FEF VA 00007FF7034B4FEF  0f b6 c8                        movzx    ecx, al
+RVA 02D04FF2 VA 00007FF7034B4FF2  48 c1 ea 06                     shr      rdx, 6
+RVA 02D04FF6 VA 00007FF7034B4FF6  49 8b 44 d3 18                  mov      rax, qword ptr [r11 + rdx*8 + 0x18]
+RVA 02D04FFB VA 00007FF7034B4FFB  48 0f a3 c8                     bt       rax, rcx
+RVA 02D04FFF VA 00007FF7034B4FFF  73 31                           jae      0x7ff7034b5032
+RVA 02D05001 VA 00007FF7034B5001  48 8d 84 24 b0 00 00 00         lea      rax, [rsp + 0xb0]
+RVA 02D05009 VA 00007FF7034B5009  f3 41 0f 10 01                  movss    xmm0, dword ptr [r9]
+RVA 02D0500E VA 00007FF7034B500E  0f 2f c1                        comiss   xmm0, xmm1
+RVA 02D05011 VA 00007FF7034B5011  49 0f 47 c1                     cmova    rax, r9
+RVA 02D05015 VA 00007FF7034B5015  f3 0f 10 08                     movss    xmm1, dword ptr [rax]
+RVA 02D05019 VA 00007FF7034B5019  f3 0f 11 8c 24 b0 00 00 00      movss    dword ptr [rsp + 0xb0], xmm1
+RVA 02D05022 VA 00007FF7034B5022  0f 28 c1                        movaps   xmm0, xmm1
+RVA 02D05025 VA 00007FF7034B5025  f3 0f 58 c6                     addss    xmm0, xmm6
+RVA 02D05029 VA 00007FF7034B5029  0f 2f c7                        comiss   xmm0, xmm7
+RVA 02D0502C VA 00007FF7034B502C  0f 87 f2 00 00 00               ja       0x7ff7034b5124
+RVA 02D05032 VA 00007FF7034B5032  49 83 c0 08                     add      r8, 8
+RVA 02D05036 VA 00007FF7034B5036  49 83 c1 08                     add      r9, 8
+RVA 02D0503A VA 00007FF7034B503A  4d 3b c2                        cmp      r8, r10
+RVA 02D0503D VA 00007FF7034B503D  75 a4                           jne      0x7ff7034b4fe3
+RVA 02D0503F VA 00007FF7034B503F  f3 0f 58 f1                     addss    xmm6, xmm1
+RVA 02D05043 VA 00007FF7034B5043  0f 2f f7                        comiss   xmm6, xmm7
+RVA 02D05046 VA 00007FF7034B5046  0f 87 38 01 00 00               ja       0x7ff7034b5184
+RVA 02D0504C VA 00007FF7034B504C  48 83 c7 08                     add      rdi, 8
+RVA 02D05050 VA 00007FF7034B5050  48 3b fe                        cmp      rdi, rsi
+RVA 02D05053 VA 00007FF7034B5053  0f 85 67 fe ff ff               jne      0x7ff7034b4ec0
+RVA 02D05059 VA 00007FF7034B5059  e9 dd fd ff ff                  jmp      0x7ff7034b4e3b
+RVA 02D0505E VA 00007FF7034B505E  48 8b 9c 24 b8 00 00 00         mov      rbx, qword ptr [rsp + 0xb8]
+RVA 02D05066 VA 00007FF7034B5066  c7 03 00 00 80 3f               mov      dword ptr [rbx], 0x3f800000
+RVA 02D0506C VA 00007FF7034B506C  48 8b 4c 24 30                  mov      rcx, qword ptr [rsp + 0x30]
+RVA 02D05071 VA 00007FF7034B5071  48 85 c9                        test     rcx, rcx
+RVA 02D05074 VA 00007FF7034B5074  0f 84 73 01 00 00               je       0x7ff7034b51ed
+RVA 02D0507A VA 00007FF7034B507A  48 8b 44 24 40                  mov      rax, qword ptr [rsp + 0x40]
+RVA 02D0507F VA 00007FF7034B507F  48 2b c1                        sub      rax, rcx
+RVA 02D05082 VA 00007FF7034B5082  48 c1 f8 03                     sar      rax, 3
+RVA 02D05086 VA 00007FF7034B5086  48 8d 14 c5 00 00 00 00         lea      rdx, [rax*8]
+RVA 02D0508E VA 00007FF7034B508E  48 8b c1                        mov      rax, rcx
+RVA 02D05091 VA 00007FF7034B5091  48 81 fa 00 10 00 00            cmp      rdx, 0x1000
+RVA 02D05098 VA 00007FF7034B5098  72 1c                           jb       0x7ff7034b50b6
+RVA 02D0509A VA 00007FF7034B509A  48 83 c2 27                     add      rdx, 0x27
+RVA 02D0509E VA 00007FF7034B509E  48 8b 49 f8                     mov      rcx, qword ptr [rcx - 8]
+RVA 02D050A2 VA 00007FF7034B50A2  48 2b c1                        sub      rax, rcx
+RVA 02D050A5 VA 00007FF7034B50A5  48 83 c0 f8                     add      rax, -8
+RVA 02D050A9 VA 00007FF7034B50A9  48 83 f8 1f                     cmp      rax, 0x1f
+RVA 02D050AD VA 00007FF7034B50AD  76 07                           jbe      0x7ff7034b50b6
+RVA 02D050AF VA 00007FF7034B50AF  ff 15 6b b0 9d 02               call     qword ptr [rip + 0x29db06b]
+RVA 02D050B5 VA 00007FF7034B50B5  cc                              int3     
+RVA 02D050B6 VA 00007FF7034B50B6  e8 f5 af 2a 02                  call     0x7ff7057600b0
+RVA 02D050BB VA 00007FF7034B50BB  90                              nop      
+RVA 02D050BC VA 00007FF7034B50BC  e9 2c 01 00 00                  jmp      0x7ff7034b51ed
+RVA 02D050C1 VA 00007FF7034B50C1  48 8b 9c 24 b8 00 00 00         mov      rbx, qword ptr [rsp + 0xb8]
+RVA 02D050C9 VA 00007FF7034B50C9  c7 03 00 00 80 3f               mov      dword ptr [rbx], 0x3f800000
+RVA 02D050CF VA 00007FF7034B50CF  48 8b 4c 24 30                  mov      rcx, qword ptr [rsp + 0x30]
+RVA 02D050D4 VA 00007FF7034B50D4  48 85 c9                        test     rcx, rcx
+RVA 02D050D7 VA 00007FF7034B50D7  0f 84 10 01 00 00               je       0x7ff7034b51ed
+RVA 02D050DD VA 00007FF7034B50DD  48 8b 44 24 40                  mov      rax, qword ptr [rsp + 0x40]
+RVA 02D050E2 VA 00007FF7034B50E2  48 2b c1                        sub      rax, rcx
+RVA 02D050E5 VA 00007FF7034B50E5  48 c1 f8 03                     sar      rax, 3
+RVA 02D050E9 VA 00007FF7034B50E9  48 8d 14 c5 00 00 00 00         lea      rdx, [rax*8]
+RVA 02D050F1 VA 00007FF7034B50F1  48 8b c1                        mov      rax, rcx
+RVA 02D050F4 VA 00007FF7034B50F4  48 81 fa 00 10 00 00            cmp      rdx, 0x1000
+RVA 02D050FB VA 00007FF7034B50FB  72 1c                           jb       0x7ff7034b5119
+RVA 02D050FD VA 00007FF7034B50FD  48 83 c2 27                     add      rdx, 0x27
+RVA 02D05101 VA 00007FF7034B5101  48 8b 49 f8                     mov      rcx, qword ptr [rcx - 8]
+RVA 02D05105 VA 00007FF7034B5105  48 2b c1                        sub      rax, rcx
+RVA 02D05108 VA 00007FF7034B5108  48 83 c0 f8                     add      rax, -8
+RVA 02D0510C VA 00007FF7034B510C  48 83 f8 1f                     cmp      rax, 0x1f
+RVA 02D05110 VA 00007FF7034B5110  76 07                           jbe      0x7ff7034b5119
+RVA 02D05112 VA 00007FF7034B5112  ff 15 08 b0 9d 02               call     qword ptr [rip + 0x29db008]
+RVA 02D05118 VA 00007FF7034B5118  cc                              int3     
+RVA 02D05119 VA 00007FF7034B5119  e8 92 af 2a 02                  call     0x7ff7057600b0
+RVA 02D0511E VA 00007FF7034B511E  90                              nop      
+RVA 02D0511F VA 00007FF7034B511F  e9 c9 00 00 00                  jmp      0x7ff7034b51ed
+RVA 02D05124 VA 00007FF7034B5124  48 8b 9c 24 b8 00 00 00         mov      rbx, qword ptr [rsp + 0xb8]
+RVA 02D0512C VA 00007FF7034B512C  c7 03 00 00 80 3f               mov      dword ptr [rbx], 0x3f800000
+RVA 02D05132 VA 00007FF7034B5132  48 8b 4c 24 30                  mov      rcx, qword ptr [rsp + 0x30]
+RVA 02D05137 VA 00007FF7034B5137  48 85 c9                        test     rcx, rcx
+RVA 02D0513A VA 00007FF7034B513A  0f 84 ad 00 00 00               je       0x7ff7034b51ed
+RVA 02D05140 VA 00007FF7034B5140  48 8b 44 24 40                  mov      rax, qword ptr [rsp + 0x40]
+RVA 02D05145 VA 00007FF7034B5145  48 2b c1                        sub      rax, rcx
+RVA 02D05148 VA 00007FF7034B5148  48 c1 f8 03                     sar      rax, 3
+RVA 02D0514C VA 00007FF7034B514C  48 8d 14 c5 00 00 00 00         lea      rdx, [rax*8]
+RVA 02D05154 VA 00007FF7034B5154  48 8b c1                        mov      rax, rcx
+RVA 02D05157 VA 00007FF7034B5157  48 81 fa 00 10 00 00            cmp      rdx, 0x1000
+RVA 02D0515E VA 00007FF7034B515E  72 1c                           jb       0x7ff7034b517c
+RVA 02D05160 VA 00007FF7034B5160  48 83 c2 27                     add      rdx, 0x27
+RVA 02D05164 VA 00007FF7034B5164  48 8b 49 f8                     mov      rcx, qword ptr [rcx - 8]
+RVA 02D05168 VA 00007FF7034B5168  48 2b c1                        sub      rax, rcx
+RVA 02D0516B VA 00007FF7034B516B  48 83 c0 f8                     add      rax, -8
+RVA 02D0516F VA 00007FF7034B516F  48 83 f8 1f                     cmp      rax, 0x1f
+RVA 02D05173 VA 00007FF7034B5173  76 07                           jbe      0x7ff7034b517c
+RVA 02D05175 VA 00007FF7034B5175  ff 15 a5 af 9d 02               call     qword ptr [rip + 0x29dafa5]
+RVA 02D0517B VA 00007FF7034B517B  cc                              int3     
+RVA 02D0517C VA 00007FF7034B517C  e8 2f af 2a 02                  call     0x7ff7057600b0
+RVA 02D05181 VA 00007FF7034B5181  90                              nop      
+RVA 02D05182 VA 00007FF7034B5182  eb 69                           jmp      0x7ff7034b51ed
+RVA 02D05184 VA 00007FF7034B5184  48 8b 9c 24 b8 00 00 00         mov      rbx, qword ptr [rsp + 0xb8]
+RVA 02D0518C VA 00007FF7034B518C  c7 03 00 00 80 3f               mov      dword ptr [rbx], 0x3f800000
+RVA 02D05192 VA 00007FF7034B5192  48 8b 4c 24 30                  mov      rcx, qword ptr [rsp + 0x30]
+RVA 02D05197 VA 00007FF7034B5197  48 85 c9                        test     rcx, rcx
+RVA 02D0519A VA 00007FF7034B519A  74 51                           je       0x7ff7034b51ed
+RVA 02D0519C VA 00007FF7034B519C  48 8b 44 24 40                  mov      rax, qword ptr [rsp + 0x40]
+RVA 02D051A1 VA 00007FF7034B51A1  48 2b c1                        sub      rax, rcx
+RVA 02D051A4 VA 00007FF7034B51A4  48 c1 f8 03                     sar      rax, 3
+RVA 02D051A8 VA 00007FF7034B51A8  48 8d 14 c5 00 00 00 00         lea      rdx, [rax*8]
+RVA 02D051B0 VA 00007FF7034B51B0  48 8b c1                        mov      rax, rcx
+RVA 02D051B3 VA 00007FF7034B51B3  48 81 fa 00 10 00 00            cmp      rdx, 0x1000
+RVA 02D051BA VA 00007FF7034B51BA  72 1c                           jb       0x7ff7034b51d8
+RVA 02D051BC VA 00007FF7034B51BC  48 83 c2 27                     add      rdx, 0x27
+RVA 02D051C0 VA 00007FF7034B51C0  48 8b 49 f8                     mov      rcx, qword ptr [rcx - 8]
+RVA 02D051C4 VA 00007FF7034B51C4  48 2b c1                        sub      rax, rcx
+RVA 02D051C7 VA 00007FF7034B51C7  48 83 c0 f8                     add      rax, -8
+RVA 02D051CB VA 00007FF7034B51CB  48 83 f8 1f                     cmp      rax, 0x1f
+RVA 02D051CF VA 00007FF7034B51CF  76 07                           jbe      0x7ff7034b51d8
+RVA 02D051D1 VA 00007FF7034B51D1  ff 15 49 af 9d 02               call     qword ptr [rip + 0x29daf49]
+RVA 02D051D7 VA 00007FF7034B51D7  cc                              int3     
+RVA 02D051D8 VA 00007FF7034B51D8  e8 d3 ae 2a 02                  call     0x7ff7057600b0
+RVA 02D051DD VA 00007FF7034B51DD  90                              nop      
+RVA 02D051DE VA 00007FF7034B51DE  eb 0d                           jmp      0x7ff7034b51ed
+RVA 02D051E0 VA 00007FF7034B51E0  49 8b cd                        mov      rcx, r13
+RVA 02D051E3 VA 00007FF7034B51E3  e8 c8 ae 2a 02                  call     0x7ff7057600b0
+RVA 02D051E8 VA 00007FF7034B51E8  90                              nop      
+RVA 02D051E9 VA 00007FF7034B51E9  f3 0f 11 33                     movss    dword ptr [rbx], xmm6
+RVA 02D051ED VA 00007FF7034B51ED  48 8b c3                        mov      rax, rbx
+RVA 02D051F0 VA 00007FF7034B51F0  48 8b 9c 24 c0 00 00 00         mov      rbx, qword ptr [rsp + 0xc0]
+RVA 02D051F8 VA 00007FF7034B51F8  0f 28 74 24 60                  movaps   xmm6, xmmword ptr [rsp + 0x60]
+RVA 02D051FD VA 00007FF7034B51FD  0f 28 7c 24 50                  movaps   xmm7, xmmword ptr [rsp + 0x50]
+RVA 02D05202 VA 00007FF7034B5202  48 83 c4 70                     add      rsp, 0x70
+RVA 02D05206 VA 00007FF7034B5206  41 5f                           pop      r15
+RVA 02D05208 VA 00007FF7034B5208  41 5e                           pop      r14
+RVA 02D0520A VA 00007FF7034B520A  41 5d                           pop      r13
+RVA 02D0520C VA 00007FF7034B520C  41 5c                           pop      r12
+RVA 02D0520E VA 00007FF7034B520E  5f                              pop      rdi
+RVA 02D0520F VA 00007FF7034B520F  5e                              pop      rsi
+RVA 02D05210 VA 00007FF7034B5210  5d                              pop      rbp
+RVA 02D05211 VA 00007FF7034B5211  c3                              ret      
+
+{"name": "IntentionEvaluate", "rva": "0x2cfdcd0", "end_rva": "0x2cfddd7", "sha256": "6e4e627fa908505a9404fedead7739e4b592c77feb74c612ea93c9b0f4905a64", "bounds": "PE runtime function entry"}
+RVA 02CFDCD0 VA 00007FF7034ADCD0  40 53                           push     rbx
+RVA 02CFDCD2 VA 00007FF7034ADCD2  48 83 ec 10                     sub      rsp, 0x10
+RVA 02CFDCD6 VA 00007FF7034ADCD6  4c 8b 49 18                     mov      r9, qword ptr [rcx + 0x18]
+RVA 02CFDCDA VA 00007FF7034ADCDA  48 8b da                        mov      rbx, rdx
+RVA 02CFDCDD VA 00007FF7034ADCDD  4c 8b 59 20                     mov      r11, qword ptr [rcx + 0x20]
+RVA 02CFDCE1 VA 00007FF7034ADCE1  4d 3b cb                        cmp      r9, r11
+RVA 02CFDCE4 VA 00007FF7034ADCE4  0f 84 de 00 00 00               je       0x7ff7034addc8
+RVA 02CFDCEA VA 00007FF7034ADCEA  48 8b 41 10                     mov      rax, qword ptr [rcx + 0x10]
+RVA 02CFDCEE VA 00007FF7034ADCEE  0f 57 d2                        xorps    xmm2, xmm2
+RVA 02CFDCF1 VA 00007FF7034ADCF1  f3 0f 10 1d d3 06 92 03         movss    xmm3, dword ptr [rip + 0x39206d3]
+RVA 02CFDCF9 VA 00007FF7034ADCF9  0f 57 c9                        xorps    xmm1, xmm1
+RVA 02CFDCFC VA 00007FF7034ADCFC  4d 8b c1                        mov      r8, r9
+RVA 02CFDCFF VA 00007FF7034ADCFF  4c 8b 90 88 10 00 00            mov      r10, qword ptr [rax + 0x1088]
+RVA 02CFDD06 VA 00007FF7034ADD06  41 8b 00                        mov      eax, dword ptr [r8]
+RVA 02CFDD09 VA 00007FF7034ADD09  83 f8 ff                        cmp      eax, -1
+RVA 02CFDD0C VA 00007FF7034ADD0C  75 08                           jne      0x7ff7034add16
+RVA 02CFDD0E VA 00007FF7034ADD0E  f3 41 0f 58 48 04               addss    xmm1, dword ptr [r8 + 4]
+RVA 02CFDD14 VA 00007FF7034ADD14  eb 73                           jmp      0x7ff7034add89
+RVA 02CFDD16 VA 00007FF7034ADD16  49 8b 4a 10                     mov      rcx, qword ptr [r10 + 0x10]
+RVA 02CFDD1A VA 00007FF7034ADD1A  c7 44 24 04 00 00 80 3f         mov      dword ptr [rsp + 4], 0x3f800000
+RVA 02CFDD22 VA 00007FF7034ADD22  c7 44 24 20 00 00 00 00         mov      dword ptr [rsp + 0x20], 0
+RVA 02CFDD2A VA 00007FF7034ADD2A  48 85 c9                        test     rcx, rcx
+RVA 02CFDD2D VA 00007FF7034ADD2D  75 04                           jne      0x7ff7034add33
+RVA 02CFDD2F VA 00007FF7034ADD2F  49 8d 4a 28                     lea      rcx, [r10 + 0x28]
+RVA 02CFDD33 VA 00007FF7034ADD33  48 8b d0                        mov      rdx, rax
+RVA 02CFDD36 VA 00007FF7034ADD36  49 8b 42 70                     mov      rax, qword ptr [r10 + 0x70]
+RVA 02CFDD3A VA 00007FF7034ADD3A  48 85 c0                        test     rax, rax
+RVA 02CFDD3D VA 00007FF7034ADD3D  75 07                           jne      0x7ff7034add46
+RVA 02CFDD3F VA 00007FF7034ADD3F  49 8d 82 88 00 00 00            lea      rax, [r10 + 0x88]
+RVA 02CFDD46 VA 00007FF7034ADD46  f3 0f 10 04 90                  movss    xmm0, dword ptr [rax + rdx*4]
+RVA 02CFDD4B VA 00007FF7034ADD4B  f3 0f 58 04 91                  addss    xmm0, dword ptr [rcx + rdx*4]
+RVA 02CFDD50 VA 00007FF7034ADD50  48 8d 0c 24                     lea      rcx, [rsp]
+RVA 02CFDD54 VA 00007FF7034ADD54  48 8d 54 24 20                  lea      rdx, [rsp + 0x20]
+RVA 02CFDD59 VA 00007FF7034ADD59  0f 2f d0                        comiss   xmm2, xmm0
+RVA 02CFDD5C VA 00007FF7034ADD5C  f3 0f 11 04 24                  movss    dword ptr [rsp], xmm0
+RVA 02CFDD61 VA 00007FF7034ADD61  0f 97 c0                        seta     al
+RVA 02CFDD64 VA 00007FF7034ADD64  84 c0                           test     al, al
+RVA 02CFDD66 VA 00007FF7034ADD66  48 0f 44 d1                     cmove    rdx, rcx
+RVA 02CFDD6A VA 00007FF7034ADD6A  48 8d 4c 24 04                  lea      rcx, [rsp + 4]
+RVA 02CFDD6F VA 00007FF7034ADD6F  0f 2f c3                        comiss   xmm0, xmm3
+RVA 02CFDD72 VA 00007FF7034ADD72  f3 41 0f 10 40 04               movss    xmm0, dword ptr [r8 + 4]
+RVA 02CFDD78 VA 00007FF7034ADD78  0f 97 c0                        seta     al
+RVA 02CFDD7B VA 00007FF7034ADD7B  84 c0                           test     al, al
+RVA 02CFDD7D VA 00007FF7034ADD7D  48 0f 44 ca                     cmove    rcx, rdx
+RVA 02CFDD81 VA 00007FF7034ADD81  f3 0f 59 01                     mulss    xmm0, dword ptr [rcx]
+RVA 02CFDD85 VA 00007FF7034ADD85  f3 0f 58 c8                     addss    xmm1, xmm0
+RVA 02CFDD89 VA 00007FF7034ADD89  49 83 c0 08                     add      r8, 8
+RVA 02CFDD8D VA 00007FF7034ADD8D  4d 3b c3                        cmp      r8, r11
+RVA 02CFDD90 VA 00007FF7034ADD90  0f 85 70 ff ff ff               jne      0x7ff7034add06
+RVA 02CFDD96 VA 00007FF7034ADD96  0f 28 c2                        movaps   xmm0, xmm2
+RVA 02CFDD99 VA 00007FF7034ADD99  0f 1f 80 00 00 00 00            nop      dword ptr [rax]
+RVA 02CFDDA0 VA 00007FF7034ADDA0  f3 41 0f 58 41 04               addss    xmm0, dword ptr [r9 + 4]
+RVA 02CFDDA6 VA 00007FF7034ADDA6  49 83 c1 08                     add      r9, 8
+RVA 02CFDDAA VA 00007FF7034ADDAA  4d 3b cb                        cmp      r9, r11
+RVA 02CFDDAD VA 00007FF7034ADDAD  75 f1                           jne      0x7ff7034adda0
+RVA 02CFDDAF VA 00007FF7034ADDAF  0f 2f d0                        comiss   xmm2, xmm0
+RVA 02CFDDB2 VA 00007FF7034ADDB2  72 03                           jb       0x7ff7034addb7
+RVA 02CFDDB4 VA 00007FF7034ADDB4  0f 28 c3                        movaps   xmm0, xmm3
+RVA 02CFDDB7 VA 00007FF7034ADDB7  f3 0f 5e c8                     divss    xmm1, xmm0
+RVA 02CFDDBB VA 00007FF7034ADDBB  48 8b c3                        mov      rax, rbx
+RVA 02CFDDBE VA 00007FF7034ADDBE  f3 0f 11 0b                     movss    dword ptr [rbx], xmm1
+RVA 02CFDDC2 VA 00007FF7034ADDC2  48 83 c4 10                     add      rsp, 0x10
+RVA 02CFDDC6 VA 00007FF7034ADDC6  5b                              pop      rbx
+RVA 02CFDDC7 VA 00007FF7034ADDC7  c3                              ret      
+RVA 02CFDDC8 VA 00007FF7034ADDC8  c7 02 00 00 80 3f               mov      dword ptr [rdx], 0x3f800000
+RVA 02CFDDCE VA 00007FF7034ADDCE  48 8b c3                        mov      rax, rbx
+RVA 02CFDDD1 VA 00007FF7034ADDD1  48 83 c4 10                     add      rsp, 0x10
+RVA 02CFDDD5 VA 00007FF7034ADDD5  5b                              pop      rbx
+RVA 02CFDDD6 VA 00007FF7034ADDD6  c3                              ret      
+
+{"name": "LuaEvaluate", "rva": "0x2d02750", "end_rva": "0x2d028c6", "sha256": "9c4ff6c8f0fc00a946eddc612652038f9a23f53d63b12b9b04966d99f0488dc2", "bounds": "PE runtime function entry"}
+RVA 02D02750 VA 00007FF7034B2750  4c 8b dc                        mov      r11, rsp
+RVA 02D02753 VA 00007FF7034B2753  49 89 5b 10                     mov      qword ptr [r11 + 0x10], rbx
+RVA 02D02757 VA 00007FF7034B2757  55                              push     rbp
+RVA 02D02758 VA 00007FF7034B2758  56                              push     rsi
+RVA 02D02759 VA 00007FF7034B2759  57                              push     rdi
+RVA 02D0275A VA 00007FF7034B275A  48 83 ec 60                     sub      rsp, 0x60
+RVA 02D0275E VA 00007FF7034B275E  0f 29 74 24 50                  movaps   xmmword ptr [rsp + 0x50], xmm6
+RVA 02D02763 VA 00007FF7034B2763  0f 29 7c 24 40                  movaps   xmmword ptr [rsp + 0x40], xmm7
+RVA 02D02768 VA 00007FF7034B2768  41 8b e8                        mov      ebp, r8d
+RVA 02D0276B VA 00007FF7034B276B  48 8b fa                        mov      rdi, rdx
+RVA 02D0276E VA 00007FF7034B276E  49 8b 41 08                     mov      rax, qword ptr [r9 + 8]
+RVA 02D02772 VA 00007FF7034B2772  49 89 43 a8                     mov      qword ptr [r11 - 0x58], rax
+RVA 02D02776 VA 00007FF7034B2776  4c 8b 49 10                     mov      r9, qword ptr [rcx + 0x10]
+RVA 02D0277A VA 00007FF7034B277A  49 8b 81 c8 0f 00 00            mov      rax, qword ptr [r9 + 0xfc8]
+RVA 02D02781 VA 00007FF7034B2781  48 8b 58 08                     mov      rbx, qword ptr [rax + 8]
+RVA 02D02785 VA 00007FF7034B2785  0f 57 ff                        xorps    xmm7, xmm7
+RVA 02D02788 VA 00007FF7034B2788  0f 57 f6                        xorps    xmm6, xmm6
+RVA 02D0278B VA 00007FF7034B278B  f3 41 0f 11 73 08               movss    dword ptr [r11 + 8], xmm6
+RVA 02D02791 VA 00007FF7034B2791  4d 89 4b 20                     mov      qword ptr [r11 + 0x20], r9
+RVA 02D02795 VA 00007FF7034B2795  49 89 5b b0                     mov      qword ptr [r11 - 0x50], rbx
+RVA 02D02799 VA 00007FF7034B2799  48 8b 43 20                     mov      rax, qword ptr [rbx + 0x20]
+RVA 02D0279D VA 00007FF7034B279D  48 8b 73 10                     mov      rsi, qword ptr [rbx + 0x10]
+RVA 02D027A1 VA 00007FF7034B27A1  48 2b 30                        sub      rsi, qword ptr [rax]
+RVA 02D027A4 VA 00007FF7034B27A4  48 83 ee 10                     sub      rsi, 0x10
+RVA 02D027A8 VA 00007FF7034B27A8  48 c1 fe 04                     sar      rsi, 4
+RVA 02D027AC VA 00007FF7034B27AC  89 74 24 30                     mov      dword ptr [rsp + 0x30], esi
+RVA 02D027B0 VA 00007FF7034B27B0  48 8d 51 18                     lea      rdx, [rcx + 0x18]
+RVA 02D027B4 VA 00007FF7034B27B4  48 8b cb                        mov      rcx, rbx
+RVA 02D027B7 VA 00007FF7034B27B7  e8 e4 d6 91 fd                  call     0x7ff700dcfea0
+RVA 02D027BC VA 00007FF7034B27BC  84 c0                           test     al, al
+RVA 02D027BE VA 00007FF7034B27BE  75 04                           jne      0x7ff7034b27c4
+RVA 02D027C0 VA 00007FF7034B27C0  32 d2                           xor      dl, dl
+RVA 02D027C2 VA 00007FF7034B27C2  eb 79                           jmp      0x7ff7034b283d
+RVA 02D027C4 VA 00007FF7034B27C4  48 8b d3                        mov      rdx, rbx
+RVA 02D027C7 VA 00007FF7034B27C7  48 8d 8c 24 98 00 00 00         lea      rcx, [rsp + 0x98]
+RVA 02D027CF VA 00007FF7034B27CF  e8 5c 3b e8 ff                  call     0x7ff703336330
+RVA 02D027D4 VA 00007FF7034B27D4  48 8b d3                        mov      rdx, rbx
+RVA 02D027D7 VA 00007FF7034B27D7  48 8d 4c 24 20                  lea      rcx, [rsp + 0x20]
+RVA 02D027DC VA 00007FF7034B27DC  e8 8f b3 31 ff                  call     0x7ff7027cdb70
+RVA 02D027E1 VA 00007FF7034B27E1  48 8b 4b 10                     mov      rcx, qword ptr [rbx + 0x10]
+RVA 02D027E5 VA 00007FF7034B27E5  48 89 29                        mov      qword ptr [rcx], rbp
+RVA 02D027E8 VA 00007FF7034B27E8  c7 41 08 13 00 00 00            mov      dword ptr [rcx + 8], 0x13
+RVA 02D027EF VA 00007FF7034B27EF  48 83 43 10 10                  add      qword ptr [rbx + 0x10], 0x10
+RVA 02D027F4 VA 00007FF7034B27F4  ba 03 00 00 00                  mov      edx, 3
+RVA 02D027F9 VA 00007FF7034B27F9  41 b8 01 00 00 00               mov      r8d, 1
+RVA 02D027FF VA 00007FF7034B27FF  48 8b cb                        mov      rcx, rbx
+RVA 02D02802 VA 00007FF7034B2802  e8 49 95 9a 00                  call     0x7ff703e5bd50
+RVA 02D02807 VA 00007FF7034B2807  0f b6 d0                        movzx    edx, al
+RVA 02D0280A VA 00007FF7034B280A  84 c0                           test     al, al
+RVA 02D0280C VA 00007FF7034B280C  74 2f                           je       0x7ff7034b283d
+RVA 02D0280E VA 00007FF7034B280E  48 8b 43 20                     mov      rax, qword ptr [rbx + 0x20]
+RVA 02D02812 VA 00007FF7034B2812  4c 8b 43 10                     mov      r8, qword ptr [rbx + 0x10]
+RVA 02D02816 VA 00007FF7034B2816  4c 2b 00                        sub      r8, qword ptr [rax]
+RVA 02D02819 VA 00007FF7034B2819  49 83 e8 10                     sub      r8, 0x10
+RVA 02D0281D VA 00007FF7034B281D  49 c1 f8 04                     sar      r8, 4
+RVA 02D02821 VA 00007FF7034B2821  48 8b d3                        mov      rdx, rbx
+RVA 02D02824 VA 00007FF7034B2824  48 8d 8c 24 80 00 00 00         lea      rcx, [rsp + 0x80]
+RVA 02D0282C VA 00007FF7034B282C  e8 4f c2 cf fd                  call     0x7ff7011aea80
+RVA 02D02831 VA 00007FF7034B2831  0f b6 d0                        movzx    edx, al
+RVA 02D02834 VA 00007FF7034B2834  f3 0f 10 b4 24 80 00 00 00      movss    xmm6, dword ptr [rsp + 0x80]
+RVA 02D0283D VA 00007FF7034B283D  48 8b 43 20                     mov      rax, qword ptr [rbx + 0x20]
+RVA 02D02841 VA 00007FF7034B2841  48 8b 08                        mov      rcx, qword ptr [rax]
+RVA 02D02844 VA 00007FF7034B2844  45 33 c0                        xor      r8d, r8d
+RVA 02D02847 VA 00007FF7034B2847  85 f6                           test     esi, esi
+RVA 02D02849 VA 00007FF7034B2849  78 3c                           js       0x7ff7034b2887
+RVA 02D0284B VA 00007FF7034B284B  48 63 c6                        movsxd   rax, esi
+RVA 02D0284E VA 00007FF7034B284E  48 ff c0                        inc      rax
+RVA 02D02851 VA 00007FF7034B2851  48 c1 e0 04                     shl      rax, 4
+RVA 02D02855 VA 00007FF7034B2855  48 03 c8                        add      rcx, rax
+RVA 02D02858 VA 00007FF7034B2858  48 8b 43 10                     mov      rax, qword ptr [rbx + 0x10]
+RVA 02D0285C VA 00007FF7034B285C  48 3b c1                        cmp      rax, rcx
+RVA 02D0285F VA 00007FF7034B285F  73 34                           jae      0x7ff7034b2895
+RVA 02D02861 VA 00007FF7034B2861  0f 1f 40 00                     nop      dword ptr [rax]
+RVA 02D02865 VA 00007FF7034B2865  66 66 66 0f 1f 84 00 00 00 00 00  nop      word ptr [rax + rax]
+RVA 02D02870 VA 00007FF7034B2870  44 89 40 08                     mov      dword ptr [rax + 8], r8d
+RVA 02D02874 VA 00007FF7034B2874  48 8b 43 10                     mov      rax, qword ptr [rbx + 0x10]
+RVA 02D02878 VA 00007FF7034B2878  48 83 c0 10                     add      rax, 0x10
+RVA 02D0287C VA 00007FF7034B287C  48 89 43 10                     mov      qword ptr [rbx + 0x10], rax
+RVA 02D02880 VA 00007FF7034B2880  48 3b c1                        cmp      rax, rcx
+RVA 02D02883 VA 00007FF7034B2883  72 eb                           jb       0x7ff7034b2870
+RVA 02D02885 VA 00007FF7034B2885  eb 0e                           jmp      0x7ff7034b2895
+RVA 02D02887 VA 00007FF7034B2887  8d 46 01                        lea      eax, [rsi + 1]
+RVA 02D0288A VA 00007FF7034B288A  48 63 c8                        movsxd   rcx, eax
+RVA 02D0288D VA 00007FF7034B288D  48 c1 e1 04                     shl      rcx, 4
+RVA 02D02891 VA 00007FF7034B2891  48 03 4b 10                     add      rcx, qword ptr [rbx + 0x10]
+RVA 02D02895 VA 00007FF7034B2895  48 89 4b 10                     mov      qword ptr [rbx + 0x10], rcx
+RVA 02D02899 VA 00007FF7034B2899  84 d2                           test     dl, dl
+RVA 02D0289B VA 00007FF7034B289B  74 09                           je       0x7ff7034b28a6
+RVA 02D0289D VA 00007FF7034B289D  f3 0f 11 37                     movss    dword ptr [rdi], xmm6
+RVA 02D028A1 VA 00007FF7034B28A1  0f 2f fe                        comiss   xmm7, xmm6
+RVA 02D028A4 VA 00007FF7034B28A4  76 03                           jbe      0x7ff7034b28a9
+RVA 02D028A6 VA 00007FF7034B28A6  44 89 07                        mov      dword ptr [rdi], r8d
+RVA 02D028A9 VA 00007FF7034B28A9  48 8b c7                        mov      rax, rdi
+RVA 02D028AC VA 00007FF7034B28AC  48 8b 9c 24 88 00 00 00         mov      rbx, qword ptr [rsp + 0x88]
+RVA 02D028B4 VA 00007FF7034B28B4  0f 28 74 24 50                  movaps   xmm6, xmmword ptr [rsp + 0x50]
+RVA 02D028B9 VA 00007FF7034B28B9  0f 28 7c 24 40                  movaps   xmm7, xmmword ptr [rsp + 0x40]
+RVA 02D028BE VA 00007FF7034B28BE  48 83 c4 60                     add      rsp, 0x60
+RVA 02D028C2 VA 00007FF7034B28C2  5f                              pop      rdi
+RVA 02D028C3 VA 00007FF7034B28C3  5e                              pop      rsi
+RVA 02D028C4 VA 00007FF7034B28C4  5d                              pop      rbp
+RVA 02D028C5 VA 00007FF7034B28C5  c3                              ret      
+
+{"name": "OnlyOneEvaluate", "rva": "0x2d01e70", "end_rva": "0x2d01ebf", "sha256": "08f9613487dbf52e6dafd7e320c680ce2e816ee2128c4a02e5b4ba365e150c70", "bounds": "PE runtime function entry"}
+RVA 02D01E70 VA 00007FF7034B1E70  40 53                           push     rbx
+RVA 02D01E72 VA 00007FF7034B1E72  48 83 ec 40                     sub      rsp, 0x40
+RVA 02D01E76 VA 00007FF7034B1E76  48 8b 49 10                     mov      rcx, qword ptr [rcx + 0x10]
+RVA 02D01E7A VA 00007FF7034B1E7A  48 8b da                        mov      rbx, rdx
+RVA 02D01E7D VA 00007FF7034B1E7D  49 8b 51 08                     mov      rdx, qword ptr [r9 + 8]
+RVA 02D01E81 VA 00007FF7034B1E81  41 b0 06                        mov      r8b, 6
+RVA 02D01E84 VA 00007FF7034B1E84  4c 8d 4c 24 20                  lea      r9, [rsp + 0x20]
+RVA 02D01E89 VA 00007FF7034B1E89  c6 44 24 20 00                  mov      byte ptr [rsp + 0x20], 0
+RVA 02D01E8E VA 00007FF7034B1E8E  c7 03 00 00 00 00               mov      dword ptr [rbx], 0
+RVA 02D01E94 VA 00007FF7034B1E94  e8 a7 1d c2 ff                  call     0x7ff7030d3c40
+RVA 02D01E99 VA 00007FF7034B1E99  84 c0                           test     al, al
+RVA 02D01E9B VA 00007FF7034B1E9B  48 8b c3                        mov      rax, rbx
+RVA 02D01E9E VA 00007FF7034B1E9E  74 0d                           je       0x7ff7034b1ead
+RVA 02D01EA0 VA 00007FF7034B1EA0  0f 57 c0                        xorps    xmm0, xmm0
+RVA 02D01EA3 VA 00007FF7034B1EA3  f3 0f 11 03                     movss    dword ptr [rbx], xmm0
+RVA 02D01EA7 VA 00007FF7034B1EA7  48 83 c4 40                     add      rsp, 0x40
+RVA 02D01EAB VA 00007FF7034B1EAB  5b                              pop      rbx
+RVA 02D01EAC VA 00007FF7034B1EAC  c3                              ret      
+RVA 02D01EAD VA 00007FF7034B1EAD  f3 0f 10 05 17 c5 91 03         movss    xmm0, dword ptr [rip + 0x391c517]
+RVA 02D01EB5 VA 00007FF7034B1EB5  f3 0f 11 03                     movss    dword ptr [rbx], xmm0
+RVA 02D01EB9 VA 00007FF7034B1EB9  48 83 c4 40                     add      rsp, 0x40
+RVA 02D01EBD VA 00007FF7034B1EBD  5b                              pop      rbx
+RVA 02D01EBE VA 00007FF7034B1EBE  c3                              ret      
+
+{"name": "CanPushFactoryContext", "rva": "0x2c58960", "end_rva": "0x2c58970", "sha256": "06f355e2879dfbeffa937eb5df73feb41f8075bdcd34e1f728ec465b1490cdb6", "bounds": "bounded leaf read; no pdata entry"}
+RVA 02C58960 VA 00007FF703408960  48 8b 81 a0 3e 00 00            mov      rax, qword ptr [rcx + 0x3ea0]
+RVA 02C58967 VA 00007FF703408967  0f b6 80 94 00 00 00            movzx    eax, byte ptr [rax + 0x94]
+RVA 02C5896E VA 00007FF70340896E  c3                              ret      
+RVA 02C5896F VA 00007FF70340896F  cc                              int3     

@@ -1,0 +1,1211 @@
+{
+  "database": "K:\\aoe4_dlc\\7ff6f65c0000.RelicCardinal.exe.i64",
+  "mutations": false,
+  "status": "complete; no database save",
+  "image_base": "0x7ff6f65c0000",
+  "functions": {
+    "GatheringEvaluate": {
+      "rva": "0x2d00120",
+      "address": "0x7ff6f92c0120",
+      "name": "sub_7FF6F92C0120",
+      "xrefs": [
+        {
+          "from": "0x7ff6fcae6f50",
+          "type": 1,
+          "function": ""
+        },
+        {
+          "from": "0x7ff6fee62ce8",
+          "type": 1,
+          "function": ""
+        }
+      ],
+      "decompile": "// Hidden C++ exception states: #wind=3\nfloat *__fastcall sub_7FF6F92C0120(__int64 a1, float *a2, __int64 a3, __int64 a4)\n{\n  float *v4; // r12\n  __int64 v5; // r13\n  __int64 v6; // r14\n  unsigned __int64 v7; // rdx\n  _QWORD *v8; // r9\n  __int64 v9; // r10\n  _QWORD *v10; // rax\n  _QWORD *v11; // r8\n  _QWORD *v12; // rbx\n  __int64 v13; // r15\n  unsigned __int64 v14; // rdi\n  _QWORD *v15; // rsi\n  _QWORD *v16; // rax\n  _QWORD *v17; // rdi\n  __int64 v18; // rsi\n  _QWORD *v19; // r12\n  __int64 v20; // rbx\n  _QWORD *v21; // r14\n  _QWORD *v22; // rbx\n  _QWORD *v23; // r13\n  __int64 v24; // rdi\n  __int64 v25; // rax\n  __int64 v26; // rcx\n  _QWORD *v27; // rax\n  __int64 v28; // rax\n  __int64 v29; // rdx\n  __int64 v30; // r10\n  unsigned int *v31; // r9\n  unsigned int *v32; // rbx\n  __int64 v33; // rcx\n  unsigned int *v34; // rdi\n  __int64 v35; // rdx\n  __int64 v36; // rdx\n  __int64 v37; // r12\n  __int64 v38; // r15\n  unsigned __int64 i; // r14\n  float *v40; // rax\n  float *v41; // rsi\n  __int64 v42; // r9\n  unsigned __int64 v43; // rsi\n  __int64 v44; // rsi\n  char *v45; // r14\n  size_t v46; // rsi\n  _QWORD *v47; // rax\n  _DWORD *v48; // r8\n  _OWORD *v49; // rcx\n  float v51; // xmm1_4\n  unsigned int v52; // ecx\n  __int64 v53; // rax\n  float v54; // xmm2_4\n  float *v55; // rax\n  __int64 v56; // [rsp+28h] [rbp-E0h] BYREF\n  _BYTE v57[40]; // [rsp+30h] [rbp-D8h] BYREF\n  unsigned __int64 v58; // [rsp+58h] [rbp-B0h]\n  __int128 v59; // [rsp+60h] [rbp-A8h] BYREF\n  _QWORD *v60; // [rsp+70h] [rbp-98h]\n  __int64 v61; // [rsp+78h] [rbp-90h]\n  __int64 v62; // [rsp+80h] [rbp-88h]\n  _QWORD *v63; // [rsp+88h] [rbp-80h]\n  _QWORD *v64; // [rsp+90h] [rbp-78h]\n  __int64 v65; // [rsp+98h] [rbp-70h]\n  _QWORD *v66; // [rsp+A0h] [rbp-68h]\n  __int64 v67; // [rsp+A8h] [rbp-60h] BYREF\n  __int64 v68; // [rsp+B0h] [rbp-58h]\n  _OWORD v69[2]; // [rsp+B8h] [rbp-50h] BYREF\n  __int64 v70; // [rsp+D8h] [rbp-30h]\n  _OWORD v71[2]; // [rsp+E0h] [rbp-28h]\n  __int64 v72; // [rsp+100h] [rbp-8h]\n  __int64 v73; // [rsp+108h] [rbp+0h] BYREF\n  __int64 v74; // [rsp+168h] [rbp+60h] BYREF\n  float *v75; // [rsp+170h] [rbp+68h]\n  _QWORD *v76; // [rsp+180h] [rbp+78h] BYREF\n\n  v75 = a2;\n  v74 = a1;\n  v4 = a2;\n  v5 = a1;\n  v6 = *(_QWORD *)(a1 + 16);\n  v65 = v6;\n  v7 = *(_QWORD *)(a4 + 8);\n  v8 = *(_QWORD **)(v6 + 4120);\n  v9 = v8[52];\n  v10 = *(_QWORD **)(v9\n                   + 16\n                   * ((0x100000001B3LL\n                     * (HIBYTE(v7)\n                      ^ (0x100000001B3LL\n                       * (BYTE6(v7)\n                        ^ (0x100000001B3LL\n                         * (BYTE5(v7)\n                          ^ (0x100000001B3LL\n                           * (BYTE4(v7)\n                            ^ (0x100000001B3LL\n                             * (BYTE3(v7)\n                              ^ (0x100000001B3LL\n                               * (BYTE2(v7)\n                                ^ (0x100000001B3LL\n                                 * ((0x100000001B3LL * ((unsigned __int8)v7 ^ 0xCBF29CE484222325uLL)) ^ BYTE1(v7)))))))))))))))\n                    & v8[55])\n                   + 8);\n  v11 = (_QWORD *)v8[50];\n  if ( v10 == v11 )\n  {\nLABEL_6:\n    v10 = 0;\n    goto LABEL_7;\n  }\n  if ( v7 != v10[2] )\n  {\n    while ( v10 != *(_QWORD **)(v9\n                              + 16\n                              * ((0x100000001B3LL\n                                * (HIBYTE(v7)\n                                 ^ (0x100000001B3LL\n                                  * (BYTE6(v7)\n                                   ^ (0x100000001B3LL\n                                    * (BYTE5(v7)\n                                     ^ (0x100000001B3LL\n                                      * (BYTE4(v7)\n                                       ^ (0x100000001B3LL\n                                        * (BYTE3(v7)\n                                         ^ (0x100000001B3LL\n                                          * (BYTE2(v7)\n                                           ^ (0x100000001B3LL\n                                            * ((0x100000001B3LL * ((unsigned __int8)v7 ^ 0xCBF29CE484222325uLL))\n                                             ^ BYTE1(v7)))))))))))))))\n                               & v8[55])) )\n    {\n      v10 = (_QWORD *)v10[1];\n      if ( v7 == v10[2] )\n        goto LABEL_7;\n    }\n    goto LABEL_6;\n  }\nLABEL_7:\n  if ( !v10 )\n    v10 = (_QWORD *)v8[50];\n  v12 = 0;\n  if ( v10 != v11 )\n    v12 = v10 + 3;\n  if ( !v12 )\n    goto LABEL_68;\n  if ( *v12 == v12[1] )\n    goto LABEL_68;\n  v13 = *(_QWORD *)(v6 + 3784);\n  v61 = v13;\n  if ( !(unsigned __int8)sub_7FF6F90DC900(v13, v7, &v67) )\n    goto LABEL_68;\n  v14 = sub_7FF6F83B74F0();\n  v58 = v14;\n  memset(v57, 0, sizeof(v57));\n  v69[0] = *(_OWORD *)v57;\n  v69[1] = *(_OWORD *)&v57[16];\n  v70 = 0;\n  memset(v57, 0, 36);\n  v71[0] = *(_OWORD *)v57;\n  v71[1] = *(_OWORD *)&v57[16];\n  v72 = 0;\n  v15 = (_QWORD *)*v12;\n  v66 = v15;\n  v16 = (_QWORD *)v12[1];\n  v76 = v16;\n  if ( v15 != v16 )\n  {\n    v17 = v16;\n    do\n    {\n      v18 = *v15;\n      if ( v18 )\n      {\n        if ( *(_DWORD *)(v18 + 96) == 3014656 )\n        {\n          v56 = 0;\n          if ( (unsigned __int8)sub_7FF6F90DD4B0(v13, v18, &v56) )\n          {\n            if ( *(_BYTE *)(v56 + 681) )\n            {\n              v59 = 0;\n              v19 = 0;\n              v64 = 0;\n              v60 = 0;\n              v20 = *(_QWORD *)(v6 + 3784);\n              if ( v20 )\n              {\n                v21 = *(_QWORD **)(v20 + 536);\n                v22 = *(_QWORD **)(v20 + 528);\n                if ( v22 != v21 )\n                {\n                  v23 = (_QWORD *)*((_QWORD *)&v59 + 1);\n                  do\n                  {\n                    v24 = *v22;\n                    v25 = sub_7FF6F9151D40(*v22);\n                    if ( v25\n                      && *(_DWORD *)(v24 + 856) == *(_DWORD *)sub_7FF6F69BC1B0(v25, &v73)\n                      && *(_QWORD *)(sub_7FF6F9151D40(*v22) + 56) == v18 )\n                    {\n                      if ( v23 == v19 )\n                      {\n                        sub_7FF6F9040BC0(&v59, v23, v22);\n                        v19 = v60;\n                        v23 = (_QWORD *)*((_QWORD *)&v59 + 1);\n                      }\n                      else\n                      {\n                        *v23++ = *v22;\n                        *((_QWORD *)&v59 + 1) = v23;\n                      }\n                    }\n                    ++v22;\n                  }\n                  while ( v22 != v21 );\n                  v64 = v19;\n                  v5 = v74;\n                }\n              }\n              v26 = v59;\n              v68 = v59;\n              v27 = (_QWORD *)v59;\n              v63 = (_QWORD *)v59;\n              if ( (_QWORD)v59 != *((_QWORD *)&v59 + 1) )\n              {\n                do\n                {\n                  v28 = sub_7FF6F9151D40(*v27);\n                  if ( v28 )\n                  {\n                    v29 = *(unsigned int *)(v28 + 336);\n                    v30 = 128;\n                    v62 = 128;\n                    if ( (_DWORD)v29 == -1 )\n                    {\n                      v31 = 0;\n                      v32 = 0;\n                      v33 = 0;\n                    }\n                    else\n                    {\n                      v31 = (unsigned int *)(v29\n                                           + g_tlsBlobTable[*(unsigned int *)(*(_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer\n                                                                            + 128LL)]);\n                      v62 = 128;\n                      v32 = v31;\n                      v33 = v29\n                          + g_tlsBlobTable[*(unsigned int *)(*(_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer + 128LL)];\n                    }\n                    v34 = (unsigned int *)(v33 + 4LL * *(unsigned int *)(v28 + 340));\n                    if ( v31 != v34 )\n                    {\n                      do\n                      {\n                        v35 = *v32;\n                        if ( (_DWORD)v35 == -1 )\n                          v36 = 0;\n                        else\n                          v36 = g_tlsBlobTable[*(unsigned int *)(v30\n                                                               + *(_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer)]\n                              + v35;\n                        v56 = 0;\n                        if ( (unsigned __int8)sub_7FF6F90DD160(v13, *(_QWORD *)(v36 + 56), &v56) )\n                        {\n                          v37 = v56 + 288;\n                          v38 = 0;\n                          for ( i = v58; (unsigned int)v38 < i; v38 = (unsigned int)(v38 + 1) )\n                          {\n                            if ( *(float *)(v37 + 24) > 0.0 )\n                            {\n                              v40 = *(float **)v37;\n                              v41 = *(float **)(v37 + 8);\n                              if ( *(float **)v37 != v41 )\n                              {\n                                while ( *((_DWORD *)v40 + 1) != (_DWORD)v38 || v40[2] <= 0.0 || v40[3] <= 0.0 )\n                                {\n                                  v40 += 4;\n                                  if ( v40 == v41 )\n                                    goto LABEL_53;\n                                }\n                                *((float *)v69 + v38) = sub_7FF6F92315C0(v37, (unsigned int)v38) + *((float *)v69 + v38);\n                                memset(v57, 0, 24);\n                                v43 = ((__int64)v41 - v42) >> 4;\n                                if ( v43 )\n                                {\n                                  if ( v43 > 0xFFFFFFFFFFFFFFFLL )\n                                    sub_7FF6F9081FE0();\n                                  v44 = 16 * v43;\n                                  v45 = (char *)sub_7FF6F6990400(v44);\n                                  *(_QWORD *)v57 = v45;\n                                  *(_QWORD *)&v57[16] = &v45[v44];\n                                  v46 = *(_QWORD *)(v37 + 8) - *(_QWORD *)v37;\n                                  memmove(v45, *(const void **)v37, v46);\n                                  *(_QWORD *)&v57[8] = &v45[v46 & 0xFFFFFFFFFFFFFFF0uLL];\n                                  i = v58;\n                                }\n                                *(_DWORD *)&v57[24] = *(_DWORD *)(v37 + 24);\n                                sub_7FF6F92BFC60(v67 + 336, v67 + 400, v57);\n                                *((float *)v71 + v38) = sub_7FF6F92315C0(v57, (unsigned int)v38) + *((float *)v71 + v38);\n                                sub_7FF6F90804A0(v57);\n                                v5 = v74;\n                              }\n                            }\nLABEL_53:\n                            ;\n                          }\n                          v13 = v61;\n                        }\n                        ++v32;\n                        v30 = v62;\n                      }\n                      while ( v32 != v34 );\n                    }\n                  }\n                  v27 = v63 + 1;\n                  v63 = v27;\n                }\n                while ( v27 != *((_QWORD **)&v59 + 1) );\n                v26 = v68;\n              }\n              if ( v26 )\n              {\n                if ( (unsigned __int64)(8 * (((__int64)v64 - v26) >> 3)) >= 0x1000\n                  && (unsigned __int64)(v26 - *(_QWORD *)(v26 - 8) - 8) > 0x1F )\n                {\n                  invalid_parameter_noinfo_noreturn();\n                }\n                sub_7FF6FB5700B0();\n              }\n              v17 = v76;\n              v6 = v65;\n            }\n          }\n        }\n      }\n      v15 = v66 + 1;\n      v66 = v15;\n    }\n    while ( v15 != v17 );\n    v14 = v58;\n    v4 = v75;\n  }\n  v47 = sub_7FF6F9BE4980();\n  v48 = v69;\n  v49 = (_OWORD *)((char *)v69 + 4 * ((v47[94] - v47[93]) / 48LL));\n  if ( v69 == v49 )\n    goto LABEL_68;\n  while ( COERCE_FLOAT(*v48 & 0x7FFFFFFF) <= 0.00000011920929 )\n  {\n    if ( ++v48 == (_DWORD *)v49 )\n      goto LABEL_68;\n  }\n  *(_OWORD *)v57 = *(_OWORD *)(v6 + 4768);\n  *(_OWORD *)&v57[16] = *(_OWORD *)(v6 + 4784);\n  *(_QWORD *)&v57[32] = *(_QWORD *)(v6 + 4800);\n  sub_7FF6F83B7F60(v57, *(_QWORD *)(v6 + 4232) + 208LL);\n  v51 = 0.0;\n  LODWORD(v74) = 0;\n  v52 = 0;\n  if ( v14 )\n  {\n    v53 = 0;\n    do\n    {\n      v54 = *((float *)v69 + v53);\n      if ( v54 > 0.0 && *(float *)&v57[4 * v53] > 0.0 )\n      {\n        *(float *)&v76 = *((float *)v71 + v53) / v54;\n        v55 = (float *)&v76;\n        if ( *(float *)&v76 <= v51 )\n          v55 = (float *)&v74;\n        v51 = *v55;\n        *(float *)&v74 = *v55;\n      }\n      v53 = ++v52;\n    }\n    while ( v52 < v14 );\n  }\n  if ( v51 <= 1.0 )\nLABEL_68:\n    *v4 = 0.0;\n  else\n    *v4 = (float)(v51 - 1.0) * *(float *)(v5 + 24);\n  return v4;\n}\n"
+    },
+    "CounterEvaluate": {
+      "rva": "0x2cfea30",
+      "address": "0x7ff6f92bea30",
+      "name": "sub_7FF6F92BEA30",
+      "xrefs": [
+        {
+          "from": "0x7ff6fcae6b08",
+          "type": 1,
+          "function": ""
+        },
+        {
+          "from": "0x7ff6fee62b98",
+          "type": 1,
+          "function": ""
+        }
+      ],
+      "decompile": "float *__fastcall sub_7FF6F92BEA30(__int64 a1, float *a2, __int64 a3, __int64 a4)\n{\n  float v6; // xmm0_4\n  float *v7; // rax\n  float v9; // [rsp+20h] [rbp-18h] BYREF\n  int v10; // [rsp+24h] [rbp-14h] BYREF\n\n  v6 = sub_7FF6F91F1C60(*(_QWORD *)(*(_QWORD *)(a1 + 16) + 15808LL) + 248LL, *(_QWORD *)(a4 + 8));\n  v7 = &v9;\n  v10 = 1065353216;\n  v9 = v6;\n  if ( v6 >= 1.0 )\n    v7 = (float *)&v10;\n  if ( *v7 == 0.0 )\n    *a2 = 0.0;\n  else\n    *a2 = (float)((float)(1.0 - *(float *)(a1 + 24)) * *v7) + *(float *)(a1 + 24);\n  return a2;\n}\n"
+    },
+    "MultiplyEvaluate": {
+      "rva": "0x2d03940",
+      "address": "0x7ff6f92c3940",
+      "name": "sub_7FF6F92C3940",
+      "xrefs": [
+        {
+          "from": "0x7ff6fcae78a8",
+          "type": 1,
+          "function": ""
+        },
+        {
+          "from": "0x7ff6fd6a626c",
+          "type": 1,
+          "function": ""
+        },
+        {
+          "from": "0x7ff6fd6a627c",
+          "type": 1,
+          "function": ""
+        },
+        {
+          "from": "0x7ff6fee63000",
+          "type": 1,
+          "function": ""
+        }
+      ],
+      "decompile": "float *__fastcall sub_7FF6F92C3940(__int64 a1, float *a2, unsigned int a3, __int64 a4)\n{\n  _QWORD *v4; // rbx\n  _QWORD *v6; // rsi\n  float v9; // xmm6_4\n  float v11; // [rsp+60h] [rbp+8h] BYREF\n\n  v4 = *(_QWORD **)(a1 + 24);\n  v6 = *(_QWORD **)(a1 + 32);\n  *a2 = 0.0;\n  if ( v4 != v6 )\n  {\n    v9 = 1.0;\n    do\n    {\n      (*(void (__fastcall **)(_QWORD, float *, _QWORD, __int64))(*(_QWORD *)*v4 + 16LL))(*v4, &v11, a3, a4);\n      v9 = v9 * v11;\n      if ( v9 <= 0.0 )\n        break;\n      ++v4;\n    }\n    while ( v4 != v6 );\n    *a2 = v9;\n  }\n  return a2;\n}\n"
+    },
+    "UtilityNameString": {
+      "rva": "0x863bdda",
+      "address": "0x7ff6febfbdda",
+      "name": "",
+      "xrefs": []
+    },
+    "GatherCandidateLookup": {
+      "rva": "0x2b1c900",
+      "address": "0x7ff6f90dc900",
+      "name": "sub_7FF6F90DC900",
+      "xrefs": [
+        {
+          "from": "0x7ff6f90ccbec",
+          "type": 17,
+          "function": "sub_7FF6F90CCBD0"
+        },
+        {
+          "from": "0x7ff6f90cdfdc",
+          "type": 17,
+          "function": "sub_7FF6F90CDF90"
+        },
+        {
+          "from": "0x7ff6f90cecce",
+          "type": 17,
+          "function": "sub_7FF6F90CEB20"
+        },
+        {
+          "from": "0x7ff6f91799c7",
+          "type": 17,
+          "function": "sub_7FF6F9179960"
+        },
+        {
+          "from": "0x7ff6f9179bee",
+          "type": 17,
+          "function": "sub_7FF6F9179BA0"
+        },
+        {
+          "from": "0x7ff6f91b71cc",
+          "type": 17,
+          "function": "sub_7FF6F91B70E0"
+        },
+        {
+          "from": "0x7ff6f91b8fcb",
+          "type": 17,
+          "function": "sub_7FF6F91B8DE0"
+        },
+        {
+          "from": "0x7ff6f91b929b",
+          "type": 17,
+          "function": "sub_7FF6F91B9060"
+        },
+        {
+          "from": "0x7ff6f91b9d3d",
+          "type": 17,
+          "function": "sub_7FF6F91B9CA0"
+        },
+        {
+          "from": "0x7ff6f91b9e9d",
+          "type": 17,
+          "function": "sub_7FF6F91B9CA0"
+        },
+        {
+          "from": "0x7ff6f92c0274",
+          "type": 17,
+          "function": "sub_7FF6F92C0120"
+        },
+        {
+          "from": "0x7ff6fee4dbb0",
+          "type": 1,
+          "function": ""
+        },
+        {
+          "from": "0x7ff6fee4dbbc",
+          "type": 1,
+          "function": ""
+        }
+      ],
+      "decompile": "// Hidden C++ exception states: #wind=5\nchar __fastcall sub_7FF6F90DC900(__int64 a1, __int64 a2, _QWORD *a3)\n{\n  __int64 v5; // rbx\n  __int64 v7; // r13\n  __int64 (__fastcall ***v8)(); // rcx\n  __int64 v9; // rax\n  __int64 v10; // r14\n  __int64 v11; // [rsp+20h] [rbp-58h] BYREF\n  __int64 v12; // [rsp+28h] [rbp-50h] BYREF\n  _BYTE v13[72]; // [rsp+30h] [rbp-48h] BYREF\n  __int64 v14; // [rsp+88h] [rbp+10h] BYREF\n  __int64 v15; // [rsp+90h] [rbp+18h] BYREF\n  __int64 v16; // [rsp+98h] [rbp+20h] BYREF\n\n  v14 = a2;\n  *a3 = 0;\n  if ( *(_DWORD *)(a2 + 96) != 3407872 )\n    return 0;\n  v5 = a1 + 808;\n  sub_7FF6FA0CC840(a1 + 808);\n  sub_7FF6F90E23B0(a1 + 1008, &v15, &v14);\n  if ( v15 != *(_QWORD *)(a1 + 1016) )\n  {\n    *a3 = *(_QWORD *)(v15 + 24);\n    if ( _InterlockedExchangeAdd((volatile signed __int32 *)(v5 + 12), 0xFFFFFFFF) == 1 )\n    {\n      _InterlockedExchange((volatile __int32 *)(v5 + 8), 0);\n      ReleaseSRWLockExclusive((PSRWLOCK)v5);\n    }\n    return 1;\n  }\n  if ( _InterlockedExchangeAdd((volatile signed __int32 *)(v5 + 12), 0xFFFFFFFF) == 1 )\n  {\n    _InterlockedExchange((volatile __int32 *)(v5 + 8), 0);\n    ReleaseSRWLockExclusive((PSRWLOCK)v5);\n  }\n  if ( !v14 )\n    return 0;\n  v7 = sub_7FF6F69E2130(v14);\n  if ( !v7 )\n    return 0;\n  v8 = (__int64 (__fastcall ***)())qword_7FF6FEA89328;\n  if ( !qword_7FF6FEA89328 )\n    v8 = off_7FF6FDD4B300;\n  v9 = ((__int64 (__fastcall *)(__int64 (__fastcall ***)(), __int64))**v8)(v8, 648);\n  v15 = v9;\n  if ( v9 )\n    v10 = sub_7FF6F90E74C0(v9);\n  else\n    v10 = 0;\n  v16 = v10;\n  sub_7FF6F91B8930(v7, a1, v10);\n  v15 = v5;\n  sub_7FF6FA0CC840(v5);\n  if ( *(_QWORD *)sub_7FF6F90E23B0(a1 + 1008, &v11, &v14) == *(_QWORD *)(a1 + 1016) )\n  {\n    v11 = v14;\n    v16 = 0;\n    v12 = v10;\n    sub_7FF6F90E5B80(a1 + 1008, v13, &v11);\n    sub_7FF6F90DE460(&v12);\n  }\n  *a3 = *(_QWORD *)(*(_QWORD *)sub_7FF6F90E3120(a1 + 1008, v13, &v14) + 24LL);\n  if ( _InterlockedExchangeAdd((volatile signed __int32 *)(v5 + 12), 0xFFFFFFFF) == 1 )\n  {\n    _InterlockedExchange((volatile __int32 *)(v5 + 8), 0);\n    ReleaseSRWLockExclusive((PSRWLOCK)v5);\n  }\n  sub_7FF6F90DE460(&v16);\n  return 1;\n}\n"
+    },
+    "GatherSquadLookup": {
+      "rva": "0x2b1d4b0",
+      "address": "0x7ff6f90dd4b0",
+      "name": "sub_7FF6F90DD4B0",
+      "xrefs": [
+        {
+          "from": "0x7ff6f8f56864",
+          "type": 17,
+          "function": "sub_7FF6F8F56750"
+        },
+        {
+          "from": "0x7ff6f8f59520",
+          "type": 17,
+          "function": "sub_7FF6F8F594A0"
+        },
+        {
+          "from": "0x7ff6f8fef3f7",
+          "type": 17,
+          "function": "sub_7FF6F8FEF250"
+        },
+        {
+          "from": "0x7ff6f8ff5b3d",
+          "type": 17,
+          "function": "sub_7FF6F8FF5A20"
+        },
+        {
+          "from": "0x7ff6f8ff649f",
+          "type": 17,
+          "function": "sub_7FF6F8FF6350"
+        },
+        {
+          "from": "0x7ff6f90401a6",
+          "type": 17,
+          "function": "sub_7FF6F90400F0"
+        },
+        {
+          "from": "0x7ff6f908905a",
+          "type": 17,
+          "function": "sub_7FF6F9088A30"
+        },
+        {
+          "from": "0x7ff6f90ce023",
+          "type": 17,
+          "function": "sub_7FF6F90CDF90"
+        },
+        {
+          "from": "0x7ff6f90cec81",
+          "type": 17,
+          "function": "sub_7FF6F90CEB20"
+        },
+        {
+          "from": "0x7ff6f90dd377",
+          "type": 17,
+          "function": "sub_7FF6F90DD160"
+        },
+        {
+          "from": "0x7ff6f90dd676",
+          "type": 17,
+          "function": "sub_7FF6F90DD4B0"
+        },
+        {
+          "from": "0x7ff6f90e9b66",
+          "type": 17,
+          "function": "sub_7FF6F90E9A70"
+        },
+        {
+          "from": "0x7ff6f90e9fd0",
+          "type": 17,
+          "function": "sub_7FF6F90E9F30"
+        },
+        {
+          "from": "0x7ff6f90ea418",
+          "type": 17,
+          "function": "sub_7FF6F90E9F30"
+        },
+        {
+          "from": "0x7ff6f90eadff",
+          "type": 17,
+          "function": "sub_7FF6F90EACC0"
+        },
+        {
+          "from": "0x7ff6f90eaf44",
+          "type": 17,
+          "function": "sub_7FF6F90EACC0"
+        },
+        {
+          "from": "0x7ff6f90f6917",
+          "type": 17,
+          "function": "sub_7FF6F90F6760"
+        },
+        {
+          "from": "0x7ff6f90feae4",
+          "type": 17,
+          "function": "sub_7FF6F90FEA10"
+        },
+        {
+          "from": "0x7ff6f91160ca",
+          "type": 17,
+          "function": "sub_7FF6F9115DB0"
+        },
+        {
+          "from": "0x7ff6f911db9b",
+          "type": 17,
+          "function": "sub_7FF6F911DA90"
+        },
+        {
+          "from": "0x7ff6f911f5e0",
+          "type": 17,
+          "function": "sub_7FF6F911F470"
+        },
+        {
+          "from": "0x7ff6f9128647",
+          "type": 17,
+          "function": "sub_7FF6F9128410"
+        },
+        {
+          "from": "0x7ff6f914b263",
+          "type": 17,
+          "function": "sub_7FF6F914AFF0"
+        },
+        {
+          "from": "0x7ff6f9151cfe",
+          "type": 17,
+          "function": "sub_7FF6F9151A30"
+        },
+        {
+          "from": "0x7ff6f916d8ce",
+          "type": 17,
+          "function": "sub_7FF6F916D5C0"
+        },
+        {
+          "from": "0x7ff6f916de96",
+          "type": 17,
+          "function": "sub_7FF6F916D5C0"
+        },
+        {
+          "from": "0x7ff6f91796bc",
+          "type": 17,
+          "function": "sub_7FF6F9179350"
+        },
+        {
+          "from": "0x7ff6f9190cac",
+          "type": 17,
+          "function": "sub_7FF6F9190BA0"
+        },
+        {
+          "from": "0x7ff6f9190e55",
+          "type": 17,
+          "function": "sub_7FF6F9190D90"
+        },
+        {
+          "from": "0x7ff6f9191ed3",
+          "type": 17,
+          "function": "sub_7FF6F9191E40"
+        },
+        {
+          "from": "0x7ff6f9192c43",
+          "type": 17,
+          "function": "sub_7FF6F9192BA0"
+        },
+        {
+          "from": "0x7ff6f919ac78",
+          "type": 17,
+          "function": "sub_7FF6F919AB00"
+        },
+        {
+          "from": "0x7ff6f91a981a",
+          "type": 17,
+          "function": "sub_7FF6F91A93D0"
+        },
+        {
+          "from": "0x7ff6f91b2672",
+          "type": 17,
+          "function": "sub_7FF6F91B23D0"
+        },
+        {
+          "from": "0x7ff6f91ecba6",
+          "type": 17,
+          "function": "sub_7FF6F91ECAF0"
+        },
+        {
+          "from": "0x7ff6f91f0eae",
+          "type": 17,
+          "function": "sub_7FF6F91F0DB0"
+        },
+        {
+          "from": "0x7ff6f92b3b97",
+          "type": 17,
+          "function": "sub_7FF6F92B3B50"
+        },
+        {
+          "from": "0x7ff6f92c034d",
+          "type": 17,
+          "function": "sub_7FF6F92C0120"
+        },
+        {
+          "from": "0x7ff6f92c1ab8",
+          "type": 17,
+          "function": "sub_7FF6F92C1A50"
+        },
+        {
+          "from": "0x7ff6fee4dbec",
+          "type": 1,
+          "function": ""
+        }
+      ],
+      "decompile": "// Hidden C++ exception states: #wind=6\nchar __fastcall sub_7FF6F90DD4B0(__int64 a1, __int64 a2, __int64 *a3)\n{\n  __int64 v6; // rdi\n  __int64 (__fastcall ***v7)(); // rcx\n  __int64 v8; // rax\n  __int64 v9; // rbx\n  __int64 v10; // rsi\n  __int64 v11; // rax\n  __int64 v12; // rax\n  _QWORD *v13; // r14\n  _QWORD *i; // rbx\n  __int64 v15; // rdx\n  int v16; // eax\n  __int64 v17; // rcx\n  __int64 *v18; // rdx\n  __int64 v19; // rcx\n  __int64 v20; // rax\n  __int64 v21; // r14\n  __int64 v22; // rbx\n  __int64 v23; // rax\n  _QWORD *v24; // r15\n  _QWORD *v25; // rcx\n  _QWORD *v26; // r13\n  _QWORD *v27; // rbx\n  __int64 v28; // rax\n  __int64 v29; // r14\n  __int64 v30; // r8\n  __int64 v31; // r8\n  __int64 v32; // rcx\n  _QWORD *v33; // rdx\n  __int64 v34; // rcx\n  _QWORD *v35; // rdx\n  __int64 v36; // r13\n  __int64 v37; // r14\n  __int64 v38; // rbx\n  int v39; // r15d\n  int v40; // r15d\n  int v41; // edx\n  int v42; // ecx\n  int v43; // r15d\n  unsigned __int64 v44; // rcx\n  _DWORD *v45; // rdx\n  unsigned __int64 v46; // rcx\n  unsigned int v47; // eax\n  int v48; // ecx\n  bool v49; // cl\n  int v50; // r15d\n  int v51; // eax\n  __int64 v52; // [rsp+28h] [rbp-40h] BYREF\n  __int64 v53; // [rsp+30h] [rbp-38h] BYREF\n  __int64 v54; // [rsp+38h] [rbp-30h]\n  __int64 v55; // [rsp+40h] [rbp-28h]\n  __int128 v56; // [rsp+48h] [rbp-20h] BYREF\n  __int64 v57; // [rsp+58h] [rbp-10h]\n  __int64 v59; // [rsp+B8h] [rbp+50h] BYREF\n  __int64 v60; // [rsp+C0h] [rbp+58h] BYREF\n  __int64 v61; // [rsp+C8h] [rbp+60h] BYREF\n\n  v59 = a2;\n  *a3 = 0;\n  if ( *(_DWORD *)(a2 + 96) != 3014656 )\n    return 0;\n  v6 = a1 + 808;\n  v54 = a1 + 808;\n  sub_7FF6FA0CC840(a1 + 808);\n  sub_7FF6F90E27B0(a1 + 1136, &v60, &v59);\n  if ( v60 == *(_QWORD *)(a1 + 1144) )\n  {\n    if ( _InterlockedExchangeAdd((volatile signed __int32 *)(v6 + 12), 0xFFFFFFFF) == 1 )\n    {\n      _InterlockedExchange((volatile __int32 *)(v6 + 8), 0);\n      ReleaseSRWLockExclusive((PSRWLOCK)v6);\n    }\n    v7 = (__int64 (__fastcall ***)())qword_7FF6FEA89328;\n    if ( !qword_7FF6FEA89328 )\n      v7 = off_7FF6FDD4B300;\n    v8 = ((__int64 (__fastcall *)(__int64 (__fastcall ***)(), __int64))**v7)(v7, 728);\n    v60 = v8;\n    if ( v8 )\n      v9 = sub_7FF6F90D78D0(v8);\n    else\n      v9 = 0;\n    v10 = v9;\n    sub_7FF6F91B9CA0(v59, a1, v9);\n    v55 = v6;\n    sub_7FF6FA0CC840(v6);\n    v11 = *(_QWORD *)sub_7FF6F90E27B0(a1 + 1136, &v60, &v59);\n    if ( v11 == *(_QWORD *)(a1 + 1144) )\n    {\n      v52 = v59;\n      v10 = 0;\n      v53 = v9;\n      sub_7FF6F90E62D0(a1 + 1136, &v56, &v52);\n      sub_7FF6F90DE040(&v53);\n      v12 = *(_QWORD *)(*(_QWORD *)sub_7FF6F90E2B00(a1 + 1136, &v56, &v59) + 24LL);\n      *a3 = v12;\n      v13 = *(_QWORD **)(v12 + 360);\n      for ( i = (_QWORD *)*v13; i != v13; i = (_QWORD *)*i )\n      {\n        v15 = i[2];\n        v61 = i[3];\n        if ( v15 )\n        {\n          v16 = *(_DWORD *)(v15 + 96);\n          if ( v16 != 3014656 )\n          {\n            if ( v16 != 1245184 )\n              continue;\n            v60 = 0;\n            if ( !(unsigned __int8)sub_7FF6F90DD160(a1, v15, &v60) )\n              continue;\n            v17 = v60 + 448;\n            v18 = &v52;\n            goto LABEL_22;\n          }\n          v60 = 0;\n          if ( (unsigned __int8)sub_7FF6F90DD4B0(a1, v15, &v60) )\n          {\n            v17 = v60 + 416;\n            v18 = (__int64 *)&v56;\nLABEL_22:\n            sub_7FF6F90E2550(v17, v18, &v59, &v61);\n          }\n        }\n      }\n    }\n    else\n    {\n      *a3 = *(_QWORD *)(v11 + 24);\n    }\n    v19 = v59;\n    if ( v59 )\n    {\n      v20 = sub_7FF6F717B6E0();\n      v21 = v20;\n      v52 = v20;\n      if ( v20 )\n      {\n        v19 = *(_QWORD *)(v20 + 32);\n        if ( *(_QWORD *)(v20 + 24) != v19 )\n        {\n          v19 = v59;\n          v22 = v59 ? sub_7FF6F6A69D20(v59) : 0LL;\n          if ( v22 )\n          {\n            v56 = 0;\n            v57 = 0;\n            v23 = sub_7FF6F90DB730(a1);\n            sub_7FF6F852C110(v22, v23, &v56);\n            v60 = *((_QWORD *)&v56 + 1);\n            if ( (_QWORD)v56 != *((_QWORD *)&v56 + 1) )\n            {\n              v24 = (_QWORD *)(v56 + 8);\n              v25 = (_QWORD *)*((_QWORD *)&v56 + 1);\n              do\n              {\n                v26 = *(_QWORD **)(v21 + 32);\n                v27 = *(_QWORD **)(v21 + 24);\n                if ( v27 != v26 )\n                {\n                  do\n                  {\n                    if ( *v27 )\n                    {\n                      v28 = sub_7FF6F69DDA00();\n                      if ( v28 )\n                      {\n                        sub_7FF6F90DCDD0(a1, v28, *v24, &v61);\n                        v29 = v61;\n                        sub_7FF6F91B73D0(v61, *a3 + 288, *a3 + 352, *a3 + 552);\n                        LOBYTE(v30) = 8;\n                        if ( (unsigned __int8)sub_7FF6F9255AD0(v29, *v24, v30) )\n                        {\n                          v32 = *a3 + 624;\n                          v33 = *(_QWORD **)(*a3 + 632);\n                          if ( v33 == *(_QWORD **)(*a3 + 640) )\n                          {\n                            sub_7FF6F6A60B00(v32, v33, v27);\n                          }\n                          else\n                          {\n                            *v33 = *v27;\n                            *(_QWORD *)(v32 + 8) += 8LL;\n                          }\n                        }\n                        LOBYTE(v31) = 7;\n                        if ( (unsigned __int8)sub_7FF6F9255AD0(v29, *v24, v31) )\n                        {\n                          v34 = *a3 + 648;\n                          v35 = *(_QWORD **)(*a3 + 656);\n                          if ( v35 == *(_QWORD **)(*a3 + 664) )\n                          {\n                            sub_7FF6F6A60B00(v34, v35, v27);\n                          }\n                          else\n                          {\n                            *v35 = *v27;\n                            *(_QWORD *)(v34 + 8) += 8LL;\n                          }\n                        }\n                      }\n                    }\n                    ++v27;\n                  }\n                  while ( v27 != v26 );\n                  v21 = v52;\n                  v25 = (_QWORD *)v60;\n                }\n                v24 += 5;\n              }\n              while ( v24 - 1 != v25 );\n              v6 = v54;\n            }\n            sub_7FF6F83CA830(&v56);\n          }\n        }\n      }\n    }\n    v36 = *a3;\n    v37 = v59;\n    v38 = sub_7FF6F69BF740(v19);\n    v39 = (4 * *(unsigned __int8 *)(v36 + 682))\n        | (*(unsigned __int8 *)(v36 + 683) << 11)\n        | (sub_7FF6FB56F880(*(_QWORD *)(v38 + 400), *(_QWORD *)(v38 + 408), v37) == *(_QWORD *)(v38 + 408));\n    v40 = ((unsigned __int8)sub_7FF6F83C7B80(v37) << 19) | v39;\n    v41 = 0;\n    if ( *(_QWORD *)(v36 + 648) != *(_QWORD *)(v36 + 656) )\n      v41 = 0x20000;\n    v42 = 0;\n    if ( *(_QWORD *)(v36 + 624) != *(_QWORD *)(v36 + 632) )\n      v42 = 0x10000;\n    v43 = (*(_QWORD *)(v36 + 368) != 0 ? 0x8000 : 0) | v42 | v41 | v40;\n    v44 = *(_QWORD *)(v36 + 704);\n    if ( !v44 )\n      goto LABEL_62;\n    v45 = *(_DWORD **)(v36 + 696);\n    v46 = v44 >> 5;\n    v47 = 0;\n    if ( (_DWORD)v46 )\n    {\n      while ( !*v45 )\n      {\n        ++v47;\n        ++v45;\n        if ( v47 >= (unsigned int)v46 )\n          goto LABEL_59;\n      }\n      v49 = 1;\n      goto LABEL_63;\n    }\nLABEL_59:\n    v48 = *(_DWORD *)(v36 + 704) & 0x1F;\n    if ( v48 )\n      v49 = (((1 << v48) - 1) & *v45) != 0;\n    else\nLABEL_62:\n      v49 = 0;\nLABEL_63:\n    v50 = (2 * v49) | v43;\n    if ( !*(_BYTE *)(v36 + 681) || (v51 = 64, v49) )\n      v51 = 0;\n    *(_DWORD *)(v36 + 720) = v51 | v50;\n    if ( _InterlockedExchangeAdd((volatile signed __int32 *)(v6 + 12), 0xFFFFFFFF) == 1 )\n    {\n      _InterlockedExchange((volatile __int32 *)(v6 + 8), 0);\n      ReleaseSRWLockExclusive((PSRWLOCK)v6);\n    }\n    if ( v10 )\n    {\n      sub_7FF6FA19B110(v10 + 688);\n      sub_7FF6F69BE100(v10 + 648);\n      sub_7FF6F69BE100(v10 + 624);\n      sub_7FF6F90DEBC0(v10 + 552);\n      sub_7FF6F6D25420(v10 + 480);\n      sub_7FF6F90D7870(v10 + 416);\n      sub_7FF6F90D7870(v10 + 352);\n      sub_7FF6F90D7810(v10 + 288);\n      sub_7FF6F69BE100(v10 + 88);\n      sub_7FF6FB5700B0();\n    }\n    return 1;\n  }\n  *a3 = *(_QWORD *)(v60 + 24);\n  if ( _InterlockedExchangeAdd((volatile signed __int32 *)(v6 + 12), 0xFFFFFFFF) == 1 )\n  {\n    _InterlockedExchange((volatile __int32 *)(v6 + 8), 0);\n    ReleaseSRWLockExclusive((PSRWLOCK)v6);\n  }\n  return 1;\n}\n"
+    },
+    "GatherApplyCandidateDelta": {
+      "rva": "0x2cffc60",
+      "address": "0x7ff6f92bfc60",
+      "name": "sub_7FF6F92BFC60",
+      "xrefs": [
+        {
+          "from": "0x7ff6f92c0625",
+          "type": 17,
+          "function": "sub_7FF6F92C0120"
+        },
+        {
+          "from": "0x7ff6fee62cd0",
+          "type": 1,
+          "function": ""
+        }
+      ],
+      "decompile": "// Hidden C++ exception states: #wind=2\n__int64 __fastcall sub_7FF6F92BFC60(unsigned int **a1, _QWORD *a2, float *a3)\n{\n  __int64 v6; // r14\n  _QWORD *v7; // rax\n  __int64 v8; // r9\n  unsigned int *v9; // rbx\n  unsigned int *i; // rdi\n  _QWORD *v11; // rbx\n  _QWORD *j; // rsi\n  unsigned int v13; // r8d\n  __int64 v14; // rbp\n  __int64 v15; // r9\n  __int64 v16; // rax\n  unsigned int v17; // edx\n  __int64 v18; // rdi\n  int v19; // xmm0_4\n  __int64 v20; // rsi\n  __int64 v21; // rbx\n  __int64 v22; // rbp\n  float k; // xmm7_4\n  unsigned int v24; // eax\n  __int64 v25; // rdi\n  float v26; // xmm6_4\n  _QWORD *v27; // rdi\n  __int64 v28; // rdx\n  float v29; // xmm0_4\n  float v30; // xmm0_4\n  __int64 v31; // rdi\n  float v32; // xmm6_4\n  _QWORD *v33; // rdi\n  __int64 v34; // rdx\n  float v35; // xmm0_4\n  float v36; // xmm0_4\n  __int64 v37; // rdx\n  float v38; // xmm7_4\n  float v39; // xmm0_4\n  unsigned __int64 *v40; // rax\n  __int128 v42; // [rsp+30h] [rbp-88h] BYREF\n  __int64 v43; // [rsp+40h] [rbp-78h]\n  float v44; // [rsp+C0h] [rbp+8h] BYREF\n  unsigned __int64 v45; // [rsp+C8h] [rbp+10h] BYREF\n\n  v6 = *(_QWORD *)qword_7FF6FEA55C58;\n  v7 = sub_7FF6F9BE4980();\n  v8 = v7[112] - v7[111];\n  v42 = 0;\n  v43 = 0;\n  if ( (int)v8 / 48 )\n    sub_7FF6F8A0F9F0(&v42);\n  v9 = *a1;\n  if ( !*a1 )\n    v9 = (unsigned int *)(a1 + 3);\n  for ( i = &v9[(_QWORD)a1[1]]; v9 != i; ++v9 )\n  {\n    sub_7FF6F8899410(v6, &v44, *v9);\n    if ( v44 != NAN\n      && !*(_BYTE *)(g_tlsBlobTable[*(unsigned int *)(*(_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer + 128LL)]\n                   + LODWORD(v44)\n                   + 25) )\n    {\n      *(float *)&v45 = v44;\n      sub_7FF6F8A0EEC0(&v42, &v45);\n    }\n  }\n  v11 = (_QWORD *)*a2;\n  if ( !*a2 )\n    v11 = a2 + 3;\n  for ( j = &v11[2 * a2[1]]; v11 != j; v11 += 2 )\n  {\n    if ( !*((_BYTE *)v11 + 9) )\n    {\n      v13 = *(_DWORD *)v11;\n      v14 = g_tlsBlobTable[*(unsigned int *)(*(_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer + 128LL)];\n      v15 = *(unsigned int *)(v6 + 32);\n      v16 = *(unsigned int *)(v15 + v14 + 4);\n      v17 = *(_DWORD *)(v6 + 32);\n      if ( *(_BYTE *)(v16 + v14 + 21) )\n        goto LABEL_26;\n      do\n      {\n        if ( *(_DWORD *)((unsigned int)v16 + v14 + 12) >= v13 )\n        {\n          v17 = v16;\n          LODWORD(v16) = *(_DWORD *)((unsigned int)v16 + v14);\n        }\n        else\n        {\n          LODWORD(v16) = *(_DWORD *)((unsigned int)v16 + v14 + 8);\n        }\n      }\n      while ( !*(_BYTE *)((unsigned int)v16 + v14 + 21) );\n      if ( v17 == (_DWORD)v15 || v13 < *(_DWORD *)(v17 + v14 + 12) )\n      {\nLABEL_26:\n        v45 = 0x8000000000000010uLL;\n        sub_7FF6FA0A7570(&v45, 0, 0, \"ModifierManager: Can't find modifier with loadID %x\", v13);\n      }\n      else\n      {\n        v18 = *(unsigned int *)(v17 + v14 + 16);\n        if ( (_DWORD)v18 != -1 )\n        {\n          if ( *(float *)(v18 + v14 + 16) == 0.0 )\n          {\n            v19 = *((_DWORD *)v11 + 3);\n            sub_7FF6F88990A0(v6, &v44);\n            if ( v44 != NAN )\n              *(_DWORD *)(LODWORD(v44) + v14 + 16) = v19;\n          }\n          LODWORD(v45) = v18;\n          sub_7FF6F8A0EEC0(&v42, &v45);\n        }\n      }\n    }\n  }\n  v20 = *((_QWORD *)a3 + 1);\n  v21 = *(_QWORD *)a3;\n  v22 = v42;\n  for ( k = 1.0; v21 != v20; v21 += 16 )\n  {\n    v24 = *(_DWORD *)(v21 + 4);\n    if ( v24 < 0xA )\n    {\n      v25 = v24;\n      v26 = *(float *)(v21 + 12);\n      sub_7FF6F9BE4980();\n      v27 = (_QWORD *)((char *)&unk_7FF6FEA54C70 + 16 * v25);\n      if ( *v27 )\n      {\n        v28 = v22 + 80LL * (unsigned int)sub_7FF6F83B8E90(v27);\n        if ( ((__int64)(*(_QWORD *)(v28 + 64) - *(_QWORD *)(v28 + 56)) >> 3)\n           + ((__int64)(*(_QWORD *)(v28 + 40) - *(_QWORD *)(v28 + 32)) >> 3) )\n        {\n          if ( *(_BYTE *)(v28 + 25) )\n            v29 = *(float *)v28;\n          else\n            v29 = 1.0;\n          v30 = v29 + *(float *)(v28 + 12);\n          if ( *(_BYTE *)(v28 + 24) )\n            v26 = *(float *)(v28 + 20);\n          else\n            v26 = (float)((float)(*(float *)(v28 + 4) + v26) * v30) * (float)(*(float *)(v28 + 8) + 1.0);\n        }\n      }\n      *(float *)(v21 + 12) = v26;\n      v31 = *(unsigned int *)(v21 + 4);\n      v32 = *(float *)(v21 + 8);\n      sub_7FF6F9BE4980();\n      v33 = (_QWORD *)((char *)&unk_7FF6FEA549F0 + 16 * v31);\n      if ( *v33 )\n      {\n        v34 = v22 + 80LL * (unsigned int)sub_7FF6F83B8E90(v33);\n        if ( ((__int64)(*(_QWORD *)(v34 + 64) - *(_QWORD *)(v34 + 56)) >> 3)\n           + ((__int64)(*(_QWORD *)(v34 + 40) - *(_QWORD *)(v34 + 32)) >> 3) )\n        {\n          if ( *(_BYTE *)(v34 + 25) )\n            v35 = *(float *)v34;\n          else\n            v35 = 1.0;\n          v36 = v35 + *(float *)(v34 + 12);\n          if ( *(_BYTE *)(v34 + 24) )\n            v32 = *(float *)(v34 + 20);\n          else\n            v32 = (float)((float)(*(float *)(v34 + 4) + v32) * v36) * (float)(*(float *)(v34 + 8) + 1.0);\n        }\n      }\n      *(float *)(v21 + 8) = v32;\n    }\n  }\n  v37 = v22 + 80LL * (unsigned int)sub_7FF6F83B8E90(&qword_7FF6FEA555E8);\n  if ( ((__int64)(*(_QWORD *)(v37 + 64) - *(_QWORD *)(v37 + 56)) >> 3)\n     + ((__int64)(*(_QWORD *)(v37 + 40) - *(_QWORD *)(v37 + 32)) >> 3) )\n  {\n    if ( *(_BYTE *)(v37 + 25) )\n      k = *(float *)v37;\n    v38 = k + *(float *)(v37 + 12);\n    if ( *(_BYTE *)(v37 + 24) )\n      v39 = *(float *)(v37 + 20);\n    else\n      v39 = (float)((float)(a3[6] + *(float *)(v37 + 4)) * v38) * (float)(*(float *)(v37 + 8) + 1.0);\n    v44 = v39;\n    LODWORD(v45) = 0;\n    v40 = (unsigned __int64 *)&v44;\n    if ( v39 <= 0.0 )\n      v40 = &v45;\n    a3[6] = *(float *)v40;\n  }\n  return sub_7FF6F8A0F000(&v42);\n}\n"
+    },
+    "GatherRateWithDistance": {
+      "rva": "0x2c715c0",
+      "address": "0x7ff6f92315c0",
+      "name": "sub_7FF6F92315C0",
+      "xrefs": [
+        {
+          "from": "0x7ff6f907863c",
+          "type": 17,
+          "function": "sub_7FF6F9078050"
+        },
+        {
+          "from": "0x7ff6f92c0578",
+          "type": 17,
+          "function": "sub_7FF6F92C0120"
+        },
+        {
+          "from": "0x7ff6f92c063b",
+          "type": 17,
+          "function": "sub_7FF6F92C0120"
+        },
+        {
+          "from": "0x7ff6fee5c604",
+          "type": 1,
+          "function": ""
+        }
+      ],
+      "decompile": "float __fastcall sub_7FF6F92315C0(float *a1, int a2, float a3)\n{\n  __int64 v3; // r8\n  __int64 v4; // rax\n  float v5; // xmm3_4\n  float v7; // xmm0_4\n  float v8; // xmm1_4\n  float v9; // xmm2_4\n\n  v3 = *((_QWORD *)a1 + 1);\n  v4 = *(_QWORD *)a1;\n  v5 = 0.0;\n  v7 = 0.0;\n  v8 = 0.0;\n  if ( *(_QWORD *)a1 != v3 )\n  {\n    do\n    {\n      if ( *(_DWORD *)(v4 + 4) == a2 )\n      {\n        v5 = v5 + *(float *)(v4 + 8);\n        v7 = v7 + *(float *)(v4 + 12);\n        v8 = v8 + 1.0;\n      }\n      v4 += 16;\n    }\n    while ( v4 != v3 );\n    if ( v8 != 0.0 )\n    {\n      v5 = v5 / v8;\n      v7 = v7 / v8;\n    }\n  }\n  v9 = a1[6];\n  if ( v9 == 0.0 || v5 == 0.0 || v7 == 0.0 )\n    return 0.0;\n  else\n    return v7 / (float)((float)((float)(a3 * 2.0) / v9) + (float)(v7 / v5));\n}\n"
+    },
+    "GatherResourceVectorCombine": {
+      "rva": "0x1df7f60",
+      "address": "0x7ff6f83b7f60",
+      "name": "sub_7FF6F83B7F60",
+      "xrefs": [
+        {
+          "from": "0x7ff6f6a0721d",
+          "type": 17,
+          "function": "sub_7FF6F6A070C0"
+        },
+        {
+          "from": "0x7ff6f6c5201d",
+          "type": 17,
+          "function": "sub_7FF6F6C517C0"
+        },
+        {
+          "from": "0x7ff6f6c55ba7",
+          "type": 17,
+          "function": "sub_7FF6F6C555D0"
+        },
+        {
+          "from": "0x7ff6f6cfafa4",
+          "type": 17,
+          "function": "sub_7FF6F6CFAC30"
+        },
+        {
+          "from": "0x7ff6f6cfafb4",
+          "type": 17,
+          "function": "sub_7FF6F6CFAC30"
+        },
+        {
+          "from": "0x7ff6f6d07f61",
+          "type": 17,
+          "function": "sub_7FF6F6D07410"
+        },
+        {
+          "from": "0x7ff6f6dbd6f9",
+          "type": 17,
+          "function": "sub_7FF6F6DBC590"
+        },
+        {
+          "from": "0x7ff6f6dbf3a5",
+          "type": 17,
+          "function": "sub_7FF6F6DBEB10"
+        },
+        {
+          "from": "0x7ff6f6dbf41f",
+          "type": 17,
+          "function": "sub_7FF6F6DBEB10"
+        },
+        {
+          "from": "0x7ff6f6dc1e67",
+          "type": 17,
+          "function": "sub_7FF6F6DC16A0"
+        },
+        {
+          "from": "0x7ff6f6ee3103",
+          "type": 17,
+          "function": "sub_7FF6F6EE26B0"
+        },
+        {
+          "from": "0x7ff6f6ee43af",
+          "type": 17,
+          "function": "sub_7FF6F6EE42A0"
+        },
+        {
+          "from": "0x7ff6f6ee507e",
+          "type": 17,
+          "function": "sub_7FF6F6EE4F70"
+        },
+        {
+          "from": "0x7ff6f6ee53d4",
+          "type": 17,
+          "function": "sub_7FF6F6EE52D0"
+        },
+        {
+          "from": "0x7ff6f6ee564f",
+          "type": 17,
+          "function": "sub_7FF6F6EE5550"
+        },
+        {
+          "from": "0x7ff6f6ee58b2",
+          "type": 17,
+          "function": "sub_7FF6F6EE57D0"
+        },
+        {
+          "from": "0x7ff6f6eeae25",
+          "type": 19,
+          "function": "sub_7FF6F6EEADC0"
+        },
+        {
+          "from": "0x7ff6f6eec330",
+          "type": 17,
+          "function": "sub_7FF6F6EEC120"
+        },
+        {
+          "from": "0x7ff6f6eec435",
+          "type": 17,
+          "function": "sub_7FF6F6EEC120"
+        },
+        {
+          "from": "0x7ff6f6eec460",
+          "type": 17,
+          "function": "sub_7FF6F6EEC120"
+        },
+        {
+          "from": "0x7ff6f6eec473",
+          "type": 17,
+          "function": "sub_7FF6F6EEC120"
+        },
+        {
+          "from": "0x7ff6f6eec5cf",
+          "type": 17,
+          "function": "sub_7FF6F6EEC550"
+        },
+        {
+          "from": "0x7ff6f6eec5e5",
+          "type": 17,
+          "function": "sub_7FF6F6EEC550"
+        },
+        {
+          "from": "0x7ff6f6fa734b",
+          "type": 17,
+          "function": "sub_7FF6F6FA7200"
+        },
+        {
+          "from": "0x7ff6f6fa7368",
+          "type": 17,
+          "function": "sub_7FF6F6FA7200"
+        },
+        {
+          "from": "0x7ff6f6fa798b",
+          "type": 17,
+          "function": "sub_7FF6F6FA7840"
+        },
+        {
+          "from": "0x7ff6f6fb1c56",
+          "type": 17,
+          "function": "sub_7FF6F6FB1BF0"
+        },
+        {
+          "from": "0x7ff6f6fb1eb6",
+          "type": 17,
+          "function": "sub_7FF6F6FB1E50"
+        },
+        {
+          "from": "0x7ff6f6fb2116",
+          "type": 17,
+          "function": "sub_7FF6F6FB20B0"
+        },
+        {
+          "from": "0x7ff6f6fb2366",
+          "type": 17,
+          "function": "sub_7FF6F6FB2300"
+        },
+        {
+          "from": "0x7ff6f6fb2566",
+          "type": 17,
+          "function": "sub_7FF6F6FB2500"
+        },
+        {
+          "from": "0x7ff6f6fb2766",
+          "type": 17,
+          "function": "sub_7FF6F6FB2700"
+        },
+        {
+          "from": "0x7ff6f6fb2966",
+          "type": 17,
+          "function": "sub_7FF6F6FB2900"
+        },
+        {
+          "from": "0x7ff6f7158296",
+          "type": 17,
+          "function": "sub_7FF6F7158230"
+        },
+        {
+          "from": "0x7ff6f715a818",
+          "type": 17,
+          "function": "sub_7FF6F715A4A0"
+        },
+        {
+          "from": "0x7ff6f742da47",
+          "type": 17,
+          "function": "sub_7FF6F742D9E0"
+        },
+        {
+          "from": "0x7ff6f742da88",
+          "type": 17,
+          "function": "sub_7FF6F742D9E0"
+        },
+        {
+          "from": "0x7ff6f742dc03",
+          "type": 17,
+          "function": "sub_7FF6F742D9E0"
+        },
+        {
+          "from": "0x7ff6f766e4d8",
+          "type": 17,
+          "function": "sub_7FF6F766E350"
+        },
+        {
+          "from": "0x7ff6f766e566",
+          "type": 17,
+          "function": "sub_7FF6F766E350"
+        },
+        {
+          "from": "0x7ff6f7ece4fd",
+          "type": 17,
+          "function": "sub_7FF6F7ECDDD0"
+        },
+        {
+          "from": "0x7ff6f7f615d5",
+          "type": 17,
+          "function": "sub_7FF6F7F61550"
+        },
+        {
+          "from": "0x7ff6f83d8ebb",
+          "type": 17,
+          "function": "sub_7FF6F83D8CB0"
+        },
+        {
+          "from": "0x7ff6f83d9272",
+          "type": 17,
+          "function": "sub_7FF6F83D8F40"
+        },
+        {
+          "from": "0x7ff6f83d927f",
+          "type": 17,
+          "function": "sub_7FF6F83D8F40"
+        },
+        {
+          "from": "0x7ff6f83d9299",
+          "type": 17,
+          "function": "sub_7FF6F83D8F40"
+        },
+        {
+          "from": "0x7ff6f83d92a8",
+          "type": 17,
+          "function": "sub_7FF6F83D8F40"
+        },
+        {
+          "from": "0x7ff6f83db229",
+          "type": 17,
+          "function": "sub_7FF6F83DAD60"
+        },
+        {
+          "from": "0x7ff6f83dfe68",
+          "type": 17,
+          "function": "sub_7FF6F83DFAF0"
+        },
+        {
+          "from": "0x7ff6f83dff84",
+          "type": 17,
+          "function": "sub_7FF6F83DFAF0"
+        },
+        {
+          "from": "0x7ff6f83e042b",
+          "type": 17,
+          "function": "sub_7FF6F83E0260"
+        },
+        {
+          "from": "0x7ff6f83e1067",
+          "type": 17,
+          "function": "sub_7FF6F83E0DD0"
+        },
+        {
+          "from": "0x7ff6f83e1078",
+          "type": 17,
+          "function": "sub_7FF6F83E0DD0"
+        },
+        {
+          "from": "0x7ff6f83e1099",
+          "type": 17,
+          "function": "sub_7FF6F83E0DD0"
+        },
+        {
+          "from": "0x7ff6f83e10bd",
+          "type": 17,
+          "function": "sub_7FF6F83E0DD0"
+        },
+        {
+          "from": "0x7ff6f83e10ce",
+          "type": 17,
+          "function": "sub_7FF6F83E0DD0"
+        },
+        {
+          "from": "0x7ff6f83e149a",
+          "type": 17,
+          "function": "sub_7FF6F83E1450"
+        },
+        {
+          "from": "0x7ff6f83e17bb",
+          "type": 17,
+          "function": "sub_7FF6F83E1740"
+        },
+        {
+          "from": "0x7ff6f83e17db",
+          "type": 17,
+          "function": "sub_7FF6F83E1740"
+        },
+        {
+          "from": "0x7ff6f83e7529",
+          "type": 17,
+          "function": "sub_7FF6F83E7110"
+        },
+        {
+          "from": "0x7ff6f83e93a2",
+          "type": 17,
+          "function": "sub_7FF6F83E9260"
+        },
+        {
+          "from": "0x7ff6f83e9f2d",
+          "type": 17,
+          "function": "sub_7FF6F83E9CA0"
+        },
+        {
+          "from": "0x7ff6f83ea024",
+          "type": 17,
+          "function": "sub_7FF6F83E9FB0"
+        },
+        {
+          "from": "0x7ff6f83ea10e",
+          "type": 17,
+          "function": "sub_7FF6F83EA060"
+        },
+        {
+          "from": "0x7ff6f83ea170",
+          "type": 17,
+          "function": "sub_7FF6F83EA150"
+        },
+        {
+          "from": "0x7ff6f852b6f1",
+          "type": 17,
+          "function": "sub_7FF6F852B610"
+        },
+        {
+          "from": "0x7ff6f852e84b",
+          "type": 17,
+          "function": "sub_7FF6F852E680"
+        },
+        {
+          "from": "0x7ff6f869e824",
+          "type": 17,
+          "function": "sub_7FF6F869E620"
+        },
+        {
+          "from": "0x7ff6f869ed73",
+          "type": 17,
+          "function": "sub_7FF6F869EC80"
+        },
+        {
+          "from": "0x7ff6f869edbf",
+          "type": 17,
+          "function": "sub_7FF6F869EC80"
+        },
+        {
+          "from": "0x7ff6f869ef1a",
+          "type": 17,
+          "function": "sub_7FF6F869EE40"
+        },
+        {
+          "from": "0x7ff6f869ef74",
+          "type": 17,
+          "function": "sub_7FF6F869EE40"
+        },
+        {
+          "from": "0x7ff6f86a16f0",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a1747",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a1754",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a1774",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a185d",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a18b4",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a18c1",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a18e1",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a1a33",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a1a8c",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a1acc",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a1aec",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a1bfb",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a1c52",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a1c5f",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86a1c7f",
+          "type": 17,
+          "function": "sub_7FF6F86A15F0"
+        },
+        {
+          "from": "0x7ff6f86ae004",
+          "type": 17,
+          "function": "sub_7FF6F86ADE00"
+        },
+        {
+          "from": "0x7ff6f86ae0a2",
+          "type": 17,
+          "function": "sub_7FF6F86AE060"
+        },
+        {
+          "from": "0x7ff6f87810da",
+          "type": 17,
+          "function": "sub_7FF6F8780FE0"
+        },
+        {
+          "from": "0x7ff6f8781124",
+          "type": 17,
+          "function": "sub_7FF6F8780FE0"
+        },
+        {
+          "from": "0x7ff6f878d05f",
+          "type": 17,
+          "function": "sub_7FF6F878CE70"
+        },
+        {
+          "from": "0x7ff6f878d0ac",
+          "type": 17,
+          "function": "sub_7FF6F878CE70"
+        },
+        {
+          "from": "0x7ff6f878e645",
+          "type": 17,
+          "function": "sub_7FF6F878E500"
+        },
+        {
+          "from": "0x7ff6f878e694",
+          "type": 17,
+          "function": "sub_7FF6F878E500"
+        },
+        {
+          "from": "0x7ff6f878e7e5",
+          "type": 17,
+          "function": "sub_7FF6F878E500"
+        },
+        {
+          "from": "0x7ff6f878e834",
+          "type": 17,
+          "function": "sub_7FF6F878E500"
+        },
+        {
+          "from": "0x7ff6f878ea12",
+          "type": 17,
+          "function": "sub_7FF6F878E500"
+        },
+        {
+          "from": "0x7ff6f878ea65",
+          "type": 17,
+          "function": "sub_7FF6F878E500"
+        },
+        {
+          "from": "0x7ff6f878ec0f",
+          "type": 17,
+          "function": "sub_7FF6F878E500"
+        },
+        {
+          "from": "0x7ff6f878ec62",
+          "type": 17,
+          "function": "sub_7FF6F878E500"
+        },
+        {
+          "from": "0x7ff6f885cbef",
+          "type": 17,
+          "function": "sub_7FF6F885CAE0"
+        },
+        {
+          "from": "0x7ff6f885f313",
+          "type": 17,
+          "function": "sub_7FF6F885F2E0"
+        },
+        {
+          "from": "0x7ff6f89bcf94",
+          "type": 17,
+          "function": "sub_7FF6F89BCD30"
+        },
+        {
+          "from": "0x7ff6f8a37041",
+          "type": 17,
+          "function": "sub_7FF6F8A36D30"
+        },
+        {
+          "from": "0x7ff6f8a371bd",
+          "type": 17,
+          "function": "sub_7FF6F8A36D30"
+        },
+        {
+          "from": "0x7ff6f8a38392",
+          "type": 17,
+          "function": "sub_7FF6F8A37FC0"
+        },
+        {
+          "from": "0x7ff6f8a38492",
+          "type": 17,
+          "function": "sub_7FF6F8A37FC0"
+        },
+        {
+          "from": "0x7ff6f8af1ec0",
+          "type": 17,
+          "function": "sub_7FF6F8AF1E10"
+        },
+        {
+          "from": "0x7ff6f8be7cbe",
+          "type": 17,
+          "function": "sub_7FF6F8BE7B30"
+        },
+        {
+          "from": "0x7ff6f8be7d0d",
+          "type": 17,
+          "function": "sub_7FF6F8BE7B30"
+        },
+        {
+          "from": "0x7ff6f8be7d5c",
+          "type": 17,
+          "function": "sub_7FF6F8BE7B30"
+        },
+        {
+          "from": "0x7ff6f8ed5ddd",
+          "type": 17,
+          "function": "sub_7FF6F8ED5CC0"
+        },
+        {
+          "from": "0x7ff6f8edd6a1",
+          "type": 17,
+          "function": "AI_Think_ApplyLockCommands"
+        },
+        {
+          "from": "0x7ff6f8ee38b8",
+          "type": 17,
+          "function": "sub_7FF6F8EE3810"
+        },
+        {
+          "from": "0x7ff6f8ee4763",
+          "type": 17,
+          "function": "sub_7FF6F8EE45E0"
+        },
+        {
+          "from": "0x7ff6f8ee478a",
+          "type": 17,
+          "function": "sub_7FF6F8EE45E0"
+        },
+        {
+          "from": "0x7ff6f8ee486a",
+          "type": 17,
+          "function": "sub_7FF6F8EE4800"
+        },
+        {
+          "from": "0x7ff6f8ee4895",
+          "type": 17,
+          "function": "sub_7FF6F8EE4800"
+        },
+        {
+          "from": "0x7ff6f8f02409",
+          "type": 17,
+          "function": "sub_7FF6F8F01FC0"
+        },
+        {
+          "from": "0x7ff6f8fc4201",
+          "type": 17,
+          "function": "sub_7FF6F8FC3FA0"
+        },
+        {
+          "from": "0x7ff6f8fc42e9",
+          "type": 17,
+          "function": "sub_7FF6F8FC3FA0"
+        },
+        {
+          "from": "0x7ff6f8fce923",
+          "type": 17,
+          "function": "sub_7FF6F8FCE870"
+        },
+        {
+          "from": "0x7ff6f9008b6c",
+          "type": 17,
+          "function": "sub_7FF6F9008A90"
+        },
+        {
+          "from": "0x7ff6f907e376",
+          "type": 17,
+          "function": "sub_7FF6F907E2B0"
+        },
+        {
+          "from": "0x7ff6f90bd5bd",
+          "type": 17,
+          "function": "sub_7FF6F90BD250"
+        },
+        {
+          "from": "0x7ff6f90bd9ac",
+          "type": 17,
+          "function": "sub_7FF6F90BD7E0"
+        },
+        {
+          "from": "0x7ff6f90bda10",
+          "type": 17,
+          "function": "sub_7FF6F90BD7E0"
+        },
+        {
+          "from": "0x7ff6f90cf1d7",
+          "type": 17,
+          "function": "sub_7FF6F90CEF90"
+        },
+        {
+          "from": "0x7ff6f90d4f97",
+          "type": 17,
+          "function": "sub_7FF6F90D4D50"
+        },
+        {
+          "from": "0x7ff6f90d54db",
+          "type": 17,
+          "function": "sub_7FF6F90D5320"
+        },
+        {
+          "from": "0x7ff6f912ca71",
+          "type": 17,
+          "function": "sub_7FF6F912CA20"
+        },
+        {
+          "from": "0x7ff6f917ab97",
+          "type": 17,
+          "function": "sub_7FF6F917A9F0"
+        },
+        {
+          "from": "0x7ff6f917b3ca",
+          "type": 17,
+          "function": "sub_7FF6F917B080"
+        },
+        {
+          "from": "0x7ff6f91c10c5",
+          "type": 17,
+          "function": "sub_7FF6F91C07C0"
+        },
+        {
+          "from": "0x7ff6f91c12c4",
+          "type": 17,
+          "function": "sub_7FF6F91C07C0"
+        },
+        {
+          "from": "0x7ff6f91eef78",
+          "type": 17,
+          "function": "sub_7FF6F91EEDB0"
+        },
+        {
+          "from": "0x7ff6f91f6845",
+          "type": 17,
+          "function": "sub_7FF6F91F64A0"
+        },
+        {
+          "from": "0x7ff6f91f6974",
+          "type": 17,
+          "function": "sub_7FF6F91F64A0"
+        },
+        {
+          "from": "0x7ff6f923fdc8",
+          "type": 17,
+          "function": "sub_7FF6F923FCC0"
+        },
+        {
+          "from": "0x7ff6f923feda",
+          "type": 17,
+          "function": "sub_7FF6F923FCC0"
+        },
+        {
+          "from": "0x7ff6f9241654",
+          "type": 17,
+          "function": "sub_7FF6F92414E0"
+        },
+        {
+          "from": "0x7ff6f926841e",
+          "type": 17,
+          "function": "sub_7FF6F9268070"
+        },
+        {
+          "from": "0x7ff6f9268ad4",
+          "type": 17,
+          "function": "sub_7FF6F9268730"
+        },
+        {
+          "from": "0x7ff6f9269db4",
+          "type": 17,
+          "function": "sub_7FF6F9269D40"
+        },
+        {
+          "from": "0x7ff6f92bee92",
+          "type": 17,
+          "function": "sub_7FF6F92BEDE0"
+        },
+        {
+          "from": "0x7ff6f92bf08b",
+          "type": 17,
+          "function": "sub_7FF6F92BF000"
+        },
+        {
+          "from": "0x7ff6f92bf36d",
+          "type": 17,
+          "function": "sub_7FF6F92BF2F0"
+        },
+        {
+          "from": "0x7ff6f92c07ea",
+          "type": 17,
+          "function": "sub_7FF6F92C0120"
+        },
+        {
+          "from": "0x7ff6fedb1e08",
+          "type": 1,
+          "function": ""
+        }
+      ],
+      "decompile": "unsigned __int64 __fastcall sub_7FF6F83B7F60(unsigned __int64 a1, unsigned __int64 a2)\n{\n  _QWORD *v4; // rax\n  unsigned __int64 v5; // r8\n  __int64 v6; // kr00_8\n  unsigned __int64 v7; // rdx\n  __m128 *v8; // rax\n  unsigned __int64 v9; // rcx\n  __m128 v10; // xmm2\n  __m128 v11; // xmm1\n  unsigned __int64 v12; // rbx\n  float *v13; // rax\n  unsigned __int64 v14; // rcx\n  float *v15; // rax\n  unsigned __int64 v16; // rdx\n\n  v4 = sub_7FF6F9BE4980();\n  v5 = 0;\n  v6 = v4[94] - v4[93];\n  v7 = v6 / 48;\n  if ( v6 / 48 )\n  {\n    if ( v7 < 0x10 || a1 <= a2 - 4 + 4 * v7 && a1 - 4 + 4 * v7 >= a2 )\n      goto LABEL_8;\n    v8 = (__m128 *)(a1 + 16);\n    v9 = a2 - a1;\n    do\n    {\n      v5 += 16LL;\n      v10 = *(__m128 *)((char *)v8 + v9);\n      v8[-1] = _mm_add_ps(*(__m128 *)((char *)v8 + v9 - 16), v8[-1]);\n      v11 = *(__m128 *)((char *)v8 + v9 + 16);\n      *v8 = _mm_add_ps(v10, *v8);\n      v8[1] = _mm_add_ps(v11, v8[1]);\n      v8[2] = _mm_add_ps(*(__m128 *)((char *)v8 + v9 + 32), v8[2]);\n      v8 += 4;\n    }\n    while ( v5 < v6 / 48 - ((v6 / 48) & 0xFuLL) );\n    if ( v5 < v7 )\n    {\nLABEL_8:\n      v12 = a2 - a1;\n      if ( v7 - v5 >= 4 )\n      {\n        v13 = (float *)(a1 + 4 + 4 * v5);\n        v14 = ((v7 - v5 - 4) >> 2) + 1;\n        v5 += 4 * v14;\n        do\n        {\n          *(v13 - 1) = *(float *)((char *)v13 + v12 - 4) + *(v13 - 1);\n          *v13 = *(float *)((char *)v13 + v12) + *v13;\n          v13[1] = *(float *)((char *)v13 + v12 + 4) + v13[1];\n          v13[2] = *(float *)((char *)v13 + v12 + 8) + v13[2];\n          v13 += 4;\n          --v14;\n        }\n        while ( v14 );\n      }\n      if ( v5 < v7 )\n      {\n        v15 = (float *)(a1 + 4 * v5);\n        v16 = v7 - v5;\n        do\n        {\n          *v15 = *(float *)((char *)v15 + v12) + *v15;\n          ++v15;\n          --v16;\n        }\n        while ( v16 );\n      }\n    }\n  }\n  return a1;\n}\n"
+    },
+    "CounterLookup": {
+      "rva": "0x2c31c60",
+      "address": "0x7ff6f91f1c60",
+      "name": "sub_7FF6F91F1C60",
+      "xrefs": [
+        {
+          "from": "0x7ff6f91f1b0a",
+          "type": 17,
+          "function": "sub_7FF6F91F17D0"
+        },
+        {
+          "from": "0x7ff6f92bea56",
+          "type": 17,
+          "function": "sub_7FF6F92BEA30"
+        },
+        {
+          "from": "0x7ff6fd68ec90",
+          "type": 1,
+          "function": ""
+        },
+        {
+          "from": "0x7ff6fd68eca8",
+          "type": 1,
+          "function": ""
+        },
+        {
+          "from": "0x7ff6fd68ed00",
+          "type": 1,
+          "function": ""
+        },
+        {
+          "from": "0x7ff6fee59508",
+          "type": 1,
+          "function": ""
+        },
+        {
+          "from": "0x7ff6fee59514",
+          "type": 1,
+          "function": ""
+        }
+      ],
+      "decompile": "__m128 __fastcall sub_7FF6F91F1C60(__int64 a1, __int64 a2)\n{\n  _BYTE *v4; // rbx\n  char v5; // bl\n  char v6; // al\n  __int64 v7; // rcx\n  __int64 v8; // r15\n  __int64 v10; // rax\n  __int64 *v11; // rcx\n  __int64 *v12; // rdx\n  __int64 v13; // rbx\n  __int64 v14; // rax\n  __int64 v15; // rbx\n  __int128 v16; // xmm1\n  __int64 v17; // rcx\n  __int64 v18; // r8\n  __int64 v19; // rdx\n  __int128 v20; // xmm6\n  __int64 v21; // rcx\n  __int64 v22; // rax\n  __int64 v23; // rbp\n  __int64 v24; // rax\n  _QWORD *v25; // rbx\n  _QWORD *i; // rdi\n  __int64 v27; // rcx\n  __int64 v28; // rsi\n  float v29; // xmm1_4\n  __int64 v30; // rax\n  int v31; // ecx\n  int v32; // eax\n  __int64 v33; // rax\n  int v34; // ecx\n  int v35; // eax\n\n  if ( *(_BYTE *)(*(_QWORD *)a1 + 59LL) && (v4 = (_BYTE *)*((_QWORD *)qword_7FF6FEA88C08 + 10), *v4) )\n  {\n    v5 = v4[2];\n    v6 = sub_7FF6F90D3990(a2);\n    if ( v5 && v6 )\n    {\n      v8 = 104;\n      goto LABEL_8;\n    }\n  }\n  else\n  {\n    sub_7FF6F90D3990(a2);\n  }\n  v8 = 72;\nLABEL_8:\n  if ( *(_QWORD *)(v8 + a1) == *(_QWORD *)(v8 + a1 + 8) )\n    return (__m128)0x3F800000u;\n  v10 = sub_7FF6F69BF740(v7);\n  v11 = *(__int64 **)(v10 + 2520);\n  v12 = *(__int64 **)(v10 + 2528);\n  if ( v11 == v12 )\n  {\nLABEL_13:\n    v14 = *(_QWORD *)(v8 + a1 + 8);\n    v15 = *(_QWORD *)(v8 + a1);\n    if ( v15 == v14 )\n      return (__m128)0LL;\n    while ( a2 != *(_QWORD *)v15 )\n    {\n      v15 += 16;\n      if ( v15 == v14 )\n        return (__m128)0LL;\n    }\n    v33 = sub_7FF6F69BF740(v11);\n    v34 = *(unsigned __int16 *)(v15 + 12);\n    v16 = *(unsigned int *)(v15 + 8);\n    if ( (unsigned int)v34 > 1 )\n    {\n      v35 = *(_DWORD *)(v33 + 488);\n      if ( v35 < v34 )\n        v34 = v35;\n      *(float *)&v16 = *(float *)&v16 / (float)v34;\n      return (__m128)v16;\n    }\n    return (__m128)v16;\n  }\n  while ( 1 )\n  {\n    v13 = *v11;\n    if ( *v11 == a2 )\n      break;\n    if ( ++v11 == v12 )\n      goto LABEL_13;\n  }\n  v17 = *(_QWORD *)(*(_QWORD *)a1 + 4120LL);\n  v18 = *(_QWORD *)(v17 + 240);\n  v19 = *(_QWORD *)(v17 + 232);\n  if ( v19 == v18 )\n    return (__m128)0LL;\n  while ( *(_QWORD *)(*(_QWORD *)v19 + 8LL) != v13 )\n  {\n    v19 += 8;\n    if ( v19 == v18 )\n      return (__m128)0LL;\n  }\n  v21 = **(_QWORD **)(*(_QWORD *)v19 + 16LL);\n  if ( !v21 )\n    return (__m128)0LL;\n  v22 = sub_7FF6F69C8040(v21);\n  if ( !v22 )\n    return (__m128)0LL;\n  v23 = *(_QWORD *)(v22 + 24);\n  v24 = *(_QWORD *)(v22 + 32);\n  if ( v23 == v24 )\n    return (__m128)0LL;\n  while ( *(_QWORD *)v23 != v13 )\n  {\n    v23 += 920;\n    if ( v23 == v24 )\n      return (__m128)0LL;\n  }\n  v25 = *(_QWORD **)(v23 + 8);\n  v20 = 0;\n  for ( i = &v25[*(unsigned int *)(v23 + 16)]; v25 != i; *(float *)&v20 = *(float *)&v20 + v29 )\n  {\n    v27 = *(_QWORD *)(v8 + a1 + 8);\n    v28 = *(_QWORD *)(v8 + a1);\n    if ( v28 == v27 )\n    {\nLABEL_33:\n      v29 = 0.0;\n    }\n    else\n    {\n      while ( *v25 != *(_QWORD *)v28 )\n      {\n        v28 += 16;\n        if ( v28 == v27 )\n          goto LABEL_33;\n      }\n      v30 = sub_7FF6F69BF740(v27);\n      v31 = *(unsigned __int16 *)(v28 + 12);\n      v29 = *(float *)(v28 + 8);\n      if ( (unsigned int)v31 > 1 )\n      {\n        v32 = *(_DWORD *)(v30 + 488);\n        if ( v32 < v31 )\n          v31 = v32;\n        v29 = v29 / (float)v31;\n      }\n    }\n    ++v25;\n  }\n  if ( !*(_DWORD *)(v23 + 16) )\n    return (__m128)0LL;\n  *(float *)&v20 = *(float *)&v20 / (float)*(int *)(v23 + 16);\n  return (__m128)v20;\n}\n"
+    }
+  }
+}
