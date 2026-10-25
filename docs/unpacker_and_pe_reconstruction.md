@@ -1,6 +1,6 @@
-# Dynamic Unpacking, Section Restoration, and PE Reconstruction in the Cardinal Engine
+﻿# Dynamic Unpacking, Section Restoration, and PE Reconstruction in the Cardinal Engine
 
-**Author:** Sergey Shunko  
+**Author:** Serhii Shunko  
 **Classification:** Binary Reverse Engineering & Executable Reconstruction  
 **Target:** Relic Cardinal Engine (`RelicCardinal.exe` x64)  
 

@@ -1,9 +1,9 @@
-# Security Research Advisory: ADV-2026-002
+﻿# Security Research Advisory: ADV-2026-002
 
 - **Advisory ID:** ADV-2026-002
 - **Title:** Integrity Checkpoints, Relocation Validation, and Anti-Tamper Virtualization in the Cardinal Engine
 - **Published:** October 2026
-- **Researcher:** Sergey Shunko
+- **Researcher:** Serhii Shunko
 - **Classification:** Binary Security Analysis / Anti-Tamper Architecture
 - **Target:** Cardinal Engine (Relic x64)
 

@@ -1,6 +1,6 @@
-# Deterministic Simulation, SCAR Virtual Machine, and Desynchronization Auditing in the Cardinal Engine
+﻿# Deterministic Simulation, SCAR Virtual Machine, and Desynchronization Auditing in the Cardinal Engine
 
-**Author:** Sergey Shunko  
+**Author:** Serhii Shunko  
 **Classification:** Real-Time Simulation Architecture & State Integrity Auditing  
 **Engine:** Relic Cardinal Engine (Age of Empires IV x64)  
 
