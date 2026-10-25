@@ -10,7 +10,7 @@
 
 This repository documents defensive binary security research, static disassembly analysis, and architectural auditing of the **Cardinal Engine** (`RelicCardinal.exe` x64) on Windows.
 
-Our research covers relocation-normalized `.text` section hashing, Import Address Table (IAT) boundary validation, dynamic PE unpacking and section reconstruction for static analysis, SCAR virtual machine sandboxing, and deterministic lockstep simulation auditing across **4,423** engine bindings to prevent Out-of-Sync (OOS) state desynchronization.
+This research covers relocation-normalized `.text` section hashing, Import Address Table (IAT) boundary validation, dynamic PE unpacking and section reconstruction for static analysis, SCAR virtual machine sandboxing, and deterministic lockstep simulation auditing across **4,423** engine bindings to prevent Out-of-Sync (OOS) state desynchronization.
 
 ---
 
