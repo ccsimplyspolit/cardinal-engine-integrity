@@ -31,9 +31,10 @@ Our research covers relocation-normalized `.text` section hashing, Import Addres
 
 ---
 
-## Static Analysis Tooling
+## Static Analysis Tooling & Audit Package
 
-- **[`tools/cardinal_iat_audit.py`](tools/cardinal_iat_audit.py)** — Python `pefile` utility for auditing Portable Executable (PE) Import Address Tables and verifying import thunk RVA boundaries.
+- **[Audit Preparation & Architecture Package (`AUDIT_PREP.md`)](AUDIT_PREP.md)** — Trail of Bits-style review goals, scope, relocation-normalized integrity diagram, and automated unit test suite (`3/3 PASS`).
+- **[`tools/cardinal_iat_audit.py`](tools/cardinal_iat_audit.py)** — Zero-dependency PE32+ header, section alignment, and Import Address Table (IAT) boundary auditor (with optional `pefile` import enumeration).
 
 ---
 
