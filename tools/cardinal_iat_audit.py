@@ -32,6 +32,8 @@ def parse_pe_summary(data: bytes) -> Dict[str, Any]:
 
     machine, num_sections, _, _, _, opt_hdr_size, _ = struct.unpack_from("<HHIIIHH", data, e_lfanew + 4)
     opt_offset = e_lfanew + 24
+    if opt_hdr_size < 28 or opt_offset + 32 > len(data):
+        raise ValueError("Truncated PE optional header")
     magic = struct.unpack_from("<H", data, opt_offset)[0]
     is_pe64 = magic == 0x20B
     image_base = (

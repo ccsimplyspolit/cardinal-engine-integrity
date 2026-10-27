@@ -2,8 +2,9 @@
 
 [![CI](https://github.com/ccsimplyspolit/cardinal-engine-integrity/actions/workflows/ci.yml/badge.svg)](https://github.com/ccsimplyspolit/cardinal-engine-integrity/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Type: Security Research / Whitepapers](https://img.shields.io/badge/Classification-Defensive%20Binary%20Audit-red.svg)]()
-[![Target: Cardinal %2F Relic Engine](https://img.shields.io/badge/Target-Cardinal%20Engine%20x64-informational.svg)]()
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23640496.svg)](https://doi.org/10.5281/zenodo.23640496)
+[![Type: Security Research / Whitepapers](https://img.shields.io/badge/Classification-Defensive%20Binary%20Audit-red.svg)](AUDIT_PREP.md)
+[![Target: Cardinal %2F Relic Engine](https://img.shields.io/badge/Target-Cardinal%20Engine%20x64-informational.svg)](AUDIT_PREP.md)
 
 ## Overview
 
