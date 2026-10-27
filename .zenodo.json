@@ -1,0 +1,28 @@
+{
+  "title": "Cardinal Engine Binary Integrity, Anti-Tamper Architecture & Deterministic Simulation Research",
+  "upload_type": "software",
+  "description": "Four architectural whitepapers and zero-dependency PE32+ static auditor covering relocation-normalized section hashing, Import Address Table (IAT) boundary validation, and classification of 4,423 deterministic simulation functions.",
+  "creators": [
+    {
+      "name": "Shunko, Serhii",
+      "orcid": "0009-0002-4183-0361"
+    }
+  ],
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": [
+    "Binary Integrity",
+    "PE32+",
+    "Static Analysis",
+    "Deterministic Simulation",
+    "Import Address Table",
+    "Reverse Engineering"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/ccsimplyspolit/cardinal-engine-integrity",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
