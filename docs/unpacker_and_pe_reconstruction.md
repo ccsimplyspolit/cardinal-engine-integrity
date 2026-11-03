@@ -80,6 +80,6 @@ Anti-tamper envelopes obscure the standard Import Table by resolving Win32 APIs 
 ## 5. Defensive Analysis & Research Outcomes
 
 Reconstructing clean, unpacked binaries of the Cardinal Engine enables:
-- **Comprehensive Disassembly:** Allowing IDA Pro to analyze over 4,400 game functions without decompiler errors caused by encrypted bytes.
+- **Full Disassembly:** Allowing IDA Pro to analyze over 4,400 game functions without decompiler errors caused by encrypted bytes.
 - **Accurate Call-Graph Analysis:** Identifying inter-subsystem communication between deterministic game simulation and network serialization layers.
 - **Deterministic Vulnerability Auditing:** Auditing network packet parsers and SCAR scripting engine boundaries for memory safety defects.
